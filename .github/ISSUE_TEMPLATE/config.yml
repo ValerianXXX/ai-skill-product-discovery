@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: BillFit product issues
+    url: https://github.com/ValerianXXX/billfit/issues
+    about: Report BillFit calculator, packaging, or product issues in the product repository.

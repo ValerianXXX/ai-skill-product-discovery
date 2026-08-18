@@ -1,0 +1,15 @@
+metric,value,unit,definition,caveat
+window_start,2026-02-16,date,First complete week in the study,Archived history rather than an official GitHub historical API
+window_end,2026-08-16,date,Last complete week in the study,Archived history rather than an official GitHub historical API
+complete_weeks,26,weeks,ISO weeks 8 through 33 of 2026,None
+archived_records,421,appearances,Rows recovered from weekly Trending archive pages,Pages did not always expose 20 repositories
+possible_top20_slots,520,slots,26 weeks multiplied by 20,Used only as a coverage denominator
+archive_coverage,0.8096153846,share,Archived records divided by possible Top-20 slots,Not a measure of GitHub market coverage
+weeks_with_full_20,5,weeks,Weeks with all 20 positions recovered,Most weeks were incomplete
+unique_repositories,284,repositories,Distinct repository names in the collected rows,Renames may affect identity
+ai_appearance_share,0.8123515439,share,Appearances marked AI-related by rules plus review,Analyst classification
+agent_appearance_share,0.5771971496,share,Appearances marked agent-related by rules plus review,Analyst classification
+coding_agent_appearance_share,0.2541567696,share,Appearances marked coding-agent-related,Analyst classification
+skills_prompts_appearance_share,0.2161520190,share,Appearances marked skills-or-prompts-related,Analyst classification
+average_weekly_retention,0.2253390864,share,Average overlap with the prior archived weekly list,Sensitive to incomplete archive coverage
+single_week_repository_share,0.6901408451,share,Repositories appearing in only one collected week,Window-censored and sensitive to incomplete archive coverage

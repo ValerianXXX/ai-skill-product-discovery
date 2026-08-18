@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If this framework or case study helps your work, please cite it."
+title: "AI Skill Product Discovery"
+type: software
+authors:
+  - name: "ValerianXXX"
+repository-code: "https://github.com/ValerianXXX/ai-skill-product-discovery"
+url: "https://github.com/ValerianXXX/ai-skill-product-discovery"
+version: 1.0.0
+date-released: 2026-08-18
+license: MIT
+keywords:
+  - ai skills
+  - product discovery
+  - consumer ai
+  - evidence
+  - case study

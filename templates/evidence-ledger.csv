@@ -1,0 +1,2 @@
+id,stage,source_strength,claim_state,source_date,date_checked,geography,source_owner,source_title,claim_supported,artifact_or_url,caveat,refresh_rule
+E001,discovery,S1,Observed,YYYY-MM-DD,YYYY-MM-DD,GEOGRAPHY,OWNER,TITLE,CLAIM,URL_OR_PATH,CAVEAT,REFRESH_RULE

@@ -1,0 +1,53 @@
+name: Evidence correction
+description: Report a source, claim, date, or interpretation that should be corrected.
+title: "[Evidence] "
+labels: [evidence]
+body:
+  - type: input
+    id: evidence_id
+    attributes:
+      label: Evidence ID or file
+      placeholder: B02 or cases/billfit/evidence-ledger.md
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_claim
+    attributes:
+      label: Current claim
+      description: Quote or summarize the exact statement that needs correction.
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+      description: Explain what should change and whether it affects a score or decision.
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Stronger source
+      description: Link directly to the primary or stronger source.
+      placeholder: https://example.gov/source
+    validations:
+      required: true
+
+  - type: input
+    id: checked
+    attributes:
+      label: Date checked
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed personal, account, medical, and proprietary information.
+          required: true

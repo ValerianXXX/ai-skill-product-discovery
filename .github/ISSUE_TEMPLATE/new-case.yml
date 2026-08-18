@@ -1,0 +1,56 @@
+name: Propose a new case
+description: Propose a fully sourced AI-skill product-discovery case.
+title: "[Case] "
+labels: [case]
+body:
+  - type: input
+    id: decision_moment
+    attributes:
+      label: Decision moment
+      description: State the user, trigger, decision, and missing data in one sentence.
+    validations:
+      required: true
+
+  - type: textarea
+    id: critical_data
+    attributes:
+      label: Critical-data gap
+      description: Name the exact current, local, compatibility, eligibility, or user-specific data that ordinary AI lacks.
+    validations:
+      required: true
+
+  - type: textarea
+    id: official_sources
+    attributes:
+      label: Authoritative sources
+      description: Provide direct links, effective dates, and the expected refresh path.
+    validations:
+      required: true
+
+  - type: textarea
+    id: substitute_test
+    attributes:
+      label: General-AI substitute test
+      description: Explain what a capable general assistant can already do and what remains unreliable.
+    validations:
+      required: true
+
+  - type: textarea
+    id: narrow_scope
+    attributes:
+      label: Narrow MVP and human gates
+      description: Define one initial geography or provider, the deterministic component, exclusions, and irreversible actions left to people.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: evidence_rules
+    attributes:
+      label: Evidence rules
+      options:
+        - label: I will separate observations, inferences, assumptions, and test results.
+          required: true
+        - label: I will not claim product-market fit from code, stars, or public availability.
+          required: true
+        - label: I will not publish personal or proprietary source material.
+          required: true
