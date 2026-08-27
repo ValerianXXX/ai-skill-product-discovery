@@ -62,6 +62,12 @@ Read the [full case](cases/billfit/README.md), the [decision timeline](cases/bil
 
 Machine-readable examples are in [`data/`](data/README.md). Reusable blank files are in [`templates/`](templates/README.md).
 
+## NeedRadar opportunity handoff
+
+[NeedRadar](https://github.com/ValerianXXX/needradar) can export a published opportunity as `OPPORTUNITY_HANDOFF_V1`. This repository accepts that object as a research input for the general-AI substitute test, critical-data gap test, source review, scoring, and explicit select/reject/defer decision.
+
+The connection is manual and metadata-only: it creates no issue, starts no build, and changes no score automatically. See [`needradar-project.json`](needradar-project.json) for the machine-readable relationship.
+
 ## Repository map
 
 ```text

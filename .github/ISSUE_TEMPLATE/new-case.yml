@@ -4,6 +4,13 @@ title: "[Case] "
 labels: [case]
 body:
   - type: input
+    id: needradar_handoff
+    attributes:
+      label: NeedRadar opportunity handoff (optional)
+      description: Link to the read-only /api/v1/opportunities/{slug}/handoff export. A link is a research input, not proof that the case should proceed.
+      placeholder: https://needradar-ai.xusihan615.chatgpt.site/api/v1/opportunities/example/handoff
+
+  - type: input
     id: decision_moment
     attributes:
       label: Decision moment

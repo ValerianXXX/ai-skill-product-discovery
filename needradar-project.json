@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ValerianXXX/needradar/main/schemas/project-connection-v1.schema.json",
+  "schemaVersion": "1.0.0",
+  "projectId": "ai-skill-product-discovery",
+  "repository": "ValerianXXX/ai-skill-product-discovery",
+  "relationship": "VALIDATION_METHOD",
+  "connectionState": "MANUAL_HANDOFF_READY",
+  "runtimeIntegration": "NONE",
+  "accepts": ["OPPORTUNITY_HANDOFF_V1"],
+  "emits": ["CASE_DECISION_RECORD"],
+  "evidenceBoundary": "A NeedRadar handoff is a research input. Selection, rejection, or deferral still requires explicit source review and does not prove demand.",
+  "needradar": {
+    "ecosystemUrl": "https://github.com/ValerianXXX/needradar/blob/main/docs/ECOSYSTEM.md",
+    "projectRegistry": "https://raw.githubusercontent.com/ValerianXXX/needradar/main/data/project-registry.json",
+    "opportunityHandoffContract": "https://raw.githubusercontent.com/ValerianXXX/needradar/main/schemas/opportunity-handoff-v1.schema.json"
+  }
+}
