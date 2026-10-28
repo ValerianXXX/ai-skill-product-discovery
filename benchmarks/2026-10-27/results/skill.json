@@ -1,0 +1,184 @@
+{
+  "datasetVersion": "substitute-assistance-2026-10-27-v1",
+  "datasetHash": "452ed16b4f8176557d915bc8dbd0a4f8e2c8770f4373dfdde84ba8955560cad4",
+  "sourceHash": "6bb814c189d0713a5e24371dd4ebea72a5a1ad53931a7928ffbe394a0a3d1276",
+  "arm": "skill",
+  "synthetic": true,
+  "mode": "REAL_EXECUTION",
+  "startedAt": "2026-10-28T00:31:48.645493+00:00",
+  "pythonVersion": "3.11.3",
+  "billfitCommit": "8ad0b6ff65e9bbe7937e26b240b0b209d7e4660a",
+  "results": [
+    {
+      "taskId": "care-income",
+      "status": "OBSERVED",
+      "answer": {
+        "care_status": "likely_eligible",
+        "fera_status": "not_primary_path",
+        "care_limit": 43280,
+        "fera_limit": 54100,
+        "official_decision": false
+      },
+      "evaluation": {
+        "factsCorrect": 5,
+        "factsChecked": 5,
+        "wrongFields": [],
+        "unexpectedFields": [],
+        "taskCompleted": true
+      },
+      "sourceVerified": true,
+      "providerCalls": 0,
+      "toolCalls": 0,
+      "attempts": [],
+      "model": null,
+      "provider": null,
+      "costUsd": null,
+      "tokens": null,
+      "userOperations": null,
+      "maintenanceHours": null,
+      "durationMs": 117
+    },
+    {
+      "taskId": "fera-income",
+      "status": "OBSERVED",
+      "answer": {
+        "care_status": "likely_not_eligible_by_income",
+        "fera_status": "likely_eligible",
+        "care_limit": 54640,
+        "fera_limit": 68300,
+        "official_decision": false
+      },
+      "evaluation": {
+        "factsCorrect": 5,
+        "factsChecked": 5,
+        "wrongFields": [],
+        "unexpectedFields": [],
+        "taskCompleted": true
+      },
+      "sourceVerified": true,
+      "providerCalls": 0,
+      "toolCalls": 0,
+      "attempts": [],
+      "model": null,
+      "provider": null,
+      "costUsd": null,
+      "tokens": null,
+      "userOperations": null,
+      "maintenanceHours": null,
+      "durationMs": 0
+    },
+    {
+      "taskId": "inclusive-boundary",
+      "status": "OBSERVED",
+      "answer": {
+        "care_status": "likely_eligible",
+        "fera_status": "not_primary_path",
+        "care_limit": 43280,
+        "fera_limit": 54100,
+        "official_decision": false
+      },
+      "evaluation": {
+        "factsCorrect": 5,
+        "factsChecked": 5,
+        "wrongFields": [],
+        "unexpectedFields": [],
+        "taskCompleted": true
+      },
+      "sourceVerified": true,
+      "providerCalls": 0,
+      "toolCalls": 0,
+      "attempts": [],
+      "model": null,
+      "provider": null,
+      "costUsd": null,
+      "tokens": null,
+      "userOperations": null,
+      "maintenanceHours": null,
+      "durationMs": 0
+    },
+    {
+      "taskId": "large-household",
+      "status": "OBSERVED",
+      "answer": {
+        "care_status": "likely_eligible",
+        "fera_status": "not_primary_path",
+        "care_limit": 122800,
+        "fera_limit": 153500,
+        "official_decision": false
+      },
+      "evaluation": {
+        "factsCorrect": 5,
+        "factsChecked": 5,
+        "wrongFields": [],
+        "unexpectedFields": [],
+        "taskCompleted": true
+      },
+      "sourceVerified": true,
+      "providerCalls": 0,
+      "toolCalls": 0,
+      "attempts": [],
+      "model": null,
+      "provider": null,
+      "costUsd": null,
+      "tokens": null,
+      "userOperations": null,
+      "maintenanceHours": null,
+      "durationMs": 0
+    },
+    {
+      "taskId": "missing-income",
+      "status": "OBSERVED",
+      "answer": {
+        "care_status": "needs_information",
+        "fera_status": "needs_information",
+        "care_limit": 54640,
+        "fera_limit": 68300,
+        "official_decision": false
+      },
+      "evaluation": {
+        "factsCorrect": 5,
+        "factsChecked": 5,
+        "wrongFields": [],
+        "unexpectedFields": [],
+        "taskCompleted": true
+      },
+      "sourceVerified": true,
+      "providerCalls": 0,
+      "toolCalls": 0,
+      "attempts": [],
+      "model": null,
+      "provider": null,
+      "costUsd": null,
+      "tokens": null,
+      "userOperations": null,
+      "maintenanceHours": null,
+      "durationMs": 0
+    },
+    {
+      "taskId": "invalid-income",
+      "status": "OBSERVED",
+      "answer": {
+        "error": "INVALID_INCOME"
+      },
+      "evaluation": {
+        "factsCorrect": 1,
+        "factsChecked": 1,
+        "wrongFields": [],
+        "unexpectedFields": [],
+        "taskCompleted": true
+      },
+      "sourceVerified": false,
+      "providerCalls": 0,
+      "toolCalls": 0,
+      "attempts": [],
+      "model": null,
+      "provider": null,
+      "costUsd": null,
+      "tokens": null,
+      "userOperations": null,
+      "maintenanceHours": null,
+      "durationMs": 0
+    }
+  ],
+  "completedAt": "2026-10-28T00:31:48.827574+00:00"
+}

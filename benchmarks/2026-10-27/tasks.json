@@ -1,0 +1,14 @@
+{
+  "version": "substitute-assistance-2026-10-27-v1",
+  "asOf": "2026-10-27",
+  "synthetic": true,
+  "scope": "Six synthetic PG&E CARE/FERA preliminary screens; not a tariff or market validation benchmark",
+  "tasks": [
+    {"id":"care-income","input":{"household_size":2,"gross_annual_household_income":40000},"requiresCurrentSource":true,"expected":{"care_status":"likely_eligible","fera_status":"not_primary_path","care_limit":43280,"fera_limit":54100,"official_decision":false}},
+    {"id":"fera-income","input":{"household_size":3,"gross_annual_household_income":60000},"requiresCurrentSource":true,"expected":{"care_status":"likely_not_eligible_by_income","fera_status":"likely_eligible","care_limit":54640,"fera_limit":68300,"official_decision":false}},
+    {"id":"inclusive-boundary","input":{"household_size":2,"gross_annual_household_income":43280},"requiresCurrentSource":true,"expected":{"care_status":"likely_eligible","fera_status":"not_primary_path","care_limit":43280,"fera_limit":54100,"official_decision":false}},
+    {"id":"large-household","input":{"household_size":9,"gross_annual_household_income":120000},"requiresCurrentSource":true,"expected":{"care_status":"likely_eligible","fera_status":"not_primary_path","care_limit":122800,"fera_limit":153500,"official_decision":false}},
+    {"id":"missing-income","input":{"household_size":3},"requiresCurrentSource":true,"expected":{"care_status":"needs_information","fera_status":"needs_information","care_limit":54640,"fera_limit":68300,"official_decision":false}},
+    {"id":"invalid-income","input":{"household_size":2,"gross_annual_household_income":-1},"requiresCurrentSource":false,"expected":{"error":"INVALID_INCOME"}}
+  ]
+}

@@ -8,6 +8,8 @@ BillFit is the first case produced with this repository's discovery method. It c
 - Primary market: U.S. consumers; MVP scope: supported PG&E residential bundled-electric accounts
 - Highest fully evidenced validation level: V4, engineering validation
 
+The August record below is historical. The [October 27 reassessment](reassessment-2026-10-27.md) verifies current sources and reports real three-arm execution: a general Agent with source/file tools matched BillFit on six assistance cases. This does not test full interval comparisons or raise the market-validation level.
+
 ## Executive summary
 
 The project did not begin with utility rates. A six-month technology-supply scan and a U.S. consumer-pain scan produced twelve lightweight AI concepts. A customer-service context tool ranked first under the initial scorecard.
@@ -35,7 +37,9 @@ The resulting MVP is deliberately narrow. It performs deterministic analysis ins
 
 This is a decision-support problem, not a bill-summary problem.
 
-## Why general AI is insufficient
+## Required inputs identified in August
+
+These are requirements for a trustworthy implementation, not proof that a current general Agent cannot obtain or process them.
 
 | Missing element | Why it matters | BillFit response |
 |---|---|---|

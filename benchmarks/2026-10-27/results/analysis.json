@@ -1,0 +1,72 @@
+{
+  "evaluatorVersion": "required-facts-v2-abstentions",
+  "datasetHash": "452ed16b4f8176557d915bc8dbd0a4f8e2c8770f4373dfdde84ba8955560cad4",
+  "sourceHash": "6bb814c189d0713a5e24371dd4ebea72a5a1ad53931a7928ffbe394a0a3d1276",
+  "runFiles": [
+    {
+      "name": "model.json",
+      "sha256": "3bbade91b0ff53485156cbd6081558db176e373c9516a190f3633add4f33eaff"
+    },
+    {
+      "name": "agent.json",
+      "sha256": "96dca404f82d3c907ee339ffc2daa33ff5e60e3e220c6b4c264a1bb551732509"
+    },
+    {
+      "name": "skill.json",
+      "sha256": "d90a2a4e2a35ae7fbfaa6b511ee3781723e8fda3612f9409ce76bb7d5a8fea65"
+    }
+  ],
+  "summary": [
+    {
+      "arm": "model",
+      "observed": 6,
+      "failedOrBlocked": 0,
+      "taskCompleted": 1,
+      "factsCorrect": 17,
+      "factsChecked": 26,
+      "incorrectFields": 0,
+      "missingOrAbstainedFields": 9,
+      "providerCalls": 6,
+      "toolCalls": 0,
+      "notRun": 0,
+      "durationMs": 83361,
+      "costUsd": null,
+      "userOperations": null,
+      "maintenanceHours": null
+    },
+    {
+      "arm": "agent",
+      "observed": 6,
+      "failedOrBlocked": 0,
+      "taskCompleted": 6,
+      "factsCorrect": 26,
+      "factsChecked": 26,
+      "incorrectFields": 0,
+      "missingOrAbstainedFields": 0,
+      "providerCalls": 11,
+      "toolCalls": 5,
+      "notRun": 0,
+      "durationMs": 63434,
+      "costUsd": null,
+      "userOperations": null,
+      "maintenanceHours": null
+    },
+    {
+      "arm": "skill",
+      "observed": 6,
+      "failedOrBlocked": 0,
+      "taskCompleted": 6,
+      "factsCorrect": 26,
+      "factsChecked": 26,
+      "incorrectFields": 0,
+      "missingOrAbstainedFields": 0,
+      "providerCalls": 0,
+      "toolCalls": 0,
+      "notRun": 0,
+      "durationMs": 117,
+      "costUsd": null,
+      "userOperations": null,
+      "maintenanceHours": null
+    }
+  ]
+}
