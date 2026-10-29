@@ -13,6 +13,8 @@ The repository now includes a runnable [three-arm substitute benchmark](benchmar
 
 Read the [results and limitations](benchmarks/2026-10-27/RESULTS.md) and [current BillFit reassessment](cases/billfit/reassessment-2026-10-27.md). Python 3.11+ runs `python -m unittest discover -s tests` and `python scripts/check_repo.py` without credentials. Optional real-model runs reuse an existing Hermes setup; no Agent installation or paid-service activation is required. Historical August decisions and validation levels remain dated records.
 
+October 28 follow-up: the collector now retains available Hermes token/call counters and labelled estimates, while actual billing remains unverified. A [single-call instrumentation check](benchmarks/2026-10-28/USAGE_CAPTURE.md) verifies collection without changing or backfilling the original comparison results.
+
 ## The core question
 
 Do not start with “What can AI summarize?” Start with:

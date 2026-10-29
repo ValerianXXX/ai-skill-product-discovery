@@ -9,6 +9,7 @@ import json
 import math
 import operator
 from pathlib import Path
+import re
 import subprocess
 import sys
 import time
@@ -19,6 +20,41 @@ DATASET = json.loads((DATA / "tasks.json").read_text(encoding="utf-8"))
 SOURCE = json.loads((DATA / "sources" / "cpuc-assistance.json").read_text(encoding="utf-8"))
 ARMS = ("model", "agent", "skill")
 EVALUATOR_VERSION = "required-facts-v2-abstentions"
+USAGE_FIELDS = ("modelApiCalls", "promptTokens", "completionTokens", "totalTokens", "estimatedCostUsd")
+
+
+def validate_usage(usage):
+    """Accept optional measured counters, never infer billing from an estimate."""
+    if usage is None:
+        return None
+    expected = {"source", "costStatus", "costSource", *USAGE_FIELDS}
+    if not isinstance(usage, dict) or set(usage) != expected or usage["source"] != "HERMES_SESSION_COUNTERS":
+        raise ValueError("USAGE_CONTRACT")
+    for name in USAGE_FIELDS:
+        value = usage[name]
+        if value is None:
+            continue
+        allowed = (int, float) if name == "estimatedCostUsd" else (int,)
+        if type(value) not in allowed or value < 0 or value > 2**63 - 1 or not math.isfinite(value):
+            raise ValueError("INVALID_USAGE_NUMBER")
+    for name in ("costStatus", "costSource"):
+        if usage[name] is not None and (not isinstance(usage[name], str) or not re.fullmatch(r"[A-Za-z0-9_.:-]{1,80}", usage[name])):
+            raise ValueError("INVALID_USAGE_LABEL")
+    if usage["estimatedCostUsd"] is not None and usage["costStatus"] in (None, "unknown"):
+        raise ValueError("UNATTRIBUTED_COST_ESTIMATE")
+    return dict(usage)
+
+
+def summarize_usage(attempts, expected_calls):
+    records = [validate_usage(attempt.get("usage")) for attempt in attempts]
+    present = [record for record in records if record is not None]
+    complete = expected_calls > 0 and len(records) == expected_calls and len(present) == expected_calls
+    totals = {name: sum(record[name] for record in present)
+              if complete and all(record[name] is not None for record in present) else None for name in USAGE_FIELDS}
+    return {**totals, "expectedAdapterCalls": expected_calls, "callsWithUsage": len(present),
+            "costStatuses": sorted({record["costStatus"] for record in present if record["costStatus"]}),
+            "costSources": sorted({record["costSource"] for record in present if record["costSource"]}),
+            "billingVerified": False}
 
 
 def digest(value):
@@ -105,6 +141,7 @@ def model_run(task, arm, command, row):
             if process.returncode or len(process.stdout) > 20000:
                 raise ValueError("ADAPTER_FAILED")
             envelope = json.loads(process.stdout)
+            attempt["usage"] = validate_usage(envelope.get("usage"))
             row["model"] = envelope["model"]
             row["provider"] = envelope["provider"]
             decision = envelope["decision"]
@@ -128,6 +165,8 @@ def model_run(task, arm, command, row):
             raise
         finally:
             attempt["durationMs"] = round((time.perf_counter() - started) * 1000)
+            row["usage"] = summarize_usage(row["attempts"], row["providerCalls"])
+            row["tokens"] = row["usage"]["totalTokens"]
     raise ValueError("TURN_LIMIT")
 
 
@@ -170,6 +209,7 @@ def summarize(reports):
         tasks = {task["id"]: task for task in DATASET["tasks"]}
         # Re-score immutable responses using one evaluator; stored run-time scores remain auditable.
         evaluations = [evaluate(tasks[row["taskId"]], row["answer"], row["sourceVerified"]) for row in observed]
+        usage = summarize_usage([attempt for row in rows for attempt in row.get("attempts", [])], sum(row["providerCalls"] for row in rows))
         result.append({"arm": report["arm"], "observed": len(observed), "failedOrBlocked": len(rows)-len(observed),
             "taskCompleted": sum(item["taskCompleted"] for item in evaluations),
             "factsCorrect": sum(item["factsCorrect"] for item in evaluations), "factsChecked": sum(item["factsChecked"] for item in evaluations),
@@ -177,7 +217,8 @@ def summarize(reports):
             "missingOrAbstainedFields": sum(len(item["missingFields"]) for item in evaluations),
             "providerCalls": sum(row["providerCalls"] for row in rows), "toolCalls": sum(row["toolCalls"] for row in rows),
             "notRun": sum(row["status"] == "NOT_RUN" for row in rows),
-            "durationMs": sum(row["durationMs"] for row in rows if row["durationMs"] is not None), "costUsd": None, "userOperations": None, "maintenanceHours": None})
+            "durationMs": sum(row["durationMs"] for row in rows if row["durationMs"] is not None), "costUsd": None,
+            "tokens": usage["totalTokens"], "usage": usage, "userOperations": None, "maintenanceHours": None})
     return result
 
 
@@ -209,6 +250,7 @@ def main():
         parser.error("An existing --billfit-root checkout is required")
     report = {"datasetVersion": DATASET["version"], "datasetHash": digest(DATASET), "sourceHash": digest(SOURCE),
               "evaluatorVersion": EVALUATOR_VERSION,
+              "usageCollectorVersion": "hermes-session-v1",
               "arm": args.arm, "synthetic": True, "mode": "REAL_EXECUTION", "startedAt": datetime.now(timezone.utc).isoformat(),
               "pythonVersion": sys.version.split()[0], "billfitCommit": None, "results": []}
     if args.billfit_root:

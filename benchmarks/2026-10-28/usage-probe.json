@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "verifiedAt": "2026-10-29T00:58:15.534121+00:00",
+  "mode": "ONE_CALL_USAGE_CAPTURE_ACCEPTANCE",
+  "synthetic": true,
+  "arm": "model",
+  "datasetVersion": "substitute-assistance-2026-10-27-v1",
+  "datasetHash": "452ed16b4f8176557d915bc8dbd0a4f8e2c8770f4373dfdde84ba8955560cad4",
+  "hermesRevision": "afe53708ee7400919ae3e17a6dde9b02629e5c87",
+  "input": {
+    "household_size": 2,
+    "gross_annual_household_income": -1
+  },
+  "callLimit": 1,
+  "sourceSha256": {
+    "scripts/hermes_benchmark_adapter.py": "ffaced419d992724d9d38c56c565660fbc712c80a38e13da6a5a50cf84ac4248",
+    "scripts/substitute_benchmark.py": "aa3bfa8809f80480158ba1fb17e88a108369369c3a462426dd06ff7daf3d90c0"
+  },
+  "historicalResultsModified": false,
+  "fullRoundPerformanceClaim": false,
+  "observation": {
+    "taskId": "invalid-income",
+    "providerCalls": 1,
+    "toolCalls": 0,
+    "sourceVerified": false,
+    "attempts": [
+      {
+        "status": "RECEIVED",
+        "durationMs": 4585,
+        "response": {
+          "tool": null,
+          "arguments": {},
+          "answer": {
+            "error": "INVALID_INCOME"
+          }
+        },
+        "usage": {
+          "source": "HERMES_SESSION_COUNTERS",
+          "modelApiCalls": 1,
+          "promptTokens": 760,
+          "completionTokens": 21,
+          "totalTokens": 781,
+          "estimatedCostUsd": 0.0,
+          "costStatus": "included",
+          "costSource": "none"
+        }
+      }
+    ],
+    "costUsd": null,
+    "tokens": 781,
+    "userOperations": null,
+    "maintenanceHours": null,
+    "model": "gpt-5.6-sol",
+    "provider": "openai-codex",
+    "usage": {
+      "modelApiCalls": 1,
+      "promptTokens": 760,
+      "completionTokens": 21,
+      "totalTokens": 781,
+      "estimatedCostUsd": 0.0,
+      "expectedAdapterCalls": 1,
+      "callsWithUsage": 1,
+      "costStatuses": [
+        "included"
+      ],
+      "costSources": [
+        "none"
+      ],
+      "billingVerified": false
+    },
+    "answer": {
+      "error": "INVALID_INCOME"
+    },
+    "evaluation": {
+      "factsCorrect": 1,
+      "factsChecked": 1,
+      "wrongFields": [],
+      "missingFields": [],
+      "unexpectedFields": [],
+      "taskCompleted": true
+    }
+  },
+  "checks": {
+    "bounded_one_call": true,
+    "zero_tools": true,
+    "tokens_observed": true,
+    "complete_usage": true,
+    "billing_not_inferred": true,
+    "task_completed": true
+  },
+  "durationMs": 4586
+}

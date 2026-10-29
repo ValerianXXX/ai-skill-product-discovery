@@ -2,9 +2,30 @@
 import contextlib
 import json
 import logging
+import math
 import os
+import re
 import sys
 import tempfile
+
+
+def session_usage(agent):
+    def count(name):
+        value = getattr(agent, f"session_{name}", None)
+        return value if type(value) is int and value >= 0 else None
+
+    def label(name):
+        value = getattr(agent, f"session_{name}", None)
+        return value if isinstance(value, str) and re.fullmatch(r"[A-Za-z0-9_.:-]{1,80}", value) else None
+
+    status = label("cost_status")
+    estimate = getattr(agent, "session_estimated_cost_usd", None)
+    if status in (None, "unknown") or type(estimate) not in (int, float) or not math.isfinite(estimate) or estimate < 0:
+        estimate = None
+    return {"source": "HERMES_SESSION_COUNTERS", "modelApiCalls": count("api_calls"),
+            "promptTokens": count("prompt_tokens"), "completionTokens": count("completion_tokens"),
+            "totalTokens": count("total_tokens"), "estimatedCostUsd": estimate,
+            "costStatus": status, "costSource": label("cost_source")}
 
 
 def main():
@@ -49,12 +70,14 @@ def main():
                 if agent.tools:
                     raise RuntimeError("UNEXPECTED_NATIVE_TOOLS")
                 response = agent.chat(json.dumps(request))
+                usage = session_usage(agent)
             if not isinstance(response, str) or len(response) > 16000:
                 raise ValueError("INVALID_RESPONSE")
             decision = json.loads(response)
         finally:
             os.chdir(previous)
-    print(json.dumps({"decision": decision, "model": model, "provider": provider, "tokens": None, "costUsd": None}))
+    print(json.dumps({"decision": decision, "model": model, "provider": provider,
+                      "tokens": usage["totalTokens"], "costUsd": None, "usage": usage}, allow_nan=False))
 
 
 if __name__ == "__main__":

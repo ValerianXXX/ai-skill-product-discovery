@@ -35,3 +35,25 @@ Each model call is a real request to the already configured provider; run only w
 - **Maintenance:** record source-refresh time, adapter repairs and test/review effort prospectively; do not invent a number from code size.
 
 No arm enrolls a household or verifies a real account. The benchmark does not establish demand, realized savings, clinical eligibility or comprehensive bill comparison. The evaluator is deterministic but its expected facts still need independent review. Repeat with new cases and independent coding before selecting a product strategy.
+
+### Usage collection added October 28
+
+New Hermes responses include a `usage` record for every received adapter turn:
+model API calls, prompt/completion/total tokens, estimated USD cost, and the
+provider's cost status/source. The historical `providerCalls` field counts
+adapter invocations; `usage.modelApiCalls` records Hermes's own API-call counter.
+They are distinct so internal calls are not silently assumed to equal adapter turns.
+
+The harness preserves each record and sums a field only when every expected call
+has a valid non-null value for that field. Failed/missing responses and older
+records produce null totals, not zero. `callsWithUsage` exposes coverage.
+Negative/nonfinite values, booleans in numeric fields and unlabelled estimates
+are rejected. Summaries derive counters from attempt records instead of trusting
+precomputed row totals.
+
+`costUsd` remains null: a reported `included` status and `$0` incremental estimate
+are not independently verified billing or zero subscription cost. Estimates are
+kept under `usage.estimatedCostUsd` with their status/source. User operations and
+maintenance hours still need prospectively observed human measurements. Historical
+results are never backfilled from a later run. See the
+[bounded live collection check](2026-10-28/USAGE_CAPTURE.md).

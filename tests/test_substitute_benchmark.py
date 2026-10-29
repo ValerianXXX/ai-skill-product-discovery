@@ -2,11 +2,21 @@ import importlib.util
 import hashlib
 import json
 from pathlib import Path
+from subprocess import CompletedProcess
+from types import SimpleNamespace
 import unittest
+from unittest.mock import patch
 
 spec = importlib.util.spec_from_file_location("benchmark", Path(__file__).resolve().parents[1] / "scripts" / "substitute_benchmark.py")
 benchmark = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(benchmark)
+adapter_spec = importlib.util.spec_from_file_location("hermes_adapter", Path(__file__).resolve().parents[1] / "scripts" / "hermes_benchmark_adapter.py")
+adapter = importlib.util.module_from_spec(adapter_spec)
+adapter_spec.loader.exec_module(adapter)
+
+USAGE = {"source": "HERMES_SESSION_COUNTERS", "modelApiCalls": 1, "promptTokens": 180,
+         "completionTokens": 20, "totalTokens": 200, "estimatedCostUsd": 0.0,
+         "costStatus": "included", "costSource": "none"}
 
 
 class SubstituteTests(unittest.TestCase):
@@ -59,10 +69,50 @@ class SubstituteTests(unittest.TestCase):
                   "sourceVerified": False, "evaluation": {"taskCompleted": True}, "providerCalls": 1,
                   "toolCalls": 0, "durationMs": 10} for task in benchmark.DATASET["tasks"]]}
         self.assertEqual(benchmark.summarize([report])[0]["taskCompleted"], 0)
+        self.assertIsNone(benchmark.summarize([report])[0]["tokens"])
         with self.assertRaisesRegex(ValueError, "DATASET_IDENTITY_MISMATCH"):
             benchmark.summarize([{**report, "datasetHash": "changed"}])
         with self.assertRaisesRegex(ValueError, "DUPLICATE_ARM"):
             benchmark.summarize([report, report])
+
+    def test_all_agent_turns_are_counted_without_promoting_estimate_to_billing(self):
+        task = benchmark.DATASET["tasks"][0]
+        decisions = [{"tool": "read_file", "arguments": {"id": "cpuc-assistance"}, "answer": None},
+                     {"tool": None, "arguments": {}, "answer": task["expected"]}]
+        responses = [CompletedProcess([], 0, json.dumps({"model": "synthetic-test", "provider": "unit-fixture",
+                     "decision": decision, "usage": USAGE}), "") for decision in decisions]
+        row = {"providerCalls": 0, "toolCalls": 0, "sourceVerified": False, "attempts": [], "costUsd": None}
+        with patch.object(benchmark.subprocess, "run", side_effect=responses):
+            self.assertEqual(benchmark.model_run(task, "agent", ["unused"], row), task["expected"])
+        self.assertEqual(row["tokens"], 400)
+        self.assertEqual(row["usage"]["modelApiCalls"], 2)
+        self.assertEqual(row["usage"]["callsWithUsage"], 2)
+        self.assertEqual(row["usage"]["estimatedCostUsd"], 0)
+        self.assertFalse(row["usage"]["billingVerified"])
+        self.assertIsNone(row["costUsd"])
+
+    def test_missing_or_failed_attempt_does_not_make_a_partial_token_total_complete(self):
+        measured = {"usage": USAGE}
+        for unmeasured in [{}, {"usage": None, "status": "FAILED"}]:
+            total = benchmark.summarize_usage([measured, unmeasured], 2)
+            self.assertEqual(total["callsWithUsage"], 1)
+            self.assertIsNone(total["totalTokens"])
+            self.assertIsNone(total["estimatedCostUsd"])
+        self.assertIsNone(benchmark.summarize_usage([measured], 2)["totalTokens"])
+        self.assertIsNone(benchmark.summarize_usage([], 0)["totalTokens"])
+
+    def test_invalid_usage_and_unknown_cost_do_not_become_free_or_zero(self):
+        for update in [{"totalTokens": True}, {"totalTokens": -1}, {"totalTokens": 10**400},
+                       {"estimatedCostUsd": float("nan")}, {"estimatedCostUsd": float("inf")},
+                       {"costStatus": "unknown"}, {"costSource": "private path/credential"}]:
+            with self.assertRaises(ValueError):
+                benchmark.validate_usage({**USAGE, **update})
+        observed = adapter.session_usage(SimpleNamespace(session_api_calls=1, session_prompt_tokens=180,
+            session_completion_tokens=20, session_total_tokens=200, session_cost_status="unknown",
+            session_estimated_cost_usd=0.0))
+        self.assertEqual(observed["totalTokens"], 200)
+        self.assertIsNone(observed["estimatedCostUsd"])
+        self.assertIsNone(adapter.session_usage(SimpleNamespace())["totalTokens"])
 
 
 if __name__ == "__main__":

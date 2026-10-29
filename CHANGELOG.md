@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased - 2026-10-28
+
+- Capture available Hermes model-call/token counters and separately labelled cost estimates for each adapter turn instead of discarding them.
+- Retain missing usage as unknown; incomplete call coverage cannot become a complete token/cost total. Billed cost, user operations and maintenance effort remain separate measurements.
+- Preserve all original six-task results. One additional real synthetic call verifies usage capture; ten offline tests and repository checks pass.
+
 ## Unreleased - 2026-10-27
 
 - Added six reproducible synthetic tasks and real general-model, tool-Agent and deterministic BillFit comparisons.
