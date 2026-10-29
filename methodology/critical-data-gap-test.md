@@ -2,6 +2,14 @@
 
 This test distinguishes a defensible AI skill from a saved prompt.
 
+## Required substitute controls
+
+Freeze the same tasks and expected evidence before comparing (1) a general model, (2) that model with ordinary search, file and calculation tools, and (3) the proposed Skill with specialized data/rules. Record model and environment versions, source/effective dates, access conditions and all attempts. A model without tools is not an adequate proxy for a capable general Agent.
+
+Use the [runnable benchmark](../benchmarks/README.md) as a small example, then expand to the candidate's actual task. Measure task completion and critical facts separately; distinguish incorrect claims from abstentions. Instrument user operations, wall time, attributable cost and ongoing maintenance, leaving unmeasured fields null. Preserve evidence and require receipts for actual downstream actions. A correct explanation is not an executed transaction.
+
+If the Agent matches the Skill, narrow the claimed advantage and test whether reliability, latency, repeated-use effort or maintenance still justify a product. The October 27 BillFit pilot matches on six assistance tasks; its interval-calculation advantage has not been measured against a general Agent. Own-project documentation and NeedRadar handoffs cannot independently establish market demand.
+
 ## The seven checks
 
 ### 1. Necessity

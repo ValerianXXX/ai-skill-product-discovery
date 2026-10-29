@@ -1,0 +1,289 @@
+{
+  "datasetVersion": "substitute-assistance-2026-10-27-v1",
+  "datasetHash": "452ed16b4f8176557d915bc8dbd0a4f8e2c8770f4373dfdde84ba8955560cad4",
+  "sourceHash": "6bb814c189d0713a5e24371dd4ebea72a5a1ad53931a7928ffbe394a0a3d1276",
+  "arm": "model",
+  "synthetic": true,
+  "mode": "REAL_EXECUTION",
+  "startedAt": "2026-10-28T00:32:27.924992+00:00",
+  "pythonVersion": "3.11.3",
+  "billfitCommit": null,
+  "results": [
+    {
+      "taskId": "care-income",
+      "status": "OBSERVED",
+      "answer": {
+        "care_status": "likely_eligible",
+        "fera_status": "not_primary_path",
+        "care_limit": null,
+        "fera_limit": null,
+        "official_decision": false
+      },
+      "evaluation": {
+        "factsCorrect": 3,
+        "factsChecked": 5,
+        "wrongFields": [
+          "care_limit",
+          "fera_limit"
+        ],
+        "unexpectedFields": [],
+        "taskCompleted": false
+      },
+      "sourceVerified": false,
+      "providerCalls": 1,
+      "toolCalls": 0,
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "durationMs": 25316,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "care_status": "likely_eligible",
+              "fera_status": "not_primary_path",
+              "care_limit": null,
+              "fera_limit": null,
+              "official_decision": false
+            }
+          }
+        }
+      ],
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "costUsd": null,
+      "tokens": null,
+      "userOperations": null,
+      "maintenanceHours": null,
+      "durationMs": 25316
+    },
+    {
+      "taskId": "fera-income",
+      "status": "OBSERVED",
+      "answer": {
+        "care_status": "needs_information",
+        "fera_status": "needs_information",
+        "care_limit": null,
+        "fera_limit": null,
+        "official_decision": false
+      },
+      "evaluation": {
+        "factsCorrect": 1,
+        "factsChecked": 5,
+        "wrongFields": [
+          "care_status",
+          "fera_status",
+          "care_limit",
+          "fera_limit"
+        ],
+        "unexpectedFields": [],
+        "taskCompleted": false
+      },
+      "sourceVerified": false,
+      "providerCalls": 1,
+      "toolCalls": 0,
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "durationMs": 7271,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "care_status": "needs_information",
+              "fera_status": "needs_information",
+              "care_limit": null,
+              "fera_limit": null,
+              "official_decision": false
+            }
+          }
+        }
+      ],
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "costUsd": null,
+      "tokens": null,
+      "userOperations": null,
+      "maintenanceHours": null,
+      "durationMs": 7271
+    },
+    {
+      "taskId": "inclusive-boundary",
+      "status": "OBSERVED",
+      "answer": {
+        "care_status": "likely_eligible",
+        "fera_status": "not_primary_path",
+        "care_limit": 43280,
+        "fera_limit": null,
+        "official_decision": false
+      },
+      "evaluation": {
+        "factsCorrect": 4,
+        "factsChecked": 5,
+        "wrongFields": [
+          "fera_limit"
+        ],
+        "unexpectedFields": [],
+        "taskCompleted": false
+      },
+      "sourceVerified": false,
+      "providerCalls": 1,
+      "toolCalls": 0,
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "durationMs": 24817,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "care_status": "likely_eligible",
+              "fera_status": "not_primary_path",
+              "care_limit": 43280,
+              "fera_limit": null,
+              "official_decision": false
+            }
+          }
+        }
+      ],
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "costUsd": null,
+      "tokens": null,
+      "userOperations": null,
+      "maintenanceHours": null,
+      "durationMs": 24817
+    },
+    {
+      "taskId": "large-household",
+      "status": "OBSERVED",
+      "answer": {
+        "care_status": "likely_eligible",
+        "fera_status": "not_primary_path",
+        "care_limit": 122800,
+        "fera_limit": 153500,
+        "official_decision": false
+      },
+      "evaluation": {
+        "factsCorrect": 5,
+        "factsChecked": 5,
+        "wrongFields": [],
+        "unexpectedFields": [],
+        "taskCompleted": false
+      },
+      "sourceVerified": false,
+      "providerCalls": 1,
+      "toolCalls": 0,
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "durationMs": 14943,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "care_status": "likely_eligible",
+              "fera_status": "not_primary_path",
+              "care_limit": 122800,
+              "fera_limit": 153500,
+              "official_decision": false
+            }
+          }
+        }
+      ],
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "costUsd": null,
+      "tokens": null,
+      "userOperations": null,
+      "maintenanceHours": null,
+      "durationMs": 14943
+    },
+    {
+      "taskId": "missing-income",
+      "status": "OBSERVED",
+      "answer": {
+        "care_status": "needs_information",
+        "fera_status": "needs_information",
+        "care_limit": null,
+        "fera_limit": null,
+        "official_decision": false
+      },
+      "evaluation": {
+        "factsCorrect": 3,
+        "factsChecked": 5,
+        "wrongFields": [
+          "care_limit",
+          "fera_limit"
+        ],
+        "unexpectedFields": [],
+        "taskCompleted": false
+      },
+      "sourceVerified": false,
+      "providerCalls": 1,
+      "toolCalls": 0,
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "durationMs": 5282,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "care_status": "needs_information",
+              "fera_status": "needs_information",
+              "care_limit": null,
+              "fera_limit": null,
+              "official_decision": false
+            }
+          }
+        }
+      ],
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "costUsd": null,
+      "tokens": null,
+      "userOperations": null,
+      "maintenanceHours": null,
+      "durationMs": 5282
+    },
+    {
+      "taskId": "invalid-income",
+      "status": "OBSERVED",
+      "answer": {
+        "error": "INVALID_INCOME"
+      },
+      "evaluation": {
+        "factsCorrect": 1,
+        "factsChecked": 1,
+        "wrongFields": [],
+        "unexpectedFields": [],
+        "taskCompleted": true
+      },
+      "sourceVerified": false,
+      "providerCalls": 1,
+      "toolCalls": 0,
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "durationMs": 5732,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "error": "INVALID_INCOME"
+            }
+          }
+        }
+      ],
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "costUsd": null,
+      "tokens": null,
+      "userOperations": null,
+      "maintenanceHours": null,
+      "durationMs": 5732
+    }
+  ],
+  "completedAt": "2026-10-28T00:33:51.294780+00:00"
+}

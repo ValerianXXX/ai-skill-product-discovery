@@ -1,0 +1,20 @@
+{
+  "id": "cpuc-assistance",
+  "url": "https://www.cpuc.ca.gov/care/",
+  "title": "CARE and FERA income guidelines",
+  "verifiedOn": "2026-10-27",
+  "effectiveFrom": "2026-06-01",
+  "effectiveTo": "2027-05-31",
+  "provenance": "Human-checked transcription of official public threshold facts, not independent market evidence or model output",
+  "careLimits": {"1":43280,"2":43280,"3":54640,"4":66000,"5":77360,"6":88720,"7":100080,"8":111440,"additionalPerson":11360},
+  "feraLimits": {"1":54100,"2":54100,"3":68300,"4":82500,"5":96700,"6":110900,"7":125100,"8":139300,"additionalPerson":14200},
+  "interpretation": [
+    "These synthetic tasks exclude categorical-program qualification and use gross annual household income.",
+    "For more than eight people, add the additional-person amount for each extra household member.",
+    "At or below the CARE ceiling: CARE likely_eligible, FERA not_primary_path.",
+    "Above CARE and at or below FERA: CARE likely_not_eligible_by_income, FERA likely_eligible.",
+    "Above both: both likely_not_eligible_by_income. Missing income: both needs_information.",
+    "Negative, nonfinite or malformed income is invalid; never silently replace it with zero.",
+    "This preliminary screen is never an official enrollment decision. The user must confirm inputs and apply through the utility."
+  ]
+}

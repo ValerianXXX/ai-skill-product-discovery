@@ -7,6 +7,16 @@ An evidence-first method for finding everyday consumer tasks that a general AI a
 
 The first complete case is [BillFit](cases/billfit/README.md): a local-first skill for supported PG&E residential rate comparison and bill-assistance screening.
 
+## October 27 reassessment
+
+The repository now includes a runnable [three-arm substitute benchmark](benchmarks/README.md), frozen tasks, source provenance and actual responses. On six synthetic assistance tasks, the configured general model completed 1/6, the same model with bounded source/file/arithmetic tools completed 6/6, and the actual BillFit deterministic Skill completed 6/6. The model abstained on nine required fields; it did not assert incorrect values. These results establish that generic tools can cover this narrow rules lookup. They do not establish a broad product advantage or customer demand.
+
+Read the [results and limitations](benchmarks/2026-10-27/RESULTS.md) and [current BillFit reassessment](cases/billfit/reassessment-2026-10-27.md). Python 3.11+ runs `python -m unittest discover -s tests` and `python scripts/check_repo.py` without credentials. Optional real-model runs reuse an existing Hermes setup; no Agent installation or paid-service activation is required. Historical August decisions and validation levels remain dated records.
+
+October 28 follow-up: the collector now retains available Hermes token/call counters and labelled estimates, while actual billing remains unverified. A [single-call instrumentation check](benchmarks/2026-10-28/USAGE_CAPTURE.md) verifies collection without changing or backfilling the original comparison results.
+
+The separate [BillFit workflow follow-up](cases/billfit/workflow-evidence-2026-10-28.md) records a real model-selected synthetic bill workflow, an initial file-boundary failure and a passing repeat after clearer tool-path guidance. It adds engineering evidence only. It is not a fourth benchmark arm, proof of superiority over an equally equipped generic Agent, or a new market-demand source.
+
 ## The core question
 
 Do not start with “What can AI summarize?” Start with:
@@ -43,7 +53,7 @@ The case preserves rejected ideas and changed decisions. It is a decision record
 | Layer | Current evidence |
 |---|---|
 | Demand signal | Utility costs and assistance decisions can matter financially; actual willingness to use BillFit is still unproven. |
-| General-AI gap | Reliable comparison requires interval usage, exact tariff logic, current official rates, account-scope facts, and explicit unknowns. |
+| General-AI gap | Those inputs remain necessary for interval comparisons; an October 27 controlled Agent successfully covered the smaller assistance lookup slice. Full bill-comparison superiority remains unmeasured. |
 | Product | [BillFit v0.2.0](https://github.com/ValerianXXX/billfit/releases/tag/v0.2.0) |
 | Engineering | Deterministic calculator, versioned data, fail-closed exclusions, and automated tests. |
 | Distribution | Public GitHub release. OpenAI review or listing is not treated as completed validation here. |
@@ -68,6 +78,8 @@ Machine-readable examples are in [`data/`](data/README.md). Reusable blank files
 
 The connection is manual and metadata-only: it creates no issue, starts no build, and changes no score automatically. See [`needradar-project.json`](needradar-project.json) for the machine-readable relationship.
 
+NeedRadar handoffs and this repository's own product documents are research leads or engineering evidence, not independent market sources. Preserve original source identities, common-origin/repost groups and counterevidence; do not count a circular link between these projects as a second demand signal.
+
 ## Repository map
 
 ```text
@@ -76,6 +88,8 @@ cases/billfit/      Complete BillFit decision record
 data/               Auditable scorecards and evidence ledgers
 templates/          Blank files for a new case
 scripts/            Repository quality checks
+benchmarks/         Frozen tasks, controlled three-arm runner and observed results
+tests/              Offline benchmark contract checks
 ```
 
 ## What this repository does not prove

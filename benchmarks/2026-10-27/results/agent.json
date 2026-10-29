@@ -1,0 +1,338 @@
+{
+  "datasetVersion": "substitute-assistance-2026-10-27-v1",
+  "datasetHash": "452ed16b4f8176557d915bc8dbd0a4f8e2c8770f4373dfdde84ba8955560cad4",
+  "sourceHash": "6bb814c189d0713a5e24371dd4ebea72a5a1ad53931a7928ffbe394a0a3d1276",
+  "evaluatorVersion": "required-facts-v2-abstentions",
+  "arm": "agent",
+  "synthetic": true,
+  "mode": "REAL_EXECUTION",
+  "startedAt": "2026-10-28T00:40:16.343547+00:00",
+  "pythonVersion": "3.11.3",
+  "billfitCommit": null,
+  "results": [
+    {
+      "taskId": "care-income",
+      "status": "OBSERVED",
+      "answer": {
+        "care_status": "likely_eligible",
+        "fera_status": "not_primary_path",
+        "care_limit": 43280,
+        "fera_limit": 54100,
+        "official_decision": false
+      },
+      "evaluation": {
+        "factsCorrect": 5,
+        "factsChecked": 5,
+        "wrongFields": [],
+        "missingFields": [],
+        "unexpectedFields": [],
+        "taskCompleted": true
+      },
+      "sourceVerified": true,
+      "providerCalls": 2,
+      "toolCalls": 1,
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "durationMs": 11249,
+          "response": {
+            "tool": "search_sources",
+            "arguments": {
+              "query": "PG&E CARE FERA income eligibility guidelines household size 2 effective June 1 2026 May 31 2027 official"
+            },
+            "answer": null
+          }
+        },
+        {
+          "status": "RECEIVED",
+          "durationMs": 5274,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "care_status": "likely_eligible",
+              "fera_status": "not_primary_path",
+              "care_limit": 43280,
+              "fera_limit": 54100,
+              "official_decision": false
+            }
+          }
+        }
+      ],
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "costUsd": null,
+      "tokens": null,
+      "userOperations": null,
+      "maintenanceHours": null,
+      "durationMs": 16524
+    },
+    {
+      "taskId": "fera-income",
+      "status": "OBSERVED",
+      "answer": {
+        "care_status": "likely_not_eligible_by_income",
+        "fera_status": "likely_eligible",
+        "care_limit": 54640,
+        "fera_limit": 68300,
+        "official_decision": false
+      },
+      "evaluation": {
+        "factsCorrect": 5,
+        "factsChecked": 5,
+        "wrongFields": [],
+        "missingFields": [],
+        "unexpectedFields": [],
+        "taskCompleted": true
+      },
+      "sourceVerified": true,
+      "providerCalls": 2,
+      "toolCalls": 1,
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "durationMs": 5523,
+          "response": {
+            "tool": "search_sources",
+            "arguments": {
+              "query": "PG&E CARE FERA income eligibility guidelines household size 3 effective 2026 official CPUC"
+            },
+            "answer": null
+          }
+        },
+        {
+          "status": "RECEIVED",
+          "durationMs": 5099,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "care_status": "likely_not_eligible_by_income",
+              "fera_status": "likely_eligible",
+              "care_limit": 54640,
+              "fera_limit": 68300,
+              "official_decision": false
+            }
+          }
+        }
+      ],
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "costUsd": null,
+      "tokens": null,
+      "userOperations": null,
+      "maintenanceHours": null,
+      "durationMs": 10622
+    },
+    {
+      "taskId": "inclusive-boundary",
+      "status": "OBSERVED",
+      "answer": {
+        "care_status": "likely_eligible",
+        "fera_status": "not_primary_path",
+        "care_limit": 43280,
+        "fera_limit": 54100,
+        "official_decision": false
+      },
+      "evaluation": {
+        "factsCorrect": 5,
+        "factsChecked": 5,
+        "wrongFields": [],
+        "missingFields": [],
+        "unexpectedFields": [],
+        "taskCompleted": true
+      },
+      "sourceVerified": true,
+      "providerCalls": 2,
+      "toolCalls": 1,
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "durationMs": 4786,
+          "response": {
+            "tool": "search_sources",
+            "arguments": {
+              "query": "PG&E CARE FERA income eligibility limits household size 2 2026 official CPUC"
+            },
+            "answer": null
+          }
+        },
+        {
+          "status": "RECEIVED",
+          "durationMs": 4616,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "care_status": "likely_eligible",
+              "fera_status": "not_primary_path",
+              "care_limit": 43280,
+              "fera_limit": 54100,
+              "official_decision": false
+            }
+          }
+        }
+      ],
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "costUsd": null,
+      "tokens": null,
+      "userOperations": null,
+      "maintenanceHours": null,
+      "durationMs": 9402
+    },
+    {
+      "taskId": "large-household",
+      "status": "OBSERVED",
+      "answer": {
+        "care_status": "likely_eligible",
+        "fera_status": "not_primary_path",
+        "care_limit": 122800,
+        "fera_limit": 153500,
+        "official_decision": false
+      },
+      "evaluation": {
+        "factsCorrect": 5,
+        "factsChecked": 5,
+        "wrongFields": [],
+        "missingFields": [],
+        "unexpectedFields": [],
+        "taskCompleted": true
+      },
+      "sourceVerified": true,
+      "providerCalls": 2,
+      "toolCalls": 1,
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "durationMs": 4865,
+          "response": {
+            "tool": "search_sources",
+            "arguments": {
+              "query": "PG&E CARE FERA income eligibility guidelines household size 9 annual income current 2026"
+            },
+            "answer": null
+          }
+        },
+        {
+          "status": "RECEIVED",
+          "durationMs": 5513,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "care_status": "likely_eligible",
+              "fera_status": "not_primary_path",
+              "care_limit": 122800,
+              "fera_limit": 153500,
+              "official_decision": false
+            }
+          }
+        }
+      ],
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "costUsd": null,
+      "tokens": null,
+      "userOperations": null,
+      "maintenanceHours": null,
+      "durationMs": 10378
+    },
+    {
+      "taskId": "missing-income",
+      "status": "OBSERVED",
+      "answer": {
+        "care_status": "needs_information",
+        "fera_status": "needs_information",
+        "care_limit": 54640,
+        "fera_limit": 68300,
+        "official_decision": false
+      },
+      "evaluation": {
+        "factsCorrect": 5,
+        "factsChecked": 5,
+        "wrongFields": [],
+        "missingFields": [],
+        "unexpectedFields": [],
+        "taskCompleted": true
+      },
+      "sourceVerified": true,
+      "providerCalls": 2,
+      "toolCalls": 1,
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "durationMs": 6294,
+          "response": {
+            "tool": "search_sources",
+            "arguments": {
+              "query": "PG&E CARE FERA income eligibility limits household size 3 current 2026 official"
+            },
+            "answer": null
+          }
+        },
+        {
+          "status": "RECEIVED",
+          "durationMs": 5694,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "care_status": "needs_information",
+              "fera_status": "needs_information",
+              "care_limit": 54640,
+              "fera_limit": 68300,
+              "official_decision": false
+            }
+          }
+        }
+      ],
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "costUsd": null,
+      "tokens": null,
+      "userOperations": null,
+      "maintenanceHours": null,
+      "durationMs": 11988
+    },
+    {
+      "taskId": "invalid-income",
+      "status": "OBSERVED",
+      "answer": {
+        "error": "INVALID_INCOME"
+      },
+      "evaluation": {
+        "factsCorrect": 1,
+        "factsChecked": 1,
+        "wrongFields": [],
+        "missingFields": [],
+        "unexpectedFields": [],
+        "taskCompleted": true
+      },
+      "sourceVerified": false,
+      "providerCalls": 1,
+      "toolCalls": 0,
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "durationMs": 4520,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "error": "INVALID_INCOME"
+            }
+          }
+        }
+      ],
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "costUsd": null,
+      "tokens": null,
+      "userOperations": null,
+      "maintenanceHours": null,
+      "durationMs": 4520
+    }
+  ],
+  "completedAt": "2026-10-28T00:41:19.785537+00:00"
+}
