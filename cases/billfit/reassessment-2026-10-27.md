@@ -2,6 +2,8 @@
 
 The August discovery record remains a historical decision trail. Current source checks and actual substitute trials refine what can still be claimed.
 
+This is the dated October 27 assessment. The [October 28 follow-up](workflow-evidence-2026-10-28.md) records subsequent model-selected synthetic workflow evidence and the expanded 34-test milestone. It does not rewrite the observations below or expand the original three-arm comparison.
+
 | Topic | Current finding | Implication |
 | --- | --- | --- |
 | PG&E residential rates | The official electric-rates page still lists March 1, 2026 to present. The current workbook is byte-identical to BillFit's prior snapshot. | The previous August 18 verification was stale under the 45-day rule; this does not mean the tariff changed. |

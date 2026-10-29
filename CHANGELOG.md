@@ -2,6 +2,7 @@
 
 ## Unreleased - 2026-10-28
 
+- Reconcile the BillFit case with its newly verified model-selected synthetic workflow, preserving the initial failure and distinguishing analytical completion from utility actions. Keep the original three-arm results, V4 ceiling and market claims unchanged; record the new source as internal product engineering evidence.
 - Capture available Hermes model-call/token counters and separately labelled cost estimates for each adapter turn instead of discarding them.
 - Retain missing usage as unknown; incomplete call coverage cannot become a complete token/cost total. Billed cost, user operations and maintenance effort remain separate measurements.
 - Preserve all original six-task results. One additional real synthetic call verifies usage capture; ten offline tests and repository checks pass.

@@ -4,6 +4,8 @@ Status date: 2026-08-18.
 
 October 27 addendum: [six synthetic three-arm tasks](../../benchmarks/2026-10-27/RESULTS.md) were actually executed using the existing configured model and BillFit commit `8ad0b6ff65e9bbe7937e26b240b0b209d7e4660a`. This adds engineering/substitute evidence, not customer adoption or outcome validation. V5 remains partial and V6-V8 remain uncompleted. The original ladder and proposed user tests below are preserved.
 
+October 28 addendum: the [two-stage model-selected BillFit workflow](workflow-evidence-2026-10-28.md) passed fixed synthetic acceptance after an initial file-boundary failure and path-guidance repair. Its fixture confirmation, returned tool results and deliberately withheld switching action are not third-party installation, customer consent or completed utility enrollment. V4 remains the highest fully evidenced level; the ledger below is unchanged.
+
 ## Validation ladder
 
 | Level | Status | Evidence | What remains |

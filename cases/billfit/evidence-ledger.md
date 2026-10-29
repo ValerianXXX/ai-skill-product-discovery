@@ -2,6 +2,8 @@
 
 The machine-readable ledger is [`data/evidence-ledger.csv`](../../data/evidence-ledger.csv). This page highlights the sources that control the final product decision.
 
+October 28 addition `B09` records the [model-selected synthetic BillFit workflow](workflow-evidence-2026-10-28.md) as first-party product engineering evidence (`S4`, `Tested`). It shares BillFit's source owner and supplies no independent demand signal. Historical source rows and market-validation levels remain unchanged.
+
 ## Product-controlling evidence
 
 | ID | Source | What it establishes | State |

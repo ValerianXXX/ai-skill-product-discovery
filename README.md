@@ -15,6 +15,8 @@ Read the [results and limitations](benchmarks/2026-10-27/RESULTS.md) and [curren
 
 October 28 follow-up: the collector now retains available Hermes token/call counters and labelled estimates, while actual billing remains unverified. A [single-call instrumentation check](benchmarks/2026-10-28/USAGE_CAPTURE.md) verifies collection without changing or backfilling the original comparison results.
 
+The separate [BillFit workflow follow-up](cases/billfit/workflow-evidence-2026-10-28.md) records a real model-selected synthetic bill workflow, an initial file-boundary failure and a passing repeat after clearer tool-path guidance. It adds engineering evidence only. It is not a fourth benchmark arm, proof of superiority over an equally equipped generic Agent, or a new market-demand source.
+
 ## The core question
 
 Do not start with “What can AI summarize?” Start with:

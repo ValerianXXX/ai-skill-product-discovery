@@ -10,6 +10,8 @@ BillFit is the first case produced with this repository's discovery method. It c
 
 The August record below is historical. The [October 27 reassessment](reassessment-2026-10-27.md) verifies current sources and reports real three-arm execution: a general Agent with source/file tools matched BillFit on six assistance cases. This does not test full interval comparisons or raise the market-validation level.
 
+The [October 28 workflow evidence](workflow-evidence-2026-10-28.md) adds a model-selected synthetic extraction/comparison/mismatch scenario with a retained first failure and a passing repeat. It verifies a bounded analytical handoff, not a utility transaction or a full-workflow advantage over a general Agent.
+
 ## Executive summary
 
 The project did not begin with utility rates. A six-month technology-supply scan and a U.S. consumer-pain scan produced twelve lightweight AI concepts. A customer-service context tool ranked first under the initial scorecard.
