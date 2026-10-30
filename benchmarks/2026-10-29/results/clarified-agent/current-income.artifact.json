@@ -1,0 +1,29 @@
+{
+  "provenance": "COMMON_HARNESS_MATERIALIZATION",
+  "taskId": "current-income",
+  "answer": {
+    "fields": {
+      "status": "screened",
+      "care_status": "likely_not_eligible_by_income",
+      "fera_status": "likely_eligible",
+      "care_limit": 54640,
+      "fera_limit": 68300,
+      "official_decision": false
+    },
+    "citations": [
+      {
+        "sourceId": "assistance-rules",
+        "locators": [
+          "/effective_from",
+          "/effective_to",
+          "/care_income_upper_limit/3",
+          "/fera_income_upper_limit/3",
+          "/notes/0",
+          "/notes/1",
+          "/notes/2"
+        ]
+      }
+    ],
+    "note": "For a 3-person household, reported gross annual income of $62,000 exceeds the CARE ceiling of $54,640 but is within the FERA ceiling of $68,300. This is only a preliminary income-path screening; it is not approval or enrollment, and proof may be requested."
+  }
+}

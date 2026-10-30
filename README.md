@@ -7,6 +7,12 @@ An evidence-first method for finding everyday consumer tasks that a general AI a
 
 The first complete case is [BillFit](cases/billfit/README.md): a local-first skill for supported PG&E residential rate comparison and bill-assistance screening.
 
+## October 29 shared-evidence study
+
+The new [six-task study and separate format calibration](benchmarks/2026-10-29/RESULTS.md) retain actual responses, failures, saved artifacts and 20 measured model calls. They expose a BillFit CSV compatibility gap and evaluation-design defects. After format clarification, model/Agent/Skill completed 2/3, 3/3 and 2/3 selected tasks; the Agent used no tools, so this does not establish a tool advantage. A simulated policy update exposed a rule missing from the shared corpus. No overall product-superiority or market claim follows.
+
+Run the [offline verification](benchmarks/2026-10-29/README.md) without credentials. The [current case reassessment](cases/billfit/reassessment-2026-10-29.md) separates maintained product capabilities, generic coverage and unresolved evidence. Historical results below retain their original information conditions.
+
 ## October 27 reassessment
 
 The repository now includes a runnable [three-arm substitute benchmark](benchmarks/README.md), frozen tasks, source provenance and actual responses. On six synthetic assistance tasks, the configured general model completed 1/6, the same model with bounded source/file/arithmetic tools completed 6/6, and the actual BillFit deterministic Skill completed 6/6. The model abstained on nine required fields; it did not assert incorrect values. These results establish that generic tools can cover this narrow rules lookup. They do not establish a broad product advantage or customer demand.
@@ -53,7 +59,7 @@ The case preserves rejected ideas and changed decisions. It is a decision record
 | Layer | Current evidence |
 |---|---|
 | Demand signal | Utility costs and assistance decisions can matter financially; actual willingness to use BillFit is still unproven. |
-| General-AI gap | Those inputs remain necessary for interval comparisons; an October 27 controlled Agent successfully covered the smaller assistance lookup slice. Full bill-comparison superiority remains unmeasured. |
+| General-AI gap | Current sources and user inputs remain necessary. October 27 tools covered assistance lookup; October 29 supplied-context answers covered selected bill conflicts and arithmetic, while exposing schema and product-input failures. Full bill-comparison superiority remains unmeasured. |
 | Product | [BillFit v0.2.0](https://github.com/ValerianXXX/billfit/releases/tag/v0.2.0) |
 | Engineering | Deterministic calculator, versioned data, fail-closed exclusions, and automated tests. |
 | Distribution | Public GitHub release. OpenAI review or listing is not treated as completed validation here. |

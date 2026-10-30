@@ -1,0 +1,26 @@
+{
+  "provenance": "COMMON_HARNESS_MATERIALIZATION",
+  "taskId": "expired-snapshot",
+  "answer": {
+    "fields": {
+      "status": "not_screened",
+      "stale": true,
+      "outside_effective_window": true,
+      "care_status": "not_screened",
+      "fera_status": "not_screened",
+      "can_act": false
+    },
+    "citations": [
+      {
+        "sourceId": "assistance-rules",
+        "locators": [
+          "/verified_on",
+          "/effective_from",
+          "/effective_to",
+          "/status"
+        ]
+      }
+    ],
+    "note": "As of the explicitly simulated date 2027-06-02, the snapshot is stale because verification on 2026-10-27 was more than 45 days earlier. Its effective window also expired on 2027-05-31, independently preventing CARE or FERA screening. Therefore both programs are not screened and no action can be taken from this snapshot. This does not assert that the actual current rules changed; refreshed, currently effective evidence is required."
+  }
+}

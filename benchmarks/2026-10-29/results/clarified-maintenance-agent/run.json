@@ -1,0 +1,91 @@
+{
+  "schema": "SHARED_EVIDENCE_RUN_V2",
+  "mode": "REAL_EXECUTION",
+  "syntheticInputs": true,
+  "arm": "agent",
+  "maintenance": true,
+  "clarified": true,
+  "catalogHash": "64f7189f9fa37c66bbf4f97c7464f74ea7ac2098dc067a5ec1b3385e183b261c",
+  "corpusHash": "70b36ff593f014c5ce4145a689b2ce719eb2cdc30db527219969cc4fe51e7b71",
+  "startedAt": "2026-10-30T01:07:11.245333+00:00",
+  "completedAt": "2026-10-30T01:07:23.006638+00:00",
+  "billfitCommit": null,
+  "results": [
+    {
+      "taskId": "current-income",
+      "status": "FAILED",
+      "answer": null,
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "requestHash": "c2656c983715c1db76df79db0d4fcc3b7d8ae954cca9fe3d30561cda12400c25",
+          "startedAt": "2026-10-30T01:07:11.248332+00:00",
+          "durationMs": 11753,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "status": "screened",
+              "care_status": "likely_eligible",
+              "fera_status": "likely_eligible",
+              "care_limit": 65000,
+              "fera_limit": 70000,
+              "official_decision": false,
+              "citations": [
+                {
+                  "sourceId": "assistance-rules",
+                  "locators": [
+                    "/effective_from",
+                    "/effective_to",
+                    "/verified_on",
+                    "/care_income_upper_limit/3",
+                    "/fera_income_upper_limit/3",
+                    "/notes/0"
+                  ]
+                }
+              ],
+              "note": "For a household of 3, the reported $62,000 gross annual income is below both supplied ceilings: CARE $65,000 and FERA $70,000. This simulated snapshot supports preliminary likely-eligible results under both upper-limit screens as of 2026-10-29, but it is not official policy, approval, or enrollment; the administering program must make any official decision."
+            }
+          },
+          "usage": {
+            "source": "HERMES_SESSION_COUNTERS",
+            "modelApiCalls": 1,
+            "promptTokens": 1861,
+            "completionTokens": 589,
+            "totalTokens": 2450,
+            "estimatedCostUsd": 0.0,
+            "costStatus": "included",
+            "costSource": "none"
+          }
+        }
+      ],
+      "artifact": null,
+      "durationMs": 11758,
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "candidateAnswer": {
+        "status": "screened",
+        "care_status": "likely_eligible",
+        "fera_status": "likely_eligible",
+        "care_limit": 65000,
+        "fera_limit": 70000,
+        "official_decision": false,
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/effective_from",
+              "/effective_to",
+              "/verified_on",
+              "/care_income_upper_limit/3",
+              "/fera_income_upper_limit/3",
+              "/notes/0"
+            ]
+          }
+        ],
+        "note": "For a household of 3, the reported $62,000 gross annual income is below both supplied ceilings: CARE $65,000 and FERA $70,000. This simulated snapshot supports preliminary likely-eligible results under both upper-limit screens as of 2026-10-29, but it is not official policy, approval, or enrollment; the administering program must make any official decision."
+      },
+      "errorType": "ValueError"
+    }
+  ]
+}

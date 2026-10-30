@@ -1,0 +1,27 @@
+{
+  "provenance": "COMMON_HARNESS_MATERIALIZATION",
+  "taskId": "missing-income",
+  "answer": {
+    "fields": {
+      "status": "screened",
+      "care_status": "needs_information",
+      "fera_status": "needs_information",
+      "care_limit": 66000,
+      "fera_limit": 82500,
+      "official_decision": false,
+      "missing": [
+        "gross_annual_household_income"
+      ]
+    },
+    "citations": [
+      {
+        "sourceId": "assistance-rules",
+        "locators": [
+          "/care_income_upper_limit/4",
+          "/fera_income_upper_limit/4"
+        ]
+      }
+    ],
+    "note": "Actual BillFit screening on the supplied dated snapshot. This is preliminary and cannot enroll an account; missing, invalid or expired information must be resolved before action."
+  }
+}

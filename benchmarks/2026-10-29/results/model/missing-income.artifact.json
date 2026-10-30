@@ -1,0 +1,28 @@
+{
+  "provenance": "COMMON_HARNESS_MATERIALIZATION",
+  "taskId": "missing-income",
+  "answer": {
+    "fields": {
+      "status": "cannot_determine_missing_income",
+      "care_status": "cannot_determine",
+      "fera_status": "cannot_determine",
+      "care_limit": 66000,
+      "fera_limit": 82500,
+      "missing": [
+        "gross_annual_household_income"
+      ],
+      "official_decision": false
+    },
+    "citations": [
+      {
+        "sourceId": "assistance-rules",
+        "locators": [
+          "/care_income_upper_limit/4",
+          "/fera_income_upper_limit/4",
+          "/notes/0"
+        ]
+      }
+    ],
+    "note": "For a household of 4, the current annual income ceilings are $66,000 for CARE and $82,500 for FERA, effective June 1, 2026 through May 31, 2027. Eligibility cannot be screened because gross annual household income is missing and no categorical program was reported. This is a screening result, not an official enrollment decision."
+  }
+}

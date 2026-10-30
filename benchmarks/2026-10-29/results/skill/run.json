@@ -1,0 +1,303 @@
+{
+  "schema": "SHARED_EVIDENCE_RUN_V2",
+  "mode": "REAL_EXECUTION",
+  "syntheticInputs": true,
+  "arm": "skill",
+  "maintenance": false,
+  "catalogHash": "228e9658ce0418315cafcc5620cdc33290fe7d05157c7750bebc34c3e5a770a0",
+  "corpusHash": "ed43035c065af4d8a0de088f4ad75ef240754038339c98e03d4f6b6e49948a93",
+  "startedAt": "2026-10-30T00:54:58.021389+00:00",
+  "completedAt": "2026-10-30T00:54:58.273089+00:00",
+  "billfitCommit": "c8e9c305f048f66561a5312121bca22436417126",
+  "results": [
+    {
+      "taskId": "current-income",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_not_eligible_by_income",
+          "fera_status": "likely_eligible",
+          "care_limit": 54640,
+          "fera_limit": 68300,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/3",
+              "/fera_income_upper_limit/3"
+            ]
+          }
+        ],
+        "note": "Actual BillFit screening on the supplied dated snapshot. This is preliminary and cannot enroll an account; missing, invalid or expired information must be resolved before action."
+      },
+      "attempts": [],
+      "artifact": {
+        "path": "current-income.artifact.json",
+        "bytes": 720,
+        "sha256": "33e311b1e018c0242b3255db334d7a862496244d586856fc25b7ecf35ee3bf21",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 98,
+      "model": null,
+      "provider": null,
+      "candidateAnswer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_not_eligible_by_income",
+          "fera_status": "likely_eligible",
+          "care_limit": 54640,
+          "fera_limit": 68300,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/3",
+              "/fera_income_upper_limit/3"
+            ]
+          }
+        ],
+        "note": "Actual BillFit screening on the supplied dated snapshot. This is preliminary and cannot enroll an account; missing, invalid or expired information must be resolved before action."
+      }
+    },
+    {
+      "taskId": "conflicting-bill",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "REVIEW_REQUIRED",
+          "current_plan": "E-TOU-C",
+          "energy_charge_values": [
+            "94.56",
+            "95.00"
+          ],
+          "base_services_charge": "24.00",
+          "total_kwh": "280",
+          "conflicting_fields": [
+            "reported_energy_charge"
+          ],
+          "automatic_calculation": false,
+          "automatic_confirmation": false
+        },
+        "citations": [
+          {
+            "sourceId": "bill-text",
+            "locators": [
+              "/0/text",
+              "/1/text",
+              "/2/text",
+              "/3/text",
+              "/4/text",
+              "/5/text",
+              "/6/text"
+            ]
+          }
+        ],
+        "note": "Actual BillFit span extraction retains the conflicting page values and excludes amount due. This text-only fixture does not measure OCR; the user must confirm every field."
+      },
+      "attempts": [],
+      "artifact": {
+        "path": "conflicting-bill.artifact.json",
+        "bytes": 921,
+        "sha256": "39840d26cd76dadef837c443cea68f46d1ae68d55973f8bbbb84088f2894ad2a",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 5,
+      "model": null,
+      "provider": null,
+      "candidateAnswer": {
+        "fields": {
+          "status": "REVIEW_REQUIRED",
+          "current_plan": "E-TOU-C",
+          "energy_charge_values": [
+            "94.56",
+            "95.00"
+          ],
+          "base_services_charge": "24.00",
+          "total_kwh": "280",
+          "conflicting_fields": [
+            "reported_energy_charge"
+          ],
+          "automatic_calculation": false,
+          "automatic_confirmation": false
+        },
+        "citations": [
+          {
+            "sourceId": "bill-text",
+            "locators": [
+              "/0/text",
+              "/1/text",
+              "/2/text",
+              "/3/text",
+              "/4/text",
+              "/5/text",
+              "/6/text"
+            ]
+          }
+        ],
+        "note": "Actual BillFit span extraction retains the conflicting page values and excludes amount due. This text-only fixture does not measure OCR; the user must confirm every field."
+      }
+    },
+    {
+      "taskId": "duplicate-usage",
+      "status": "FAILED",
+      "answer": null,
+      "attempts": [],
+      "artifact": null,
+      "durationMs": 14,
+      "model": null,
+      "provider": null,
+      "errorType": "BillFitError"
+    },
+    {
+      "taskId": "missing-income",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "needs_information",
+          "fera_status": "needs_information",
+          "care_limit": 66000,
+          "fera_limit": 82500,
+          "official_decision": false,
+          "missing": [
+            "gross_annual_household_income"
+          ]
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/4",
+              "/fera_income_upper_limit/4"
+            ]
+          }
+        ],
+        "note": "Actual BillFit screening on the supplied dated snapshot. This is preliminary and cannot enroll an account; missing, invalid or expired information must be resolved before action."
+      },
+      "attempts": [],
+      "artifact": {
+        "path": "missing-income.artifact.json",
+        "bytes": 778,
+        "sha256": "51fdf08d0b73c788c2a3d240c8f451036e8d5d1ee77f59b92409542a81a5a467",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 4,
+      "model": null,
+      "provider": null,
+      "candidateAnswer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "needs_information",
+          "fera_status": "needs_information",
+          "care_limit": 66000,
+          "fera_limit": 82500,
+          "official_decision": false,
+          "missing": [
+            "gross_annual_household_income"
+          ]
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/4",
+              "/fera_income_upper_limit/4"
+            ]
+          }
+        ],
+        "note": "Actual BillFit screening on the supplied dated snapshot. This is preliminary and cannot enroll an account; missing, invalid or expired information must be resolved before action."
+      }
+    },
+    {
+      "taskId": "expired-snapshot",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "rules_outside_effective_window",
+          "stale": true,
+          "outside_effective_window": true,
+          "care_status": "not_screened",
+          "fera_status": "not_screened",
+          "can_act": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/verified_on",
+              "/effective_to"
+            ]
+          }
+        ],
+        "note": "Actual BillFit screening on the supplied dated snapshot. This is preliminary and cannot enroll an account; missing, invalid or expired information must be resolved before action."
+      },
+      "attempts": [],
+      "artifact": {
+        "path": "expired-snapshot.artifact.json",
+        "bytes": 694,
+        "sha256": "7bf3a685c51f49cbe6c47e0f58f624398eb74931129da9cf11123d52d2f04072",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 4,
+      "model": null,
+      "provider": null,
+      "candidateAnswer": {
+        "fields": {
+          "status": "rules_outside_effective_window",
+          "stale": true,
+          "outside_effective_window": true,
+          "care_status": "not_screened",
+          "fera_status": "not_screened",
+          "can_act": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/verified_on",
+              "/effective_to"
+            ]
+          }
+        ],
+        "note": "Actual BillFit screening on the supplied dated snapshot. This is preliminary and cannot enroll an account; missing, invalid or expired information must be resolved before action."
+      }
+    },
+    {
+      "taskId": "invalid-income",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "error": "INVALID_INCOME",
+          "official_decision": false,
+          "can_act": false
+        },
+        "citations": [],
+        "note": "Actual BillFit screening on the supplied dated snapshot. This is preliminary and cannot enroll an account; missing, invalid or expired information must be resolved before action."
+      },
+      "attempts": [],
+      "artifact": {
+        "path": "invalid-income.artifact.json",
+        "bytes": 429,
+        "sha256": "f8806226f7dcfe4a1e07704bca1414d61a91143d9ffc8639808460fe94fce86a",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 5,
+      "model": null,
+      "provider": null,
+      "candidateAnswer": {
+        "fields": {
+          "error": "INVALID_INCOME",
+          "official_decision": false,
+          "can_act": false
+        },
+        "citations": [],
+        "note": "Actual BillFit screening on the supplied dated snapshot. This is preliminary and cannot enroll an account; missing, invalid or expired information must be resolved before action."
+      }
+    }
+  ]
+}

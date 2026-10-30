@@ -1,0 +1,13 @@
+{
+  "provenance": "COMMON_HARNESS_MATERIALIZATION",
+  "taskId": "invalid-income",
+  "answer": {
+    "fields": {
+      "error": "INVALID_INCOME",
+      "official_decision": false,
+      "can_act": false
+    },
+    "citations": [],
+    "note": "Negative income is invalid input; no eligibility determination was made and no action can be taken."
+  }
+}

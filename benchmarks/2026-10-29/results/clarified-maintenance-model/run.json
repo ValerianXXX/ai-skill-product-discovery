@@ -1,0 +1,119 @@
+{
+  "schema": "SHARED_EVIDENCE_RUN_V2",
+  "mode": "REAL_EXECUTION",
+  "syntheticInputs": true,
+  "arm": "model",
+  "maintenance": true,
+  "clarified": true,
+  "catalogHash": "64f7189f9fa37c66bbf4f97c7464f74ea7ac2098dc067a5ec1b3385e183b261c",
+  "corpusHash": "70b36ff593f014c5ce4145a689b2ce719eb2cdc30db527219969cc4fe51e7b71",
+  "startedAt": "2026-10-30T01:06:12.419098+00:00",
+  "completedAt": "2026-10-30T01:06:24.239802+00:00",
+  "billfitCommit": null,
+  "results": [
+    {
+      "taskId": "current-income",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_eligible",
+          "fera_status": "likely_eligible",
+          "care_limit": 65000,
+          "fera_limit": 70000,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/effective_from",
+              "/effective_to",
+              "/care_income_upper_limit/3",
+              "/fera_income_upper_limit/3",
+              "/notes/0"
+            ]
+          }
+        ],
+        "note": "Preliminary income-only screening for a 3-person household: $62,000 is below both the simulated CARE ceiling of $65,000 and FERA ceiling of $70,000. Both paths therefore screen as likely eligible under this snapshot. The snapshot is explicitly synthetic and not an official policy update; this is neither approval nor enrollment, and an administering utility would make any official determination."
+      },
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "requestHash": "3777be17486496e8ee2483311f7f4fcd0019f537fc8f98703b843256a784650a",
+          "startedAt": "2026-10-30T01:06:12.422099+00:00",
+          "durationMs": 11811,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "fields": {
+                "status": "screened",
+                "care_status": "likely_eligible",
+                "fera_status": "likely_eligible",
+                "care_limit": 65000,
+                "fera_limit": 70000,
+                "official_decision": false
+              },
+              "citations": [
+                {
+                  "sourceId": "assistance-rules",
+                  "locators": [
+                    "/effective_from",
+                    "/effective_to",
+                    "/care_income_upper_limit/3",
+                    "/fera_income_upper_limit/3",
+                    "/notes/0"
+                  ]
+                }
+              ],
+              "note": "Preliminary income-only screening for a 3-person household: $62,000 is below both the simulated CARE ceiling of $65,000 and FERA ceiling of $70,000. Both paths therefore screen as likely eligible under this snapshot. The snapshot is explicitly synthetic and not an official policy update; this is neither approval nor enrollment, and an administering utility would make any official determination."
+            }
+          },
+          "usage": {
+            "source": "HERMES_SESSION_COUNTERS",
+            "modelApiCalls": 1,
+            "promptTokens": 1755,
+            "completionTokens": 484,
+            "totalTokens": 2239,
+            "estimatedCostUsd": 0.0,
+            "costStatus": "included",
+            "costSource": "none"
+          }
+        }
+      ],
+      "artifact": {
+        "path": "current-income.artifact.json",
+        "bytes": 1003,
+        "sha256": "d47c043221eb9bc1d93e2eb774d6b839e8cbcedc2f18155a2e528c5459941ab6",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 11817,
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "candidateAnswer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_eligible",
+          "fera_status": "likely_eligible",
+          "care_limit": 65000,
+          "fera_limit": 70000,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/effective_from",
+              "/effective_to",
+              "/care_income_upper_limit/3",
+              "/fera_income_upper_limit/3",
+              "/notes/0"
+            ]
+          }
+        ],
+        "note": "Preliminary income-only screening for a 3-person household: $62,000 is below both the simulated CARE ceiling of $65,000 and FERA ceiling of $70,000. Both paths therefore screen as likely eligible under this snapshot. The snapshot is explicitly synthetic and not an official policy update; this is neither approval nor enrollment, and an administering utility would make any official determination."
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "provenance": "COMMON_HARNESS_MATERIALIZATION",
+  "taskId": "duplicate-usage",
+  "answer": {
+    "fields": {
+      "status": "parsed",
+      "unique_intervals": 4,
+      "duplicate_intervals_removed": 1,
+      "total_kwh": 2.0,
+      "hours_covered": 4,
+      "recommendation_ready": false
+    },
+    "citations": [
+      {
+        "sourceId": "usage-csv",
+        "locators": [
+          "/1",
+          "/2",
+          "/3",
+          "/4",
+          "/5"
+        ]
+      }
+    ],
+    "note": "Four unique one-hour intervals total 2.0 kWh after removing one exact duplicate. This limited four-hour sample cannot establish a rate-switch recommendation or support inferred annual savings."
+  }
+}

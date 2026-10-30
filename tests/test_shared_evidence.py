@@ -39,6 +39,31 @@ class SharedEvidenceTests(unittest.TestCase):
         self.assertFalse(result['taskCompleted'])
         self.assertTrue(evaluate(self.task, self.answer(), self.corpus, True)['taskCompleted'])
 
+    def test_format_calibration_is_separate_and_does_not_leak_answers(self):
+        original = digest(self.catalog)
+        catalog, corpus = load_round(clarified=True)
+        self.assertEqual([task['id'] for task in catalog['tasks']],
+                         ['current-income', 'conflicting-bill', 'duplicate-usage'])
+        self.assertEqual(digest(corpus), digest(self.corpus))
+        self.assertEqual(digest(load_round()[0]), original)
+        task = catalog['tasks'][0]
+        model = request_for(task, corpus, 'model', [])
+        agent = request_for(task, corpus, 'agent', [])
+        self.assertEqual(model['responseContract'], agent['responseContract'])
+        rules = model['responseContract']['formatRules']
+        self.assertIn('likely_eligible', rules['statusVocabulary']['care_status'])
+        self.assertNotIn('expected', json.dumps(model))
+        self.assertNotIn('requiredCitations', json.dumps(model))
+        self.assertNotIn('formatRules', request_for(self.task, self.corpus, 'model', [])['responseContract'])
+
+    def test_flat_correct_values_do_not_silently_pass_answer_contract(self):
+        answer = self.answer()
+        flattened = {**answer.pop('fields'), **answer}
+        result = evaluate(self.task, flattened, self.corpus, False)
+        self.assertFalse(result['contractValid'])
+        self.assertFalse(result['taskCompleted'])
+        self.assertEqual(len(result['missingFields']), 6)
+
     def test_missing_wrong_and_unknown_use_fixed_denominator(self):
         answer = self.answer()
         answer['fields']['care_limit'] = None

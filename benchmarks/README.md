@@ -1,5 +1,7 @@
 # Reproducible substitute test
 
+The [October 29 shared-evidence study](2026-10-29/README.md) is a separate round with six new tasks, supplied evidence for every arm, a disclosed format correction and an incomplete-policy maintenance limitation. Its [results](2026-10-29/RESULTS.md) must not be combined with the original counts below as a model-improvement trend.
+
 The October 27 benchmark fixes six original synthetic assistance inputs and compares three explicit capability envelopes:
 
 1. **General model:** existing configured Hermes model, one response, no tools or supplied source facts.

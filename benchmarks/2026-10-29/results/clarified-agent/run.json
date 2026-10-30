@@ -1,0 +1,354 @@
+{
+  "schema": "SHARED_EVIDENCE_RUN_V2",
+  "mode": "REAL_EXECUTION",
+  "syntheticInputs": true,
+  "arm": "agent",
+  "maintenance": false,
+  "clarified": true,
+  "catalogHash": "d031e633d15dc091dc0272a0998fc15675f13674eb68f9a4475007260d012616",
+  "corpusHash": "ed43035c065af4d8a0de088f4ad75ef240754038339c98e03d4f6b6e49948a93",
+  "startedAt": "2026-10-30T01:05:00.425113+00:00",
+  "completedAt": "2026-10-30T01:05:20.055818+00:00",
+  "billfitCommit": null,
+  "results": [
+    {
+      "taskId": "current-income",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_not_eligible_by_income",
+          "fera_status": "likely_eligible",
+          "care_limit": 54640,
+          "fera_limit": 68300,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/effective_from",
+              "/effective_to",
+              "/care_income_upper_limit/3",
+              "/fera_income_upper_limit/3",
+              "/notes/0",
+              "/notes/1",
+              "/notes/2"
+            ]
+          }
+        ],
+        "note": "For a 3-person household, reported gross annual income of $62,000 exceeds the CARE ceiling of $54,640 but is within the FERA ceiling of $68,300. This is only a preliminary income-path screening; it is not approval or enrollment, and proof may be requested."
+      },
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "requestHash": "80f38f946574b0450170b039c11a31fc696fb85616acc12434f8b2b4c2e3a746",
+          "startedAt": "2026-10-30T01:05:00.429114+00:00",
+          "durationMs": 8267,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "fields": {
+                "status": "screened",
+                "care_status": "likely_not_eligible_by_income",
+                "fera_status": "likely_eligible",
+                "care_limit": 54640,
+                "fera_limit": 68300,
+                "official_decision": false
+              },
+              "citations": [
+                {
+                  "sourceId": "assistance-rules",
+                  "locators": [
+                    "/effective_from",
+                    "/effective_to",
+                    "/care_income_upper_limit/3",
+                    "/fera_income_upper_limit/3",
+                    "/notes/0",
+                    "/notes/1",
+                    "/notes/2"
+                  ]
+                }
+              ],
+              "note": "For a 3-person household, reported gross annual income of $62,000 exceeds the CARE ceiling of $54,640 but is within the FERA ceiling of $68,300. This is only a preliminary income-path screening; it is not approval or enrollment, and proof may be requested."
+            }
+          },
+          "usage": {
+            "source": "HERMES_SESSION_COUNTERS",
+            "modelApiCalls": 1,
+            "promptTokens": 1853,
+            "completionTokens": 355,
+            "totalTokens": 2208,
+            "estimatedCostUsd": 0.0,
+            "costStatus": "included",
+            "costSource": "none"
+          }
+        }
+      ],
+      "artifact": {
+        "path": "current-income.artifact.json",
+        "bytes": 920,
+        "sha256": "7eb4cb1f1d99bf8c0df9b0aaabc9ea6a134c5a24b119f9167466dcaf89c6ffda",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 8274,
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "candidateAnswer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_not_eligible_by_income",
+          "fera_status": "likely_eligible",
+          "care_limit": 54640,
+          "fera_limit": 68300,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/effective_from",
+              "/effective_to",
+              "/care_income_upper_limit/3",
+              "/fera_income_upper_limit/3",
+              "/notes/0",
+              "/notes/1",
+              "/notes/2"
+            ]
+          }
+        ],
+        "note": "For a 3-person household, reported gross annual income of $62,000 exceeds the CARE ceiling of $54,640 but is within the FERA ceiling of $68,300. This is only a preliminary income-path screening; it is not approval or enrollment, and proof may be requested."
+      }
+    },
+    {
+      "taskId": "conflicting-bill",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "REVIEW_REQUIRED",
+          "current_plan": "E-TOU-C",
+          "energy_charge_values": [
+            "94.56",
+            "95.00"
+          ],
+          "base_services_charge": "24.00",
+          "total_kwh": "280",
+          "conflicting_fields": [
+            "reported_energy_charge"
+          ],
+          "automatic_calculation": false,
+          "automatic_confirmation": false
+        },
+        "citations": [
+          {
+            "sourceId": "bill-text",
+            "locators": [
+              "/0/text",
+              "/1/text",
+              "/2/text",
+              "/3/text",
+              "/5/text"
+            ]
+          }
+        ],
+        "note": "The two pages report conflicting energy charges, retained in source order. The total amount due was excluded. No calculation or automatic confirmation was performed; user confirmation is required."
+      },
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "requestHash": "ecb4c1d53eaf2ecddeaaab3d17a4533bdbacf3cbe2e7641714af337157ad77eb",
+          "startedAt": "2026-10-30T01:05:08.704660+00:00",
+          "durationMs": 4823,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "fields": {
+                "status": "REVIEW_REQUIRED",
+                "current_plan": "E-TOU-C",
+                "energy_charge_values": [
+                  "94.56",
+                  "95.00"
+                ],
+                "base_services_charge": "24.00",
+                "total_kwh": "280",
+                "conflicting_fields": [
+                  "reported_energy_charge"
+                ],
+                "automatic_calculation": false,
+                "automatic_confirmation": false
+              },
+              "citations": [
+                {
+                  "sourceId": "bill-text",
+                  "locators": [
+                    "/0/text",
+                    "/1/text",
+                    "/2/text",
+                    "/3/text",
+                    "/5/text"
+                  ]
+                }
+              ],
+              "note": "The two pages report conflicting energy charges, retained in source order. The total amount due was excluded. No calculation or automatic confirmation was performed; user confirmation is required."
+            }
+          },
+          "usage": {
+            "source": "HERMES_SESSION_COUNTERS",
+            "modelApiCalls": 1,
+            "promptTokens": 1564,
+            "completionTokens": 150,
+            "totalTokens": 1714,
+            "estimatedCostUsd": 0.0,
+            "costStatus": "included",
+            "costSource": "none"
+          }
+        }
+      ],
+      "artifact": {
+        "path": "conflicting-bill.artifact.json",
+        "bytes": 904,
+        "sha256": "48b6bc695a4b7e8ccf450e29ca36d6c0541b34b225bb8a7e9ae0852fa4a7e663",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 4830,
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "candidateAnswer": {
+        "fields": {
+          "status": "REVIEW_REQUIRED",
+          "current_plan": "E-TOU-C",
+          "energy_charge_values": [
+            "94.56",
+            "95.00"
+          ],
+          "base_services_charge": "24.00",
+          "total_kwh": "280",
+          "conflicting_fields": [
+            "reported_energy_charge"
+          ],
+          "automatic_calculation": false,
+          "automatic_confirmation": false
+        },
+        "citations": [
+          {
+            "sourceId": "bill-text",
+            "locators": [
+              "/0/text",
+              "/1/text",
+              "/2/text",
+              "/3/text",
+              "/5/text"
+            ]
+          }
+        ],
+        "note": "The two pages report conflicting energy charges, retained in source order. The total amount due was excluded. No calculation or automatic confirmation was performed; user confirmation is required."
+      }
+    },
+    {
+      "taskId": "duplicate-usage",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "parsed",
+          "unique_intervals": 4,
+          "duplicate_intervals_removed": 1,
+          "total_kwh": 2.0,
+          "hours_covered": 4,
+          "recommendation_ready": false
+        },
+        "citations": [
+          {
+            "sourceId": "usage-csv",
+            "locators": [
+              "/1",
+              "/2",
+              "/3",
+              "/4",
+              "/5"
+            ]
+          }
+        ],
+        "note": "Four unique one-hour intervals total 2.0 kWh after removing one exact duplicate. This limited four-hour sample cannot establish a rate-switch recommendation or support inferred annual savings."
+      },
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "requestHash": "5f69979012ba5a00dde6c93b7c062992e3002a54d3dacbfb0e814ae1921fc521",
+          "startedAt": "2026-10-30T01:05:13.536938+00:00",
+          "durationMs": 6511,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "fields": {
+                "status": "parsed",
+                "unique_intervals": 4,
+                "duplicate_intervals_removed": 1,
+                "total_kwh": 2.0,
+                "hours_covered": 4,
+                "recommendation_ready": false
+              },
+              "citations": [
+                {
+                  "sourceId": "usage-csv",
+                  "locators": [
+                    "/1",
+                    "/2",
+                    "/3",
+                    "/4",
+                    "/5"
+                  ]
+                }
+              ],
+              "note": "Four unique one-hour intervals total 2.0 kWh after removing one exact duplicate. This limited four-hour sample cannot establish a rate-switch recommendation or support inferred annual savings."
+            }
+          },
+          "usage": {
+            "source": "HERMES_SESSION_COUNTERS",
+            "modelApiCalls": 1,
+            "promptTokens": 1499,
+            "completionTokens": 200,
+            "totalTokens": 1699,
+            "estimatedCostUsd": 0.0,
+            "costStatus": "included",
+            "costSource": "none"
+          }
+        }
+      ],
+      "artifact": {
+        "path": "duplicate-usage.artifact.json",
+        "bytes": 700,
+        "sha256": "753cb33eec4956ddf18b4ca841a73929ee3537c24327cc55ce769ec4f7205a29",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 6518,
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "candidateAnswer": {
+        "fields": {
+          "status": "parsed",
+          "unique_intervals": 4,
+          "duplicate_intervals_removed": 1,
+          "total_kwh": 2.0,
+          "hours_covered": 4,
+          "recommendation_ready": false
+        },
+        "citations": [
+          {
+            "sourceId": "usage-csv",
+            "locators": [
+              "/1",
+              "/2",
+              "/3",
+              "/4",
+              "/5"
+            ]
+          }
+        ],
+        "note": "Four unique one-hour intervals total 2.0 kWh after removing one exact duplicate. This limited four-hour sample cannot establish a rate-switch recommendation or support inferred annual savings."
+      }
+    }
+  ]
+}

@@ -12,6 +12,8 @@ The August record below is historical. The [October 27 reassessment](reassessmen
 
 The [October 28 workflow evidence](workflow-evidence-2026-10-28.md) adds a model-selected synthetic extraction/comparison/mismatch scenario with a retained first failure and a passing repeat. It verifies a bounded analytical handoff, not a utility transaction or a full-workflow advantage over a general Agent.
 
+The [October 29 reassessment](reassessment-2026-10-29.md) adds a supplied-context comparison, preserves a BillFit CSV failure and identifies protocol/source-coverage limitations. It does not raise the validation level or replace the dated record below.
+
 ## Executive summary
 
 The project did not begin with utility rates. A six-month technology-supply scan and a U.S. consumer-pain scan produced twelve lightweight AI concepts. A customer-service context tool ranked first under the initial scorecard.
