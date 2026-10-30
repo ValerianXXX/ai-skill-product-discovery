@@ -33,7 +33,7 @@ def main():
     if not raw or len(raw) > 40000:
         raise ValueError("INPUT_LIMIT")
     request = json.loads(raw)
-    if request.get("protocol") != "SUBSTITUTE_BENCHMARK_V1":
+    if request.get("protocol") not in {"SUBSTITUTE_BENCHMARK_V1", "SUBSTITUTE_SHARED_EVIDENCE_V2"}:
         raise ValueError("PROTOCOL_REQUIRED")
     for key in ("HERMES_KANBAN_TASK", "HERMES_YOLO_MODE", "HERMES_ACCEPT_HOOKS"):
         os.environ.pop(key, None)
