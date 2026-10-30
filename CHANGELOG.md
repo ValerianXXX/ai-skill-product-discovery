@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased - 2026-10-29
+
+- Add a frozen six-task shared-evidence runner, bounded generic broker, actual BillFit bridge, per-turn usage, atomic run storage and verified common-harness artifacts.
+- Preserve 20 real model calls, initial format ambiguities, a separately frozen three-task calibration and an explicitly synthetic rules-change exercise. Disclose the missing shared FERA rule; do not claim comparative factual quality from exact string matches.
+- Add recomputed receipts, budget/denominator checks, a source-coverage protocol template and current BillFit reassessment. Record its rejected `kwh` CSV as a product compatibility finding without altering the baseline.
+- Keep historical studies, billing uncertainty, user/maintenance effort and market-validation limits intact. No deployment, new paid service or production data change.
+
 ## Unreleased - 2026-10-28
 
 - Reconcile the BillFit case with its newly verified model-selected synthetic workflow, preserving the initial failure and distinguishing analytical completion from utility actions. Keep the original three-arm results, V4 ceiling and market claims unchanged; record the new source as internal product engineering evidence.

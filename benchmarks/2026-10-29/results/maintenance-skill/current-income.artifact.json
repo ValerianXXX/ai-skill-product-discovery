@@ -1,0 +1,24 @@
+{
+  "provenance": "COMMON_HARNESS_MATERIALIZATION",
+  "taskId": "current-income",
+  "answer": {
+    "fields": {
+      "status": "screened",
+      "care_status": "likely_eligible",
+      "fera_status": "not_primary_path",
+      "care_limit": 65000,
+      "fera_limit": 70000,
+      "official_decision": false
+    },
+    "citations": [
+      {
+        "sourceId": "assistance-rules",
+        "locators": [
+          "/care_income_upper_limit/3",
+          "/fera_income_upper_limit/3"
+        ]
+      }
+    ],
+    "note": "Actual BillFit screening on the supplied dated snapshot. This is preliminary and cannot enroll an account; missing, invalid or expired information must be resolved before action."
+  }
+}

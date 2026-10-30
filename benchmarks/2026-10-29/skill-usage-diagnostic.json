@@ -1,0 +1,8 @@
+{
+  "kind": "POST_ATTEMPT_DIAGNOSTIC_NOT_PRIMARY_RERUN",
+  "taskId": "duplicate-usage",
+  "billfitCommit": "c8e9c305f048f66561a5312121bca22436417126",
+  "originalAttemptPreserved": true,
+  "errorType": "BillFitError",
+  "errorCode": "CSV_HEADER_NOT_FOUND"
+}

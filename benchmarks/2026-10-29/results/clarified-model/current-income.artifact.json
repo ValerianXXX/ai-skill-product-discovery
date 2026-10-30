@@ -1,0 +1,27 @@
+{
+  "provenance": "COMMON_HARNESS_MATERIALIZATION",
+  "taskId": "current-income",
+  "answer": {
+    "fields": {
+      "status": "screened",
+      "care_status": "likely_not_eligible_by_income",
+      "fera_status": "likely_eligible",
+      "care_limit": 54640,
+      "fera_limit": 68300,
+      "official_decision": false
+    },
+    "citations": [
+      {
+        "sourceId": "assistance-rules",
+        "locators": [
+          "/effective_from",
+          "/effective_to",
+          "/care_income_upper_limit/3",
+          "/fera_income_upper_limit/3",
+          "/notes/0"
+        ]
+      }
+    ],
+    "note": "For a 3-person household, gross annual income of $62,000 exceeds the CARE ceiling of $54,640 but is within the FERA ceiling of $68,300. This preliminary income-path screen therefore indicates likely CARE ineligibility by income and likely FERA eligibility. No listed categorical enrollment changes the CARE path. This is not approval, enrollment, or an official eligibility decision."
+  }
+}

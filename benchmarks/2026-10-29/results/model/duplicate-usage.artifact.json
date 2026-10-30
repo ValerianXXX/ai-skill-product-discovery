@@ -1,0 +1,27 @@
+{
+  "provenance": "COMMON_HARNESS_MATERIALIZATION",
+  "taskId": "duplicate-usage",
+  "answer": {
+    "fields": {
+      "status": "complete",
+      "unique_intervals": 4,
+      "duplicate_intervals_removed": 1,
+      "total_kwh": 2.0,
+      "hours_covered": 4,
+      "recommendation_ready": false
+    },
+    "citations": [
+      {
+        "sourceId": "usage-csv",
+        "locators": [
+          "/1",
+          "/2",
+          "/3",
+          "/4",
+          "/5"
+        ]
+      }
+    ],
+    "note": "The five rows contain four unique one-hour intervals; the repeated 09:00 reading was removed as an exact duplicate. Unique usage totals 2.0 kWh over 4 covered hours. Four hours are insufficient for a rate-switch recommendation, and no annual savings are inferred."
+  }
+}

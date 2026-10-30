@@ -25,3 +25,6 @@ jobs:
 
       - name: Validate benchmark contracts without model calls
         run: python -m unittest discover -s tests -v
+
+      - name: Recompute shared-evidence outcomes and artifact receipts
+        run: python scripts/shared_evidence_report.py --check benchmarks/2026-10-29/analysis.json

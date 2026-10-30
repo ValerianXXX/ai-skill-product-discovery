@@ -1,0 +1,558 @@
+{
+  "schema": "SHARED_EVIDENCE_RUN_V2",
+  "mode": "REAL_EXECUTION",
+  "syntheticInputs": true,
+  "arm": "agent",
+  "maintenance": false,
+  "catalogHash": "228e9658ce0418315cafcc5620cdc33290fe7d05157c7750bebc34c3e5a770a0",
+  "corpusHash": "ed43035c065af4d8a0de088f4ad75ef240754038339c98e03d4f6b6e49948a93",
+  "startedAt": "2026-10-30T00:57:10.128555+00:00",
+  "completedAt": "2026-10-30T00:57:49.739476+00:00",
+  "billfitCommit": null,
+  "results": [
+    {
+      "taskId": "current-income",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "Preliminary screening: CARE income path exceeds the ceiling; FERA income path is within the ceiling.",
+          "care_status": "Not income-eligible on the supplied figures.",
+          "fera_status": "Preliminarily income-eligible on the supplied figures.",
+          "care_limit": 54640,
+          "fera_limit": 68300,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/3",
+              "/fera_income_upper_limit/3",
+              "/notes/0"
+            ]
+          }
+        ],
+        "note": "For a 3-person household, $62,000 gross annual household income is above the $54,640 CARE ceiling but at or below the $68,300 FERA ceiling. No categorical-program path is indicated because no public-program enrollment was supplied. This is only a preliminary eligibility screen under the snapshot effective June 1, 2026 through May 31, 2027; it is not enrollment or an official decision."
+      },
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "requestHash": "e9f3d8fc434bb9b18fb00f2b0a179b8e93c9232592f66ce380e416c9f9ddc20d",
+          "startedAt": "2026-10-30T00:57:10.132556+00:00",
+          "durationMs": 6707,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "fields": {
+                "status": "Preliminary screening: CARE income path exceeds the ceiling; FERA income path is within the ceiling.",
+                "care_status": "Not income-eligible on the supplied figures.",
+                "fera_status": "Preliminarily income-eligible on the supplied figures.",
+                "care_limit": 54640,
+                "fera_limit": 68300,
+                "official_decision": false
+              },
+              "citations": [
+                {
+                  "sourceId": "assistance-rules",
+                  "locators": [
+                    "/care_income_upper_limit/3",
+                    "/fera_income_upper_limit/3",
+                    "/notes/0"
+                  ]
+                }
+              ],
+              "note": "For a 3-person household, $62,000 gross annual household income is above the $54,640 CARE ceiling but at or below the $68,300 FERA ceiling. No categorical-program path is indicated because no public-program enrollment was supplied. This is only a preliminary eligibility screen under the snapshot effective June 1, 2026 through May 31, 2027; it is not enrollment or an official decision."
+            }
+          },
+          "usage": {
+            "source": "HERMES_SESSION_COUNTERS",
+            "modelApiCalls": 1,
+            "promptTokens": 1493,
+            "completionTokens": 211,
+            "totalTokens": 1704,
+            "estimatedCostUsd": 0.0,
+            "costStatus": "included",
+            "costSource": "none"
+          }
+        }
+      ],
+      "artifact": {
+        "path": "current-income.artifact.json",
+        "bytes": 1097,
+        "sha256": "c8e2b5b8d4a3bbbdf0a08a8a2b3a498b69e75bc5879dbca09a4f712bc3334ec7",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 6713,
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "candidateAnswer": {
+        "fields": {
+          "status": "Preliminary screening: CARE income path exceeds the ceiling; FERA income path is within the ceiling.",
+          "care_status": "Not income-eligible on the supplied figures.",
+          "fera_status": "Preliminarily income-eligible on the supplied figures.",
+          "care_limit": 54640,
+          "fera_limit": 68300,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/3",
+              "/fera_income_upper_limit/3",
+              "/notes/0"
+            ]
+          }
+        ],
+        "note": "For a 3-person household, $62,000 gross annual household income is above the $54,640 CARE ceiling but at or below the $68,300 FERA ceiling. No categorical-program path is indicated because no public-program enrollment was supplied. This is only a preliminary eligibility screen under the snapshot effective June 1, 2026 through May 31, 2027; it is not enrollment or an official decision."
+      }
+    },
+    {
+      "taskId": "conflicting-bill",
+      "status": "FAILED",
+      "answer": null,
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "requestHash": "a858be767a4d61aca179c6d0595a6e6c18d860f3b54884f9e1254d712d1d1d85",
+          "startedAt": "2026-10-30T00:57:16.848815+00:00",
+          "durationMs": 9954,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "fields": {
+                "status": "requires_user_confirmation",
+                "current_plan": "E-TOU-C",
+                "energy_charge_values": [
+                  "94.56",
+                  "95.00"
+                ],
+                "base_services_charge": "24.00",
+                "total_kwh": "280 kWh",
+                "conflicting_fields": [
+                  "energy_charge_values"
+                ],
+                "automatic_calculation": false,
+                "automatic_confirmation": false
+              },
+              "citations": [
+                {
+                  "sourceId": "bill-text",
+                  "locators": [
+                    "/0/text"
+                  ]
+                },
+                {
+                  "sourceId": "bill-text",
+                  "locators": [
+                    "/1/text",
+                    "/5/text"
+                  ]
+                },
+                {
+                  "sourceId": "bill-text",
+                  "locators": [
+                    "/2/text"
+                  ]
+                },
+                {
+                  "sourceId": "bill-text",
+                  "locators": [
+                    "/3/text"
+                  ]
+                },
+                {
+                  "sourceId": "bill-text",
+                  "locators": [
+                    "/6/text"
+                  ]
+                }
+              ],
+              "note": "The two pages report conflicting energy charges in source order. The whole amount due was excluded, no calculation was performed, and user confirmation is required before confirming the fields."
+            }
+          },
+          "usage": {
+            "source": "HERMES_SESSION_COUNTERS",
+            "modelApiCalls": 1,
+            "promptTokens": 1205,
+            "completionTokens": 503,
+            "totalTokens": 1708,
+            "estimatedCostUsd": 0.0,
+            "costStatus": "included",
+            "costSource": "none"
+          }
+        }
+      ],
+      "artifact": null,
+      "durationMs": 9960,
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "candidateAnswer": {
+        "fields": {
+          "status": "requires_user_confirmation",
+          "current_plan": "E-TOU-C",
+          "energy_charge_values": [
+            "94.56",
+            "95.00"
+          ],
+          "base_services_charge": "24.00",
+          "total_kwh": "280 kWh",
+          "conflicting_fields": [
+            "energy_charge_values"
+          ],
+          "automatic_calculation": false,
+          "automatic_confirmation": false
+        },
+        "citations": [
+          {
+            "sourceId": "bill-text",
+            "locators": [
+              "/0/text"
+            ]
+          },
+          {
+            "sourceId": "bill-text",
+            "locators": [
+              "/1/text",
+              "/5/text"
+            ]
+          },
+          {
+            "sourceId": "bill-text",
+            "locators": [
+              "/2/text"
+            ]
+          },
+          {
+            "sourceId": "bill-text",
+            "locators": [
+              "/3/text"
+            ]
+          },
+          {
+            "sourceId": "bill-text",
+            "locators": [
+              "/6/text"
+            ]
+          }
+        ],
+        "note": "The two pages report conflicting energy charges in source order. The whole amount due was excluded, no calculation was performed, and user confirmation is required before confirming the fields."
+      },
+      "errorType": "ValueError"
+    },
+    {
+      "taskId": "duplicate-usage",
+      "status": "FAILED",
+      "answer": null,
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "requestHash": "2a66bc5ab72b435828f0ec4f9e54b85598f67ee45b4b95ee9b6d0439c3de1215",
+          "startedAt": "2026-10-30T00:57:26.810236+00:00",
+          "durationMs": 6388,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "status": "complete",
+              "unique_intervals": 4,
+              "duplicate_intervals_removed": 1,
+              "total_kwh": 2,
+              "hours_covered": 4,
+              "recommendation_ready": false,
+              "citations": [
+                {
+                  "sourceId": "usage-csv",
+                  "locators": [
+                    "/0",
+                    "/1",
+                    "/2",
+                    "/3",
+                    "/4",
+                    "/5"
+                  ]
+                }
+              ],
+              "note": "Five explicit rows contain four unique one-hour intervals; the repeated 09:00 reading is an exact duplicate and was removed. Unique usage totals 2.0 kWh across 4 covered hours. Four hours are insufficient for a rate-switch recommendation, and no annual savings are inferred."
+            }
+          },
+          "usage": {
+            "source": "HERMES_SESSION_COUNTERS",
+            "modelApiCalls": 1,
+            "promptTokens": 1136,
+            "completionTokens": 247,
+            "totalTokens": 1383,
+            "estimatedCostUsd": 0.0,
+            "costStatus": "included",
+            "costSource": "none"
+          }
+        }
+      ],
+      "artifact": null,
+      "durationMs": 6394,
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "candidateAnswer": {
+        "status": "complete",
+        "unique_intervals": 4,
+        "duplicate_intervals_removed": 1,
+        "total_kwh": 2,
+        "hours_covered": 4,
+        "recommendation_ready": false,
+        "citations": [
+          {
+            "sourceId": "usage-csv",
+            "locators": [
+              "/0",
+              "/1",
+              "/2",
+              "/3",
+              "/4",
+              "/5"
+            ]
+          }
+        ],
+        "note": "Five explicit rows contain four unique one-hour intervals; the repeated 09:00 reading is an exact duplicate and was removed. Unique usage totals 2.0 kWh across 4 covered hours. Four hours are insufficient for a rate-switch recommendation, and no annual savings are inferred."
+      },
+      "errorType": "ValueError"
+    },
+    {
+      "taskId": "missing-income",
+      "status": "FAILED",
+      "answer": null,
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "requestHash": "ccef8cbb18346ad09abcf371b89f1245fd022bce2dc0bc2178f219955ba7582c",
+          "startedAt": "2026-10-30T00:57:33.206150+00:00",
+          "durationMs": 4869,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "status": "undetermined",
+              "care_status": "undetermined",
+              "fera_status": "undetermined",
+              "care_limit": 66000,
+              "fera_limit": 82500,
+              "missing": [
+                "gross_annual_household_income"
+              ],
+              "official_decision": false,
+              "citations": [
+                {
+                  "sourceId": "assistance-rules",
+                  "locators": [
+                    "/care_income_upper_limit/4",
+                    "/fera_income_upper_limit/4",
+                    "/notes/0"
+                  ]
+                }
+              ],
+              "note": "For a household of 4, the current CARE ceiling is $66,000 and the FERA ceiling is $82,500. Eligibility cannot be screened because gross annual household income is missing and no categorical program was reported. This is a screening result, not an official enrollment decision."
+            }
+          },
+          "usage": {
+            "source": "HERMES_SESSION_COUNTERS",
+            "modelApiCalls": 1,
+            "promptTokens": 1505,
+            "completionTokens": 158,
+            "totalTokens": 1663,
+            "estimatedCostUsd": 0.0,
+            "costStatus": "included",
+            "costSource": "none"
+          }
+        }
+      ],
+      "artifact": null,
+      "durationMs": 4876,
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "candidateAnswer": {
+        "status": "undetermined",
+        "care_status": "undetermined",
+        "fera_status": "undetermined",
+        "care_limit": 66000,
+        "fera_limit": 82500,
+        "missing": [
+          "gross_annual_household_income"
+        ],
+        "official_decision": false,
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/4",
+              "/fera_income_upper_limit/4",
+              "/notes/0"
+            ]
+          }
+        ],
+        "note": "For a household of 4, the current CARE ceiling is $66,000 and the FERA ceiling is $82,500. Eligibility cannot be screened because gross annual household income is missing and no categorical program was reported. This is a screening result, not an official enrollment decision."
+      },
+      "errorType": "ValueError"
+    },
+    {
+      "taskId": "expired-snapshot",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "not_screened",
+          "stale": true,
+          "outside_effective_window": true,
+          "care_status": "not_screened",
+          "fera_status": "not_screened",
+          "can_act": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/verified_on",
+              "/effective_from",
+              "/effective_to"
+            ]
+          }
+        ],
+        "note": "Using the explicitly simulated as-of date 2027-06-02, the snapshot is stale because verification on 2026-10-27 was more than 45 days earlier. Its effective window also expired on 2027-05-31, independently preventing CARE or FERA screening and action. This does not assert that the actual current rules changed."
+      },
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "requestHash": "852497a3d6840e2f24bd01f965dd5588bb766dbf966739b1e84642f53af4c857",
+          "startedAt": "2026-10-30T00:57:38.084088+00:00",
+          "durationMs": 6974,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "fields": {
+                "status": "not_screened",
+                "stale": true,
+                "outside_effective_window": true,
+                "care_status": "not_screened",
+                "fera_status": "not_screened",
+                "can_act": false
+              },
+              "citations": [
+                {
+                  "sourceId": "assistance-rules",
+                  "locators": [
+                    "/verified_on",
+                    "/effective_from",
+                    "/effective_to"
+                  ]
+                }
+              ],
+              "note": "Using the explicitly simulated as-of date 2027-06-02, the snapshot is stale because verification on 2026-10-27 was more than 45 days earlier. Its effective window also expired on 2027-05-31, independently preventing CARE or FERA screening and action. This does not assert that the actual current rules changed."
+            }
+          },
+          "usage": {
+            "source": "HERMES_SESSION_COUNTERS",
+            "modelApiCalls": 1,
+            "promptTokens": 1515,
+            "completionTokens": 278,
+            "totalTokens": 1793,
+            "estimatedCostUsd": 0.0,
+            "costStatus": "included",
+            "costSource": "none"
+          }
+        }
+      ],
+      "artifact": {
+        "path": "expired-snapshot.artifact.json",
+        "bytes": 837,
+        "sha256": "9e4e9ad3db6ac38bcb6c3fd209cbd9d4315b165b394ab384b36039db21a4d0f0",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 6981,
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "candidateAnswer": {
+        "fields": {
+          "status": "not_screened",
+          "stale": true,
+          "outside_effective_window": true,
+          "care_status": "not_screened",
+          "fera_status": "not_screened",
+          "can_act": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/verified_on",
+              "/effective_from",
+              "/effective_to"
+            ]
+          }
+        ],
+        "note": "Using the explicitly simulated as-of date 2027-06-02, the snapshot is stale because verification on 2026-10-27 was more than 45 days earlier. Its effective window also expired on 2027-05-31, independently preventing CARE or FERA screening and action. This does not assert that the actual current rules changed."
+      }
+    },
+    {
+      "taskId": "invalid-income",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "error": "INVALID_INCOME",
+          "official_decision": false,
+          "can_act": false
+        },
+        "citations": [],
+        "note": "Negative income is invalid input; no eligibility determination was made and no action can be taken."
+      },
+      "attempts": [
+        {
+          "status": "RECEIVED",
+          "requestHash": "5427a44e95dcdf211d36aeabf2fddd22612ad85bf31b10ee1f472dadb0d4e60d",
+          "startedAt": "2026-10-30T00:57:45.068599+00:00",
+          "durationMs": 4663,
+          "response": {
+            "tool": null,
+            "arguments": {},
+            "answer": {
+              "fields": {
+                "error": "INVALID_INCOME",
+                "official_decision": false,
+                "can_act": false
+              },
+              "citations": [],
+              "note": "Negative income is invalid input; no eligibility determination was made and no action can be taken."
+            }
+          },
+          "usage": {
+            "source": "HERMES_SESSION_COUNTERS",
+            "modelApiCalls": 1,
+            "promptTokens": 952,
+            "completionTokens": 95,
+            "totalTokens": 1047,
+            "estimatedCostUsd": 0.0,
+            "costStatus": "included",
+            "costSource": "none"
+          }
+        }
+      ],
+      "artifact": {
+        "path": "invalid-income.artifact.json",
+        "bytes": 350,
+        "sha256": "ba843eef08f1aea417ccac2da26e2c155986937a0e6ee855ca110118ac3bb8a6",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 4671,
+      "model": "gpt-5.6-sol",
+      "provider": "openai-codex",
+      "candidateAnswer": {
+        "fields": {
+          "error": "INVALID_INCOME",
+          "official_decision": false,
+          "can_act": false
+        },
+        "citations": [],
+        "note": "Negative income is invalid input; no eligibility determination was made and no action can be taken."
+      }
+    }
+  ]
+}

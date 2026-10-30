@@ -1,0 +1,69 @@
+{
+  "schema": "SHARED_EVIDENCE_RUN_V2",
+  "mode": "REAL_EXECUTION",
+  "syntheticInputs": true,
+  "arm": "skill",
+  "maintenance": true,
+  "clarified": true,
+  "catalogHash": "64f7189f9fa37c66bbf4f97c7464f74ea7ac2098dc067a5ec1b3385e183b261c",
+  "corpusHash": "70b36ff593f014c5ce4145a689b2ce719eb2cdc30db527219969cc4fe51e7b71",
+  "startedAt": "2026-10-30T01:07:21.415260+00:00",
+  "completedAt": "2026-10-30T01:07:21.583931+00:00",
+  "billfitCommit": "c8e9c305f048f66561a5312121bca22436417126",
+  "results": [
+    {
+      "taskId": "current-income",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_eligible",
+          "fera_status": "not_primary_path",
+          "care_limit": 65000,
+          "fera_limit": 70000,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/3",
+              "/fera_income_upper_limit/3"
+            ]
+          }
+        ],
+        "note": "Actual BillFit screening on the supplied dated snapshot. This is preliminary and cannot enroll an account; missing, invalid or expired information must be resolved before action."
+      },
+      "attempts": [],
+      "artifact": {
+        "path": "current-income.artifact.json",
+        "bytes": 707,
+        "sha256": "28bc3434bcea98b9b77f49b5f14a4dc6cace3727b19a54a799782395c692690f",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 89,
+      "model": null,
+      "provider": null,
+      "candidateAnswer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_eligible",
+          "fera_status": "not_primary_path",
+          "care_limit": 65000,
+          "fera_limit": 70000,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/3",
+              "/fera_income_upper_limit/3"
+            ]
+          }
+        ],
+        "note": "Actual BillFit screening on the supplied dated snapshot. This is preliminary and cannot enroll an account; missing, invalid or expired information must be resolved before action."
+      }
+    }
+  ]
+}

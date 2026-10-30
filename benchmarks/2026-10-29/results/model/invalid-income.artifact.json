@@ -1,0 +1,13 @@
+{
+  "provenance": "COMMON_HARNESS_MATERIALIZATION",
+  "taskId": "invalid-income",
+  "answer": {
+    "fields": {
+      "error": "INVALID_INCOME",
+      "official_decision": false,
+      "can_act": false
+    },
+    "citations": [],
+    "note": "The reported gross annual household income is negative and therefore invalid. No eligibility inference or official decision can be made, and no action can be taken from this input. No source documents were supplied for citation."
+  }
+}
