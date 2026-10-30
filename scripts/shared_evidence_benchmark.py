@@ -108,7 +108,7 @@ def model_answer(task, corpus, arm, command, row, limits, checkpoint):
 
 def read_summary(file):
     report = json.loads(file.read_text(encoding='utf-8'))
-    catalog, corpus = load_round(report['maintenance'])
+    catalog, corpus = load_round(report['maintenance'], report.get('clarified', False))
     if report['schema'] != 'SHARED_EVIDENCE_RUN_V2' or report['arm'] not in ARMS or report['catalogHash'] != digest(catalog) or report['corpusHash'] != digest(corpus):
         raise ValueError('ROUND_IDENTITY')
     tasks = {t['id']: t for t in catalog['tasks']}
@@ -150,7 +150,7 @@ def read_summary(file):
                 raise ValueError('DURATION')
             measured_duration.append(row['durationMs'])
     usage = summarize_usage(attempts, len(attempts))
-    return {'arm': report['arm'], 'maintenance': report['maintenance'], 'planned': len(tasks),
+    return {'arm': report['arm'], 'maintenance': report['maintenance'], 'clarified': report.get('clarified', False), 'planned': len(tasks),
             'observed': sum(r['status'] == 'OBSERVED' for r in rows),
             'failed': sum(r['status'] == 'FAILED' for r in rows), 'notRunOrInterrupted': sum(r['status'] in {'STARTED', 'NOT_RUN'} for r in rows),
             'taskCompleted': sum(e['taskCompleted'] for e in evaluations),
@@ -163,12 +163,12 @@ def read_summary(file):
             'noteSemanticsIndependentlyReviewed': False}
 
 
-def run(arm, directory, command=None, billfit_root=None, maintenance=False):
-    catalog, corpus = load_round(maintenance)
+def run(arm, directory, command=None, billfit_root=None, maintenance=False, clarified=False):
+    catalog, corpus = load_round(maintenance, clarified)
     directory.mkdir(parents=True, exist_ok=False)
     file = directory / 'run.json'
     report = {'schema': 'SHARED_EVIDENCE_RUN_V2', 'mode': 'REAL_EXECUTION', 'syntheticInputs': True,
-              'arm': arm, 'maintenance': maintenance, 'catalogHash': digest(catalog), 'corpusHash': digest(corpus),
+              'arm': arm, 'maintenance': maintenance, 'clarified': clarified, 'catalogHash': digest(catalog), 'corpusHash': digest(corpus),
               'startedAt': now(), 'completedAt': None, 'billfitCommit': None, 'results': []}
     if arm == 'skill':
         revision = subprocess.run(['git', '-C', str(billfit_root), 'rev-parse', 'HEAD'], capture_output=True, text=True, check=True)
@@ -224,6 +224,7 @@ def main():
     parser.add_argument('--adapter-json', type=Path)
     parser.add_argument('--billfit-root', type=Path)
     parser.add_argument('--maintenance', action='store_true')
+    parser.add_argument('--clarified', action='store_true')
     parser.add_argument('--summarize', type=Path, nargs='+')
     args = parser.parse_args()
     if args.summarize:
@@ -235,7 +236,7 @@ def main():
         parser.error('An existing authorized argv adapter is required')
     if args.arm == 'skill' and not args.billfit_root:
         parser.error('Provide the existing public BillFit checkout')
-    print(json.dumps(run(args.arm, args.output_dir, command, args.billfit_root, args.maintenance), indent=2))
+    print(json.dumps(run(args.arm, args.output_dir, command, args.billfit_root, args.maintenance, args.clarified), indent=2))
 
 
 if __name__ == '__main__':

@@ -1,0 +1,15 @@
+{
+  "schema": "SHARED_RESPONSE_FORMAT_V2_1",
+  "calibrationTaskIds": ["current-income", "conflicting-bill", "duplicate-usage"],
+  "statusVocabulary": {
+    "status": ["screened", "REVIEW_REQUIRED", "parsed", "rules_outside_effective_window"],
+    "care_status": ["likely_eligible", "likely_not_eligible_by_income", "not_primary_path", "needs_information", "not_screened"],
+    "fera_status": ["likely_eligible", "likely_not_eligible_by_income", "not_primary_path", "needs_information", "not_screened"]
+  },
+  "statusMeaning": "Use screened for a completed preliminary screening, including missing-income outcomes. Use REVIEW_REQUIRED for unconfirmed bill extraction, parsed for usage aggregation, and rules_outside_effective_window for expired rules. The per-program statuses carry the eligibility or uncertainty result; overall status does not mean approval.",
+  "numericStrings": "Charge strings use bare decimal values with two fractional digits, without currency symbols. A total_kwh string uses a bare number without unit text; when the requested type is number, use a JSON number.",
+  "conflictVocabulary": ["current_plan", "reported_energy_charge", "reported_base_services_charge", "total_kwh"],
+  "conflictMeaning": "conflicting_fields uses these canonical input field IDs; energy_charge_values is the output array for reported_energy_charge.",
+  "citationGrouping": "Exactly one entry per distinct sourceId; combine all relevant locators in that entry, without repeated locators.",
+  "brokerEnvelope": "Every response, including a tool request, contains exactly tool, arguments and answer. A tool request has answer:null. A final answer has tool:null and arguments:{}. Never return both an answer and a tool request."
+}

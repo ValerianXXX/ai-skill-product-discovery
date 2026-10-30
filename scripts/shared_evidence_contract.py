@@ -15,11 +15,17 @@ def digest(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(',', ':'), allow_nan=False).encode()).hexdigest()
 
 
-def load_round(maintenance=False):
+def load_round(maintenance=False, clarified=False):
     catalog = json.loads((ROUND / 'tasks.json').read_text(encoding='utf-8'))
     corpus = json.loads((ROUND / 'corpus.json').read_text(encoding='utf-8'))
     if len(catalog['tasks']) != 6 or len({t['id'] for t in catalog['tasks']}) != 6:
         raise ValueError('TASK_DENOMINATOR')
+    if clarified:
+        format_rules = json.loads((ROUND / 'response-format.json').read_text(encoding='utf-8'))
+        catalog['responseFormat'] = format_rules
+        catalog['tasks'] = [task for task in catalog['tasks'] if task['id'] in format_rules['calibrationTaskIds']]
+        for task in catalog['tasks']:
+            task['responseFormat'] = deepcopy(format_rules)
     if maintenance:
         task = deepcopy(next(t for t in catalog['tasks'] if t['id'] == catalog['maintenance']['taskId']))
         task['expected'] = deepcopy(catalog['maintenance']['expected'])
@@ -112,7 +118,7 @@ def evaluate(task, answer, corpus, artifact_verified):
 
 
 def request_for(task, corpus, arm, history):
-    return {'protocol': 'SUBSTITUTE_SHARED_EVIDENCE_V2', 'arm': arm, 'synthetic': True,
+    request = {'protocol': 'SUBSTITUTE_SHARED_EVIDENCE_V2', 'arm': arm, 'synthetic': True,
             'taskId': task['id'], 'asOf': task['asOf'], 'task': task['prompt'], 'input': task['input'],
             'sharedEvidence': documents_for(task, corpus),
             'responseContract': {
@@ -125,3 +131,6 @@ def request_for(task, corpus, arm, history):
                 {'name': 'read_file', 'arguments': {'id': 'one supplied document ID'}, 'description': 'Read the same bounded document; no arbitrary filesystem access.'},
                 {'name': 'calculate', 'arguments': {'expression': 'numbers and + - * /'}, 'description': 'Bounded generic arithmetic, no domain functions.'}],
             'history': history}
+    if 'responseFormat' in task:
+        request['responseContract']['formatRules'] = deepcopy(task['responseFormat'])
+    return request
