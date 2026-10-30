@@ -1066,12 +1066,12 @@
       "sha256": "28bc3434bcea98b9b77f49b5f14a4dc6cace3727b19a54a799782395c692690f"
     },
     "tasks.json": {
-      "bytes": 7849,
-      "sha256": "42d2ee412fd1f9dd1e1dafb7d983bcd11edaae8a73e156ab48010ad42a0c4277"
+      "bytes": 7602,
+      "sha256": "e190d7a7d32df4caefb977fa35565ec3c217375a0f4c4e9a053dae9b597f55b6"
     },
     "corpus.json": {
-      "bytes": 4023,
-      "sha256": "c4317a94935684e6f7504dca37eb18aae3445b41a373986ae1281acd472d2b80"
+      "bytes": 3890,
+      "sha256": "c188b78ee5907d8e86cd04668c084086599ccb5990fca9de1402746e6f3e40d5"
     },
     "response-format.json": {
       "bytes": 1729,
