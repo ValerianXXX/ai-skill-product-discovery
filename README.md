@@ -13,6 +13,8 @@ The new [six-task study and separate format calibration](benchmarks/2026-10-29/R
 
 Run the [offline verification](benchmarks/2026-10-29/README.md) without credentials. The [current case reassessment](cases/billfit/reassessment-2026-10-29.md) separates maintained product capabilities, generic coverage and unresolved evidence. Historical results below retain their original information conditions.
 
+October 31 [transcript-integrity follow-up](benchmarks/2026-10-31/transcript-integrity/README.md): the offline reader now rejects impossible execution sequences and inconsistent saved outcomes, and counts only authorized, recomputed tool turns. All ten historical runs and their published report remain unchanged. This is a collector reliability repair with no new model calls or quality claim.
+
 ## October 27 reassessment
 
 The repository now includes a runnable [three-arm substitute benchmark](benchmarks/README.md), frozen tasks, source provenance and actual responses. On six synthetic assistance tasks, the configured general model completed 1/6, the same model with bounded source/file/arithmetic tools completed 6/6, and the actual BillFit deterministic Skill completed 6/6. The model abstained on nine required fields; it did not assert incorrect values. These results establish that generic tools can cover this narrow rules lookup. They do not establish a broad product advantage or customer demand.

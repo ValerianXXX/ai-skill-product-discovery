@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased - 2026-10-31
+
+- Separate execution-ledger replay from outcome evaluation. Reject turns after a final response, failure or interruption, received responses outside the runner contract, unattempted rows containing output, and observed rows without a valid matching artifact.
+- Derive tool-use credit from authorized, recomputed Agent turns instead of the presence of a `toolResult` key. Preserve failed/partial payloads without credit; distinguish booleans from numbers in nested results.
+- Add frozen offline mutation probes and replay every actual collector checkpoint using a synthetic adapter. The 42-test suite passes; all ten October 29 runs, original artifacts and published report remain unchanged. No new provider calls, revised factual scores, production changes or independent-human claims.
+
 ## Unreleased - 2026-10-29
 
 - Add a frozen six-task shared-evidence runner, bounded generic broker, actual BillFit bridge, per-turn usage, atomic run storage and verified common-harness artifacts.

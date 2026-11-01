@@ -1,0 +1,273 @@
+test_execution_identity_flags_are_not_truthy_aliases (test_shared_evidence_replay.TranscriptReplayTests.test_execution_identity_flags_are_not_truthy_aliases) ... 
+  test_execution_identity_flags_are_not_truthy_aliases (test_shared_evidence_replay.TranscriptReplayTests.test_execution_identity_flags_are_not_truthy_aliases) (key='mode', value='SIMULATED') ... FAIL
+  test_execution_identity_flags_are_not_truthy_aliases (test_shared_evidence_replay.TranscriptReplayTests.test_execution_identity_flags_are_not_truthy_aliases) (key='syntheticInputs', value=False) ... FAIL
+  test_execution_identity_flags_are_not_truthy_aliases (test_shared_evidence_replay.TranscriptReplayTests.test_execution_identity_flags_are_not_truthy_aliases) (key='syntheticInputs', value=1) ... FAIL
+  test_execution_identity_flags_are_not_truthy_aliases (test_shared_evidence_replay.TranscriptReplayTests.test_execution_identity_flags_are_not_truthy_aliases) (key='maintenance', value=0) ... FAIL
+  test_execution_identity_flags_are_not_truthy_aliases (test_shared_evidence_replay.TranscriptReplayTests.test_execution_identity_flags_are_not_truthy_aliases) (key='clarified', value=0) ... FAIL
+test_failed_final_contract_remains_an_observation_without_completion (test_shared_evidence_replay.TranscriptReplayTests.test_failed_final_contract_remains_an_observation_without_completion) ... ok
+test_failed_transport_and_received_but_unmaterialized_checkpoints_survive (test_shared_evidence_replay.TranscriptReplayTests.test_failed_transport_and_received_but_unmaterialized_checkpoints_survive) ... ok
+test_final_answer_cannot_claim_a_tool_result (test_shared_evidence_replay.TranscriptReplayTests.test_final_answer_cannot_claim_a_tool_result) ... FAIL
+test_historical_report_and_all_original_receipts_stay_identical (test_shared_evidence_replay.TranscriptReplayTests.test_historical_report_and_all_original_receipts_stay_identical) ... ok
+test_malformed_attempt_collections_fail_with_a_diagnostic (test_shared_evidence_replay.TranscriptReplayTests.test_malformed_attempt_collections_fail_with_a_diagnostic) ... 
+  test_malformed_attempt_collections_fail_with_a_diagnostic (test_shared_evidence_replay.TranscriptReplayTests.test_malformed_attempt_collections_fail_with_a_diagnostic) (attempts=[None]) ... ERROR
+test_model_record_cannot_claim_a_successful_agent_tool (test_shared_evidence_replay.TranscriptReplayTests.test_model_record_cannot_claim_a_successful_agent_tool) ... FAIL
+test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call (test_shared_evidence_replay.TranscriptReplayTests.test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call) ... 
+  test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call (test_shared_evidence_replay.TranscriptReplayTests.test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call) (terminal='RECEIVED') ... FAIL
+  test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call (test_shared_evidence_replay.TranscriptReplayTests.test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call) (terminal='FAILED') ... FAIL
+  test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call (test_shared_evidence_replay.TranscriptReplayTests.test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call) (terminal='STARTED') ... FAIL
+  test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call (test_shared_evidence_replay.TranscriptReplayTests.test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call) (terminal='UNRECOGNIZED') ... FAIL
+test_observed_row_requires_a_valid_saved_answer_and_consistent_candidate (test_shared_evidence_replay.TranscriptReplayTests.test_observed_row_requires_a_valid_saved_answer_and_consistent_candidate) ... 
+  test_observed_row_requires_a_valid_saved_answer_and_consistent_candidate (test_shared_evidence_replay.TranscriptReplayTests.test_observed_row_requires_a_valid_saved_answer_and_consistent_candidate) (mutation='no-artifact') ... FAIL
+  test_observed_row_requires_a_valid_saved_answer_and_consistent_candidate (test_shared_evidence_replay.TranscriptReplayTests.test_observed_row_requires_a_valid_saved_answer_and_consistent_candidate) (mutation='candidate-changed') ... FAIL
+  test_observed_row_requires_a_valid_saved_answer_and_consistent_candidate (test_shared_evidence_replay.TranscriptReplayTests.test_observed_row_requires_a_valid_saved_answer_and_consistent_candidate) (mutation='invalid-contract') ... FAIL
+test_only_agent_tool_turns_can_produce_recomputed_tool_credit (test_shared_evidence_replay.TranscriptReplayTests.test_only_agent_tool_turns_can_produce_recomputed_tool_credit) ... FAIL
+test_received_response_must_follow_the_actual_runner_contract (test_shared_evidence_replay.TranscriptReplayTests.test_received_response_must_follow_the_actual_runner_contract) ... 
+  test_received_response_must_follow_the_actual_runner_contract (test_shared_evidence_replay.TranscriptReplayTests.test_received_response_must_follow_the_actual_runner_contract) (mutation='arguments') ... FAIL
+  test_received_response_must_follow_the_actual_runner_contract (test_shared_evidence_replay.TranscriptReplayTests.test_received_response_must_follow_the_actual_runner_contract) (mutation='extra') ... FAIL
+  test_received_response_must_follow_the_actual_runner_contract (test_shared_evidence_replay.TranscriptReplayTests.test_received_response_must_follow_the_actual_runner_contract) (mutation='missing') ... ERROR
+  test_received_response_must_follow_the_actual_runner_contract (test_shared_evidence_replay.TranscriptReplayTests.test_received_response_must_follow_the_actual_runner_contract) (mutation='array') ... ERROR
+test_tool_turn_cannot_also_return_an_answer (test_shared_evidence_replay.TranscriptReplayTests.test_tool_turn_cannot_also_return_an_answer) ... FAIL
+test_unattempted_row_cannot_contain_measured_output (test_shared_evidence_replay.TranscriptReplayTests.test_unattempted_row_cannot_contain_measured_output) ... FAIL
+
+======================================================================
+ERROR: test_malformed_attempt_collections_fail_with_a_diagnostic (test_shared_evidence_replay.TranscriptReplayTests.test_malformed_attempt_collections_fail_with_a_diagnostic) (attempts=[None])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 159, in test_malformed_attempt_collections_fail_with_a_diagnostic
+    self.rejected(report)
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 47, in rejected
+    self.summary(report)
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 43, in summary
+    return read_summary(self.file)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\scripts\shared_evidence_benchmark.py", line 130, in read_summary
+    if attempt['requestHash'] != digest(request_for(task, corpus, report['arm'], history)):
+       ~~~~~~~^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+
+======================================================================
+ERROR: test_received_response_must_follow_the_actual_runner_contract (test_shared_evidence_replay.TranscriptReplayTests.test_received_response_must_follow_the_actual_runner_contract) (mutation='missing')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 95, in test_received_response_must_follow_the_actual_runner_contract
+    self.rejected(report)
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 47, in rejected
+    self.summary(report)
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 43, in summary
+    return read_summary(self.file)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\scripts\shared_evidence_benchmark.py", line 135, in read_summary
+    final = decision['answer']
+            ~~~~~~~~^^^^^^^^^^
+KeyError: 'answer'
+
+======================================================================
+ERROR: test_received_response_must_follow_the_actual_runner_contract (test_shared_evidence_replay.TranscriptReplayTests.test_received_response_must_follow_the_actual_runner_contract) (mutation='array')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 95, in test_received_response_must_follow_the_actual_runner_contract
+    self.rejected(report)
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 47, in rejected
+    self.summary(report)
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 43, in summary
+    return read_summary(self.file)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\scripts\shared_evidence_benchmark.py", line 134, in read_summary
+    if decision['tool'] is None:
+       ~~~~~~~~^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+
+======================================================================
+FAIL: test_execution_identity_flags_are_not_truthy_aliases (test_shared_evidence_replay.TranscriptReplayTests.test_execution_identity_flags_are_not_truthy_aliases) (key='mode', value='SIMULATED')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 152, in test_execution_identity_flags_are_not_truthy_aliases
+    self.rejected(report)
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 46, in rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_execution_identity_flags_are_not_truthy_aliases (test_shared_evidence_replay.TranscriptReplayTests.test_execution_identity_flags_are_not_truthy_aliases) (key='syntheticInputs', value=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 152, in test_execution_identity_flags_are_not_truthy_aliases
+    self.rejected(report)
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 46, in rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_execution_identity_flags_are_not_truthy_aliases (test_shared_evidence_replay.TranscriptReplayTests.test_execution_identity_flags_are_not_truthy_aliases) (key='syntheticInputs', value=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 152, in test_execution_identity_flags_are_not_truthy_aliases
+    self.rejected(report)
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 46, in rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_execution_identity_flags_are_not_truthy_aliases (test_shared_evidence_replay.TranscriptReplayTests.test_execution_identity_flags_are_not_truthy_aliases) (key='maintenance', value=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 152, in test_execution_identity_flags_are_not_truthy_aliases
+    self.rejected(report)
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 46, in rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_execution_identity_flags_are_not_truthy_aliases (test_shared_evidence_replay.TranscriptReplayTests.test_execution_identity_flags_are_not_truthy_aliases) (key='clarified', value=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 152, in test_execution_identity_flags_are_not_truthy_aliases
+    self.rejected(report)
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 46, in rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_final_answer_cannot_claim_a_tool_result (test_shared_evidence_replay.TranscriptReplayTests.test_final_answer_cannot_claim_a_tool_result)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 66, in test_final_answer_cannot_claim_a_tool_result
+    self.rejected()
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 46, in rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_model_record_cannot_claim_a_successful_agent_tool (test_shared_evidence_replay.TranscriptReplayTests.test_model_record_cannot_claim_a_successful_agent_tool)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 120, in test_model_record_cannot_claim_a_successful_agent_tool
+    self.rejected()
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 46, in rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call (test_shared_evidence_replay.TranscriptReplayTests.test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call) (terminal='RECEIVED')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 80, in test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call
+    self.rejected(report)
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 46, in rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call (test_shared_evidence_replay.TranscriptReplayTests.test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call) (terminal='FAILED')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 80, in test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call
+    self.rejected(report)
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 46, in rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call (test_shared_evidence_replay.TranscriptReplayTests.test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call) (terminal='STARTED')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 80, in test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call
+    self.rejected(report)
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 46, in rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call (test_shared_evidence_replay.TranscriptReplayTests.test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call) (terminal='UNRECOGNIZED')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 80, in test_no_turn_may_follow_a_final_answer_failed_call_or_interrupted_call
+    self.rejected(report)
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 46, in rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_observed_row_requires_a_valid_saved_answer_and_consistent_candidate (test_shared_evidence_replay.TranscriptReplayTests.test_observed_row_requires_a_valid_saved_answer_and_consistent_candidate) (mutation='no-artifact')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 144, in test_observed_row_requires_a_valid_saved_answer_and_consistent_candidate
+    self.rejected(report)
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 46, in rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_observed_row_requires_a_valid_saved_answer_and_consistent_candidate (test_shared_evidence_replay.TranscriptReplayTests.test_observed_row_requires_a_valid_saved_answer_and_consistent_candidate) (mutation='candidate-changed')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 144, in test_observed_row_requires_a_valid_saved_answer_and_consistent_candidate
+    self.rejected(report)
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 46, in rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_observed_row_requires_a_valid_saved_answer_and_consistent_candidate (test_shared_evidence_replay.TranscriptReplayTests.test_observed_row_requires_a_valid_saved_answer_and_consistent_candidate) (mutation='invalid-contract')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 144, in test_observed_row_requires_a_valid_saved_answer_and_consistent_candidate
+    self.rejected(report)
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 46, in rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_only_agent_tool_turns_can_produce_recomputed_tool_credit (test_shared_evidence_replay.TranscriptReplayTests.test_only_agent_tool_turns_can_produce_recomputed_tool_credit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 105, in test_only_agent_tool_turns_can_produce_recomputed_tool_credit
+    self.rejected()
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 46, in rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_received_response_must_follow_the_actual_runner_contract (test_shared_evidence_replay.TranscriptReplayTests.test_received_response_must_follow_the_actual_runner_contract) (mutation='arguments')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 95, in test_received_response_must_follow_the_actual_runner_contract
+    self.rejected(report)
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 46, in rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_received_response_must_follow_the_actual_runner_contract (test_shared_evidence_replay.TranscriptReplayTests.test_received_response_must_follow_the_actual_runner_contract) (mutation='extra')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 95, in test_received_response_must_follow_the_actual_runner_contract
+    self.rejected(report)
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 46, in rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_tool_turn_cannot_also_return_an_answer (test_shared_evidence_replay.TranscriptReplayTests.test_tool_turn_cannot_also_return_an_answer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 109, in test_tool_turn_cannot_also_return_an_answer
+    self.rejected()
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 46, in rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_unattempted_row_cannot_contain_measured_output (test_shared_evidence_replay.TranscriptReplayTests.test_unattempted_row_cannot_contain_measured_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 125, in test_unattempted_row_cannot_contain_measured_output
+    self.rejected()
+  File "<WORKSPACE>\ai-skill-product-discovery-transcript\tests\test_shared_evidence_replay.py", line 46, in rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 13 tests in 2.894s
+
+FAILED (failures=19, errors=3)
