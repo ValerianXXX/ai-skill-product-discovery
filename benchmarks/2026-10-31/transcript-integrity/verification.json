@@ -233,8 +233,8 @@
   "testLogs": {
     "before": {
       "path": "before.txt",
-      "sha256": "bc9da0c597499d503bcfcd11ba3d9768f1fabb75cf9fd004bfb0c52123c0ef71",
-      "bytes": 24143,
+      "sha256": "67153a9c80fd3f8f2eb6af250ff729bf07a45e6aed882c8bbe9aec74c5705b86",
+      "bytes": 24138,
       "originalLocalLogSha256": "1c42e241141e61158a8493371fb0a04d63427dff6a1b10a3ab899191f8075718",
       "exitCode": 1,
       "testMethods": 13,
@@ -259,12 +259,18 @@
       "durationSeconds": 4.914
     }
   },
-  "publicLogTransform": "Workspace prefix replaced with <WORKSPACE>; line endings normalized to LF; no omitted lines.",
+  "publicLogTransform": "Workspace prefix replaced with <WORKSPACE>; line endings normalized to LF; five trailing ASCII spaces stripped in the public before log; no omitted lines.",
   "hostedChecks": "PENDING_AT_RECEIPT_CREATION_REPORT_TERMINAL_STATUS_IN_DRAFT_PR",
   "limitations": [
     "Internal consistency is not provider attestation.",
     "Free-text note semantics remain without independent adjudication.",
     "No new fair held-out comparison, user study, billing or maintenance-effort measurement.",
     "Original source-policy and response-format limitations are unchanged."
-  ]
+  ],
+  "publicLogFormattingCorrection": {
+    "firstDeliveryCommit": "b1ae5831eb4fc58e18195aa71f3f674ae620c3e8",
+    "initialPublicBeforeLogSha256": "bc9da0c597499d503bcfcd11ba3d9768f1fabb75cf9fd004bfb0c52123c0ef71",
+    "reason": "Initial staged diff check flagged five trailing spaces in unittest output. Strip only those five line-ending spaces in the public copy; retain original local bytes and the first public copy in Git history.",
+    "linesChanged": 5
+  }
 }

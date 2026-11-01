@@ -30,7 +30,7 @@ The original 27 tests, repository check and published-report recomputation passe
 
 The complete-suite run took 4.914 seconds on Python 3.11.3. Probe and full-suite times are test-harness observations, not model latency or a performance comparison. The synthetic adapter exercises the actual collector, atomic checkpoint writer, bounded arithmetic broker and artifact materializer; it does not contact a model or BillFit runtime. A mix of a valid tool trajectory, invalid final schema and transport failure retains six planned tasks, two completed tasks, two failures and two unattempted tasks.
 
-The [verification receipt](verification.json) records source/artifact hashes, frozen revisions and local results. Public test logs replace only the workspace path with `<WORKSPACE>` and normalize line endings; original local log hashes are retained in the receipt. No recorded answer, answer key, historical score, original artifact or original receipt was edited. Hosted checks are reported separately in the draft PR after they finish.
+The [verification receipt](verification.json) records source/artifact hashes, frozen revisions and local results. Public test logs replace the workspace path with `<WORKSPACE>`, normalize line endings and remove five trailing spaces flagged by the first staged diff check. Original local log hashes and the first public-copy hash are retained in the receipt; the first public copy remains in Git history. No lines were omitted. No recorded answer, answer key, historical score, original artifact or original receipt was edited. Hosted checks are reported separately in the draft PR after they finish.
 
 ## Reproduce without credentials
 
