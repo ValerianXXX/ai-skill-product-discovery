@@ -1,0 +1,34 @@
+{
+  "provenance": "COMMON_HARNESS_MATERIALIZATION",
+  "taskId": "new-duplicate-usage",
+  "answer": {
+    "fields": {
+      "status": "parsed",
+      "unique_intervals": 4,
+      "duplicate_intervals_removed": 1,
+      "total_kwh": 5.5,
+      "hours_covered": 4.0,
+      "recommendation_ready": false
+    },
+    "citations": [
+      {
+        "sourceId": "usage-csv",
+        "locators": [
+          "/1",
+          "/2",
+          "/3",
+          "/4",
+          "/5"
+        ]
+      },
+      {
+        "sourceId": "workflow-policy",
+        "locators": [
+          "/usage",
+          "/artifacts"
+        ]
+      }
+    ],
+    "note": "Actual BillFit interval parsing removes duplicate readings and totals unique energy. The four-hour sample withholds switching guidance; no annual saving or rate-plan change is established."
+  }
+}

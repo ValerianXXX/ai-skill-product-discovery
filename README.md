@@ -7,6 +7,10 @@ An evidence-first method for finding everyday consumer tasks that a general AI a
 
 The first complete case is [BillFit](cases/billfit/README.md): a local-first skill for supported PG&E residential rate comparison and bill-assistance screening.
 
+## November 1 complete-policy preparation
+
+The [new twelve-task round](benchmarks/2026-11-01/README.md) supplies the missing FERA lower bounds, decision order and response conventions before observations. Actual BillFit completed 12/12 synthetic reference tasks (95/95 selected fields) and one isolated rule-change check. Model/Agent results are **not produced**: the closed October budget is not reused. A preflight rejects incomplete policy; historical results remain unchanged. This repairs the comparison method and does not establish AI or Skill superiority. See the [current case assessment](cases/billfit/reassessment-2026-11-01.md).
+
 ## October 29 shared-evidence study
 
 The new [six-task study and separate format calibration](benchmarks/2026-10-29/RESULTS.md) retain actual responses, failures, saved artifacts and 20 measured model calls. They expose a BillFit CSV compatibility gap and evaluation-design defects. After format clarification, model/Agent/Skill completed 2/3, 3/3 and 2/3 selected tasks; the Agent used no tools, so this does not establish a tool advantage. A simulated policy update exposed a rule missing from the shared corpus. No overall product-superiority or market claim follows.
