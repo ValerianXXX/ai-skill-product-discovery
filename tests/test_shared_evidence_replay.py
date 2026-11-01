@@ -11,7 +11,7 @@ import unittest
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from shared_evidence_benchmark import read_summary, run, save_artifact
+from shared_evidence_benchmark import atomic_report, read_summary, run, save_artifact
 from shared_evidence_broker import broker
 from shared_evidence_contract import digest, load_round, request_for
 from shared_evidence_report import build_report
@@ -188,6 +188,54 @@ class TranscriptReplayTests(unittest.TestCase):
                 self.assertEqual(summary['taskCompleted'], 5)
                 self.assertEqual(summary['adapterCalls'], 5 if state == 'never-started' else 6)
                 self.assertIsNone(summary['costUsd'])
+
+    def test_every_real_collector_checkpoint_replays_without_provider_calls(self):
+        summaries = []
+        tasks = {task['id']: task for task in self.catalog['tasks']}
+
+        def adapter(_command, **kwargs):
+            request = json.loads(kwargs['input'])
+            task = tasks[request['taskId']]
+            if task['id'] == 'missing-income':
+                return subprocess.CompletedProcess([], 1, '', 'UNIT TEST transport failure')
+            answer = self.answer(task)
+            if task['id'] == 'current-income' and not request['history']:
+                decision = {'tool': 'calculate', 'arguments': {'expression': '1+0'}, 'answer': None}
+            else:
+                if task['id'] == 'duplicate-usage':
+                    answer = {**answer.pop('fields'), **answer}
+                decision = {'tool': None, 'arguments': {}, 'answer': answer}
+            return subprocess.CompletedProcess([], 0, json.dumps({
+                'decision': decision, 'model': 'UNIT_TEST_ONLY', 'provider': 'UNIT_TEST_ONLY'}), '')
+
+        def checkpoint(file, report):
+            atomic_report(file, report)
+            summaries.append(read_summary(file))
+
+        with patch('shared_evidence_benchmark.subprocess.run', side_effect=adapter), \
+                patch('shared_evidence_benchmark.atomic_report', side_effect=checkpoint), redirect_stdout(io.StringIO()):
+            result = run('agent', Path(self.temporary.name) / 'checkpoint-run', ['unit-test-only-no-runtime'])
+        self.assertEqual(result['taskCompleted'], 2)
+        self.assertEqual(result['failed'], 2)
+        self.assertEqual(result['notRunOrInterrupted'], 2)
+        self.assertEqual(result['adapterCalls'], 5)
+        self.assertEqual(result['toolCalls'], 1)
+        self.assertTrue(all(summary['planned'] == 6 for summary in summaries))
+        self.assertTrue(all(summary['taskCompleted'] <= summary['observed'] for summary in summaries))
+        self.assertEqual(summaries[-1], result)
+
+    def test_failed_or_partial_payload_cannot_inflate_tool_use(self):
+        for status in ('FAILED', 'STARTED'):
+            with self.subTest(status=status):
+                report = deepcopy(self.report)
+                row = report['results'][0]
+                row.update(status=status, answer=None, artifact=None)
+                row.pop('candidateAnswer')
+                row['attempts'][0].update(status=status, response=None, toolResult={'unaccepted': True})
+                summary = self.summary(report)
+                self.assertEqual(summary['toolCalls'], 0)
+                self.assertEqual(summary['adapterCalls'], 6)
+                self.assertEqual(summary['taskCompleted'], 5)
 
 
 if __name__ == '__main__':

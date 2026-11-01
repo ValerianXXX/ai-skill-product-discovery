@@ -11,6 +11,7 @@ import time
 
 from shared_evidence_contract import ARMS, digest, evaluate, load_round, request_for, validate_answer
 from shared_evidence_broker import broker
+from shared_evidence_replay import replay_row, validate_run_metadata
 from substitute_benchmark import summarize_usage, validate_usage
 
 
@@ -108,42 +109,25 @@ def model_answer(task, corpus, arm, command, row, limits, checkpoint):
 
 def read_summary(file):
     report = json.loads(file.read_text(encoding='utf-8'))
+    validate_run_metadata(report)
     catalog, corpus = load_round(report['maintenance'], report.get('clarified', False))
     if report['schema'] != 'SHARED_EVIDENCE_RUN_V2' or report['arm'] not in ARMS or report['catalogHash'] != digest(catalog) or report['corpusHash'] != digest(corpus):
         raise ValueError('ROUND_IDENTITY')
     tasks = {t['id']: t for t in catalog['tasks']}
     rows = report['results']
-    if len(rows) != len(tasks) or {r['taskId'] for r in rows} != set(tasks):
+    if (not isinstance(rows, list) or len(rows) != len(tasks)
+            or any(not isinstance(row, dict) or not isinstance(row.get('taskId'), str) for row in rows)
+            or {r['taskId'] for r in rows} != set(tasks)):
         raise ValueError('TASK_DENOMINATOR')
     evaluations, attempts = [], []
     measured_duration = []
+    tool_calls = 0
     for row in rows:
-        if row['status'] not in {'OBSERVED', 'FAILED', 'NOT_RUN', 'STARTED'}:
-            raise ValueError('RESULT_STATUS')
         verified = verify_artifact(file.parent, row)
-        history = []
         task = tasks[row['taskId']]
-        if len(row['attempts']) > (catalog['limits']['modelTurns'] if report['arm'] == 'model' else catalog['limits']['agentTurns'] if report['arm'] == 'agent' else 0):
-            raise ValueError('CALL_LIMIT')
-        final = None
-        for attempt in row['attempts']:
-            if attempt['requestHash'] != digest(request_for(task, corpus, report['arm'], history)):
-                raise ValueError('REQUEST_IDENTITY')
-            decision = attempt.get('response')
-            if attempt['status'] == 'RECEIVED' and decision is not None:
-                if decision['tool'] is None:
-                    final = decision['answer']
-                else:
-                    result = broker(decision['tool'], decision['arguments'], task, corpus)
-                    if result != attempt.get('toolResult'):
-                        raise ValueError('TOOL_RESULT_CHANGED')
-                    history.append({'request': decision, 'result': result})
-        candidate = row['answer'] if row['status'] == 'OBSERVED' else row.get('candidateAnswer')
-        if report['arm'] != 'skill' and candidate is not None and final != candidate:
-            raise ValueError('FINAL_RESPONSE_CHANGED')
-        if row['status'] != 'OBSERVED' and (row['answer'] is not None or verified):
-            raise ValueError('UNAVAILABLE_OUTCOME')
-        evaluations.append(evaluate(task, candidate, corpus, verified))
+        replayed = replay_row(row, task, corpus, report['arm'], catalog['limits'], verified)
+        evaluations.append(evaluate(task, replayed.candidate, corpus, verified))
+        tool_calls += replayed.tool_calls
         attempts.extend(row['attempts'])
         if row['durationMs'] is not None:
             if type(row['durationMs']) is not int or row['durationMs'] < 0:
@@ -157,7 +141,7 @@ def read_summary(file):
             'factsCorrect': sum(e['factsCorrect'] for e in evaluations), 'factsRequired': sum(e['factsRequired'] for e in evaluations),
             'incorrectFields': sum(len(e['incorrectFields']) for e in evaluations), 'missingFields': sum(len(e['missingFields']) for e in evaluations),
             'evidenceComplete': sum(e['evidenceComplete'] for e in evaluations), 'artifactsVerified': sum(e['artifactVerified'] for e in evaluations),
-            'adapterCalls': len(attempts), 'toolCalls': sum('toolResult' in a for a in attempts),
+            'adapterCalls': len(attempts), 'toolCalls': tool_calls,
             'usage': usage, 'costUsd': None, 'userOperations': None, 'humanMaintenanceMs': None,
             'durationMs': sum(measured_duration), 'timedTasks': len(measured_duration), 'evaluations': evaluations,
             'noteSemanticsIndependentlyReviewed': False}
