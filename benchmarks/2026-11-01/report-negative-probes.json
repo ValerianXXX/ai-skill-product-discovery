@@ -1,0 +1,45 @@
+{
+  "schema": "SHARED_POLICY_NEGATIVE_PROBES_V1",
+  "summaryMutants": [
+    {
+      "case": "boolean_reference_zero",
+      "status": "REJECTED_AS_EXPECTED",
+      "reason": "REFERENCE_SUMMARY_CHANGED"
+    },
+    {
+      "case": "invented_completion",
+      "status": "REJECTED_AS_EXPECTED",
+      "reason": "REFERENCE_SUMMARY_CHANGED"
+    },
+    {
+      "case": "boolean_unobserved_count",
+      "status": "REJECTED_AS_EXPECTED",
+      "reason": "UNOBSERVED_MODEL_RESULT"
+    },
+    {
+      "case": "unknown_cost_as_zero",
+      "status": "REJECTED_AS_EXPECTED",
+      "reason": "UNOBSERVED_COMPARATIVE_CLAIM"
+    },
+    {
+      "case": "boolean_provider_zero",
+      "status": "REJECTED_AS_EXPECTED",
+      "reason": "UNOBSERVED_COMPARATIVE_CLAIM"
+    }
+  ],
+  "requestExport": {
+    "files": 25,
+    "requests": 24,
+    "answerKeys": 0,
+    "existingDirectoryUnchanged": true
+  },
+  "maintenancePreparedRequests": 2,
+  "newProviderCalls": 0,
+  "unchangedActualEvidence": {
+    "status": "PASS",
+    "referenceTasks": 13,
+    "historicalFilesUnchanged": 59,
+    "newProviderCalls": 0,
+    "modelComparison": "NOT_PRODUCED"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "provenance": "COMMON_HARNESS_MATERIALIZATION",
+  "taskId": "negative-income",
+  "answer": {
+    "fields": {
+      "error": "INVALID_INCOME",
+      "official_decision": false,
+      "can_act": false
+    },
+    "citations": [
+      {
+        "sourceId": "assistance-rules",
+        "locators": [
+          "/care_income_upper_limit/3",
+          "/fera_income_lower_limit/3",
+          "/fera_income_upper_limit/3",
+          "/verified_on",
+          "/effective_from",
+          "/effective_to"
+        ]
+      },
+      {
+        "sourceId": "screening-policy",
+        "locators": [
+          "/inputValidation",
+          "/freshness",
+          "/output",
+          "/incomeDecisionOrder",
+          "/fractionalIncome",
+          "/householdsAboveEight"
+        ]
+      }
+    ],
+    "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "provenance": "COMMON_HARNESS_MATERIALIZATION",
+  "taskId": "fera-at-floor",
+  "answer": {
+    "fields": {
+      "status": "screened",
+      "care_status": "likely_not_eligible_by_income",
+      "fera_status": "likely_eligible",
+      "care_limit": 66000,
+      "fera_lower": 66001,
+      "fera_limit": 82500,
+      "stale": false,
+      "outside_effective_window": false,
+      "official_decision": false
+    },
+    "citations": [
+      {
+        "sourceId": "assistance-rules",
+        "locators": [
+          "/care_income_upper_limit/4",
+          "/fera_income_lower_limit/4",
+          "/fera_income_upper_limit/4",
+          "/verified_on",
+          "/effective_from",
+          "/effective_to"
+        ]
+      },
+      {
+        "sourceId": "screening-policy",
+        "locators": [
+          "/inputValidation",
+          "/freshness",
+          "/output",
+          "/incomeDecisionOrder",
+          "/fractionalIncome",
+          "/householdsAboveEight"
+        ]
+      }
+    ],
+    "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+  }
+}

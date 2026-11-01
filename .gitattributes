@@ -2,3 +2,4 @@
 # Preserve byte hashes of original observed run records across operating systems.
 benchmarks/**/results/*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 benchmarks/2026-10-29/results/**/*.json -text
+benchmarks/2026-11-01/results/**/*.json -text

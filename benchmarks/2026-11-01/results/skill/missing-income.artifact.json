@@ -1,0 +1,42 @@
+{
+  "provenance": "COMMON_HARNESS_MATERIALIZATION",
+  "taskId": "missing-income",
+  "answer": {
+    "fields": {
+      "status": "screened",
+      "care_status": "needs_information",
+      "fera_status": "needs_information",
+      "care_limit": 43280,
+      "fera_lower": 43281,
+      "fera_limit": 54100,
+      "stale": false,
+      "outside_effective_window": false,
+      "official_decision": false
+    },
+    "citations": [
+      {
+        "sourceId": "assistance-rules",
+        "locators": [
+          "/care_income_upper_limit/2",
+          "/fera_income_lower_limit/2",
+          "/fera_income_upper_limit/2",
+          "/verified_on",
+          "/effective_from",
+          "/effective_to"
+        ]
+      },
+      {
+        "sourceId": "screening-policy",
+        "locators": [
+          "/inputValidation",
+          "/freshness",
+          "/output",
+          "/incomeDecisionOrder",
+          "/fractionalIncome",
+          "/householdsAboveEight"
+        ]
+      }
+    ],
+    "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+  }
+}

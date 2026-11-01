@@ -1,0 +1,43 @@
+{
+  "provenance": "COMMON_HARNESS_MATERIALIZATION",
+  "taskId": "new-conflicting-bill",
+  "answer": {
+    "fields": {
+      "status": "REVIEW_REQUIRED",
+      "current_plan": "E-TOU-D",
+      "energy_charge_values": [
+        "88.20",
+        "88.70"
+      ],
+      "base_services_charge": "24.15",
+      "total_kwh": "315",
+      "conflicting_fields": [
+        "reported_energy_charge"
+      ],
+      "automatic_calculation": false,
+      "automatic_confirmation": false
+    },
+    "citations": [
+      {
+        "sourceId": "bill-text",
+        "locators": [
+          "/0/text",
+          "/1/text",
+          "/2/text",
+          "/3/text",
+          "/4/text",
+          "/5/text",
+          "/6/text"
+        ]
+      },
+      {
+        "sourceId": "workflow-policy",
+        "locators": [
+          "/bill",
+          "/artifacts"
+        ]
+      }
+    ],
+    "note": "Actual BillFit span extraction retains the conflicting page values and excludes amount due. This text-only fixture does not measure OCR; the user must confirm every field."
+  }
+}

@@ -1,0 +1,1070 @@
+{
+  "schema": "SHARED_EVIDENCE_RUN_V2",
+  "mode": "REAL_EXECUTION",
+  "syntheticInputs": true,
+  "arm": "skill",
+  "maintenance": false,
+  "clarified": false,
+  "catalogHash": "26190ae01f30bf0bb868054d38fa71300f87396e78ebc1ad3bb4881c6924ee17",
+  "corpusHash": "6321d08ed744fde9489b6b8442689d833f0a2e8a76c7071193fb39c28001bd47",
+  "startedAt": "2026-11-01T07:58:20.086174+00:00",
+  "completedAt": "2026-11-01T07:58:20.395659+00:00",
+  "billfitCommit": "d9d2a079312cf9948b4f5fe4084629ebf41f5cf2",
+  "results": [
+    {
+      "taskId": "care-at-ceiling",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_eligible",
+          "fera_status": "not_primary_path",
+          "care_limit": 66000,
+          "fera_lower": 66001,
+          "fera_limit": 82500,
+          "stale": false,
+          "outside_effective_window": false,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/4",
+              "/fera_income_lower_limit/4",
+              "/fera_income_upper_limit/4",
+              "/verified_on",
+              "/effective_from",
+              "/effective_to"
+            ]
+          },
+          {
+            "sourceId": "screening-policy",
+            "locators": [
+              "/inputValidation",
+              "/freshness",
+              "/output",
+              "/incomeDecisionOrder",
+              "/fractionalIncome",
+              "/householdsAboveEight"
+            ]
+          }
+        ],
+        "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+      },
+      "attempts": [],
+      "artifact": {
+        "path": "care-at-ceiling.artifact.json",
+        "bytes": 1246,
+        "sha256": "d8c94544e382a0a3c7af187ea7928b11bb479037669190941789cc6dde9d29fc",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 95,
+      "model": null,
+      "provider": null,
+      "candidateAnswer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_eligible",
+          "fera_status": "not_primary_path",
+          "care_limit": 66000,
+          "fera_lower": 66001,
+          "fera_limit": 82500,
+          "stale": false,
+          "outside_effective_window": false,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/4",
+              "/fera_income_lower_limit/4",
+              "/fera_income_upper_limit/4",
+              "/verified_on",
+              "/effective_from",
+              "/effective_to"
+            ]
+          },
+          {
+            "sourceId": "screening-policy",
+            "locators": [
+              "/inputValidation",
+              "/freshness",
+              "/output",
+              "/incomeDecisionOrder",
+              "/fractionalIncome",
+              "/householdsAboveEight"
+            ]
+          }
+        ],
+        "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+      }
+    },
+    {
+      "taskId": "fera-at-floor",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_not_eligible_by_income",
+          "fera_status": "likely_eligible",
+          "care_limit": 66000,
+          "fera_lower": 66001,
+          "fera_limit": 82500,
+          "stale": false,
+          "outside_effective_window": false,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/4",
+              "/fera_income_lower_limit/4",
+              "/fera_income_upper_limit/4",
+              "/verified_on",
+              "/effective_from",
+              "/effective_to"
+            ]
+          },
+          {
+            "sourceId": "screening-policy",
+            "locators": [
+              "/inputValidation",
+              "/freshness",
+              "/output",
+              "/incomeDecisionOrder",
+              "/fractionalIncome",
+              "/householdsAboveEight"
+            ]
+          }
+        ],
+        "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+      },
+      "attempts": [],
+      "artifact": {
+        "path": "fera-at-floor.artifact.json",
+        "bytes": 1257,
+        "sha256": "9b937d76a0528c11d90d802141ceb8ca501d09183cdb5c605a1eeb5792c0fbdc",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 4,
+      "model": null,
+      "provider": null,
+      "candidateAnswer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_not_eligible_by_income",
+          "fera_status": "likely_eligible",
+          "care_limit": 66000,
+          "fera_lower": 66001,
+          "fera_limit": 82500,
+          "stale": false,
+          "outside_effective_window": false,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/4",
+              "/fera_income_lower_limit/4",
+              "/fera_income_upper_limit/4",
+              "/verified_on",
+              "/effective_from",
+              "/effective_to"
+            ]
+          },
+          {
+            "sourceId": "screening-policy",
+            "locators": [
+              "/inputValidation",
+              "/freshness",
+              "/output",
+              "/incomeDecisionOrder",
+              "/fractionalIncome",
+              "/householdsAboveEight"
+            ]
+          }
+        ],
+        "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+      }
+    },
+    {
+      "taskId": "fractional-gap",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_not_eligible_by_income",
+          "fera_status": "needs_official_confirmation",
+          "care_limit": 66000,
+          "fera_lower": 66001,
+          "fera_limit": 82500,
+          "stale": false,
+          "outside_effective_window": false,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/4",
+              "/fera_income_lower_limit/4",
+              "/fera_income_upper_limit/4",
+              "/verified_on",
+              "/effective_from",
+              "/effective_to"
+            ]
+          },
+          {
+            "sourceId": "screening-policy",
+            "locators": [
+              "/inputValidation",
+              "/freshness",
+              "/output",
+              "/incomeDecisionOrder",
+              "/fractionalIncome",
+              "/householdsAboveEight"
+            ]
+          }
+        ],
+        "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+      },
+      "attempts": [],
+      "artifact": {
+        "path": "fractional-gap.artifact.json",
+        "bytes": 1270,
+        "sha256": "ebf34788a918bd35462073f2a0022b4e512378e0acaa5093d752e1710769a6d0",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 4,
+      "model": null,
+      "provider": null,
+      "candidateAnswer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_not_eligible_by_income",
+          "fera_status": "needs_official_confirmation",
+          "care_limit": 66000,
+          "fera_lower": 66001,
+          "fera_limit": 82500,
+          "stale": false,
+          "outside_effective_window": false,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/4",
+              "/fera_income_lower_limit/4",
+              "/fera_income_upper_limit/4",
+              "/verified_on",
+              "/effective_from",
+              "/effective_to"
+            ]
+          },
+          {
+            "sourceId": "screening-policy",
+            "locators": [
+              "/inputValidation",
+              "/freshness",
+              "/output",
+              "/incomeDecisionOrder",
+              "/fractionalIncome",
+              "/householdsAboveEight"
+            ]
+          }
+        ],
+        "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+      }
+    },
+    {
+      "taskId": "fera-at-ceiling",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_not_eligible_by_income",
+          "fera_status": "likely_eligible",
+          "care_limit": 54640,
+          "fera_lower": 54641,
+          "fera_limit": 68300,
+          "stale": false,
+          "outside_effective_window": false,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/3",
+              "/fera_income_lower_limit/3",
+              "/fera_income_upper_limit/3",
+              "/verified_on",
+              "/effective_from",
+              "/effective_to"
+            ]
+          },
+          {
+            "sourceId": "screening-policy",
+            "locators": [
+              "/inputValidation",
+              "/freshness",
+              "/output",
+              "/incomeDecisionOrder",
+              "/fractionalIncome",
+              "/householdsAboveEight"
+            ]
+          }
+        ],
+        "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+      },
+      "attempts": [],
+      "artifact": {
+        "path": "fera-at-ceiling.artifact.json",
+        "bytes": 1259,
+        "sha256": "fc5814338c8d6b9a6636bea5238635586ce89639fc0bf9433a0c524292e175e5",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 4,
+      "model": null,
+      "provider": null,
+      "candidateAnswer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_not_eligible_by_income",
+          "fera_status": "likely_eligible",
+          "care_limit": 54640,
+          "fera_lower": 54641,
+          "fera_limit": 68300,
+          "stale": false,
+          "outside_effective_window": false,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/3",
+              "/fera_income_lower_limit/3",
+              "/fera_income_upper_limit/3",
+              "/verified_on",
+              "/effective_from",
+              "/effective_to"
+            ]
+          },
+          {
+            "sourceId": "screening-policy",
+            "locators": [
+              "/inputValidation",
+              "/freshness",
+              "/output",
+              "/incomeDecisionOrder",
+              "/fractionalIncome",
+              "/householdsAboveEight"
+            ]
+          }
+        ],
+        "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+      }
+    },
+    {
+      "taskId": "above-fera-ceiling",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_not_eligible_by_income",
+          "fera_status": "likely_not_eligible_by_income",
+          "care_limit": 54640,
+          "fera_lower": 54641,
+          "fera_limit": 68300,
+          "stale": false,
+          "outside_effective_window": false,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/3",
+              "/fera_income_lower_limit/3",
+              "/fera_income_upper_limit/3",
+              "/verified_on",
+              "/effective_from",
+              "/effective_to"
+            ]
+          },
+          {
+            "sourceId": "screening-policy",
+            "locators": [
+              "/inputValidation",
+              "/freshness",
+              "/output",
+              "/incomeDecisionOrder",
+              "/fractionalIncome",
+              "/householdsAboveEight"
+            ]
+          }
+        ],
+        "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+      },
+      "attempts": [],
+      "artifact": {
+        "path": "above-fera-ceiling.artifact.json",
+        "bytes": 1276,
+        "sha256": "4f182ab8488d0c6906dda9476bc6f41b4dc9d8e2866c00c5735e5857ac04ee30",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 4,
+      "model": null,
+      "provider": null,
+      "candidateAnswer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_not_eligible_by_income",
+          "fera_status": "likely_not_eligible_by_income",
+          "care_limit": 54640,
+          "fera_lower": 54641,
+          "fera_limit": 68300,
+          "stale": false,
+          "outside_effective_window": false,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/3",
+              "/fera_income_lower_limit/3",
+              "/fera_income_upper_limit/3",
+              "/verified_on",
+              "/effective_from",
+              "/effective_to"
+            ]
+          },
+          {
+            "sourceId": "screening-policy",
+            "locators": [
+              "/inputValidation",
+              "/freshness",
+              "/output",
+              "/incomeDecisionOrder",
+              "/fractionalIncome",
+              "/householdsAboveEight"
+            ]
+          }
+        ],
+        "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+      }
+    },
+    {
+      "taskId": "missing-income",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "needs_information",
+          "fera_status": "needs_information",
+          "care_limit": 43280,
+          "fera_lower": 43281,
+          "fera_limit": 54100,
+          "stale": false,
+          "outside_effective_window": false,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/2",
+              "/fera_income_lower_limit/2",
+              "/fera_income_upper_limit/2",
+              "/verified_on",
+              "/effective_from",
+              "/effective_to"
+            ]
+          },
+          {
+            "sourceId": "screening-policy",
+            "locators": [
+              "/inputValidation",
+              "/freshness",
+              "/output",
+              "/incomeDecisionOrder",
+              "/fractionalIncome",
+              "/householdsAboveEight"
+            ]
+          }
+        ],
+        "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+      },
+      "attempts": [],
+      "artifact": {
+        "path": "missing-income.artifact.json",
+        "bytes": 1248,
+        "sha256": "972fbf4eb01c12bf4df35dffb4b6ce76c84b9b76d706364f21a3c281683e879c",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 4,
+      "model": null,
+      "provider": null,
+      "candidateAnswer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "needs_information",
+          "fera_status": "needs_information",
+          "care_limit": 43280,
+          "fera_lower": 43281,
+          "fera_limit": 54100,
+          "stale": false,
+          "outside_effective_window": false,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/2",
+              "/fera_income_lower_limit/2",
+              "/fera_income_upper_limit/2",
+              "/verified_on",
+              "/effective_from",
+              "/effective_to"
+            ]
+          },
+          {
+            "sourceId": "screening-policy",
+            "locators": [
+              "/inputValidation",
+              "/freshness",
+              "/output",
+              "/incomeDecisionOrder",
+              "/fractionalIncome",
+              "/householdsAboveEight"
+            ]
+          }
+        ],
+        "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+      }
+    },
+    {
+      "taskId": "overdue-still-effective",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_not_eligible_by_income",
+          "fera_status": "likely_eligible",
+          "care_limit": 43280,
+          "fera_lower": 43281,
+          "fera_limit": 54100,
+          "stale": true,
+          "outside_effective_window": false,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/2",
+              "/fera_income_lower_limit/2",
+              "/fera_income_upper_limit/2",
+              "/verified_on",
+              "/effective_from",
+              "/effective_to"
+            ]
+          },
+          {
+            "sourceId": "screening-policy",
+            "locators": [
+              "/inputValidation",
+              "/freshness",
+              "/output",
+              "/incomeDecisionOrder",
+              "/fractionalIncome",
+              "/householdsAboveEight"
+            ]
+          }
+        ],
+        "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+      },
+      "attempts": [],
+      "artifact": {
+        "path": "overdue-still-effective.artifact.json",
+        "bytes": 1266,
+        "sha256": "b9febf573aaaa66a63d29d922388e37ff4822fc776b9251246e6d9faff18ecf8",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 4,
+      "model": null,
+      "provider": null,
+      "candidateAnswer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_not_eligible_by_income",
+          "fera_status": "likely_eligible",
+          "care_limit": 43280,
+          "fera_lower": 43281,
+          "fera_limit": 54100,
+          "stale": true,
+          "outside_effective_window": false,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/2",
+              "/fera_income_lower_limit/2",
+              "/fera_income_upper_limit/2",
+              "/verified_on",
+              "/effective_from",
+              "/effective_to"
+            ]
+          },
+          {
+            "sourceId": "screening-policy",
+            "locators": [
+              "/inputValidation",
+              "/freshness",
+              "/output",
+              "/incomeDecisionOrder",
+              "/fractionalIncome",
+              "/householdsAboveEight"
+            ]
+          }
+        ],
+        "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+      }
+    },
+    {
+      "taskId": "nine-person-household",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_eligible",
+          "fera_status": "not_primary_path",
+          "care_limit": 122800,
+          "fera_lower": 122801,
+          "fera_limit": 153500,
+          "stale": false,
+          "outside_effective_window": false,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/8",
+              "/fera_income_lower_limit/8",
+              "/fera_income_upper_limit/8",
+              "/verified_on",
+              "/effective_from",
+              "/effective_to",
+              "/care_income_upper_limit/additional_person",
+              "/fera_income_lower_limit/additional_person",
+              "/fera_income_upper_limit/additional_person"
+            ]
+          },
+          {
+            "sourceId": "screening-policy",
+            "locators": [
+              "/inputValidation",
+              "/freshness",
+              "/output",
+              "/incomeDecisionOrder",
+              "/fractionalIncome",
+              "/householdsAboveEight"
+            ]
+          }
+        ],
+        "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+      },
+      "attempts": [],
+      "artifact": {
+        "path": "nine-person-household.artifact.json",
+        "bytes": 1423,
+        "sha256": "c63e0aa4d338d3851449b1b944cb1b011082f8d840537546a59bbc31534ed452",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 4,
+      "model": null,
+      "provider": null,
+      "candidateAnswer": {
+        "fields": {
+          "status": "screened",
+          "care_status": "likely_eligible",
+          "fera_status": "not_primary_path",
+          "care_limit": 122800,
+          "fera_lower": 122801,
+          "fera_limit": 153500,
+          "stale": false,
+          "outside_effective_window": false,
+          "official_decision": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/8",
+              "/fera_income_lower_limit/8",
+              "/fera_income_upper_limit/8",
+              "/verified_on",
+              "/effective_from",
+              "/effective_to",
+              "/care_income_upper_limit/additional_person",
+              "/fera_income_lower_limit/additional_person",
+              "/fera_income_upper_limit/additional_person"
+            ]
+          },
+          {
+            "sourceId": "screening-policy",
+            "locators": [
+              "/inputValidation",
+              "/freshness",
+              "/output",
+              "/incomeDecisionOrder",
+              "/fractionalIncome",
+              "/householdsAboveEight"
+            ]
+          }
+        ],
+        "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+      }
+    },
+    {
+      "taskId": "outside-effective-window",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "rules_outside_effective_window",
+          "stale": true,
+          "outside_effective_window": true,
+          "care_status": "not_screened",
+          "fera_status": "not_screened",
+          "can_act": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/3",
+              "/fera_income_lower_limit/3",
+              "/fera_income_upper_limit/3",
+              "/verified_on",
+              "/effective_from",
+              "/effective_to"
+            ]
+          },
+          {
+            "sourceId": "screening-policy",
+            "locators": [
+              "/inputValidation",
+              "/freshness",
+              "/output",
+              "/incomeDecisionOrder",
+              "/fractionalIncome",
+              "/householdsAboveEight"
+            ]
+          }
+        ],
+        "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+      },
+      "attempts": [],
+      "artifact": {
+        "path": "outside-effective-window.artifact.json",
+        "bytes": 1177,
+        "sha256": "7a9d2e7d455936fe6fb29d7e351af1266cec20e8e6e218a0d301f1c278d5741a",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 5,
+      "model": null,
+      "provider": null,
+      "candidateAnswer": {
+        "fields": {
+          "status": "rules_outside_effective_window",
+          "stale": true,
+          "outside_effective_window": true,
+          "care_status": "not_screened",
+          "fera_status": "not_screened",
+          "can_act": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/3",
+              "/fera_income_lower_limit/3",
+              "/fera_income_upper_limit/3",
+              "/verified_on",
+              "/effective_from",
+              "/effective_to"
+            ]
+          },
+          {
+            "sourceId": "screening-policy",
+            "locators": [
+              "/inputValidation",
+              "/freshness",
+              "/output",
+              "/incomeDecisionOrder",
+              "/fractionalIncome",
+              "/householdsAboveEight"
+            ]
+          }
+        ],
+        "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+      }
+    },
+    {
+      "taskId": "negative-income",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "error": "INVALID_INCOME",
+          "official_decision": false,
+          "can_act": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/3",
+              "/fera_income_lower_limit/3",
+              "/fera_income_upper_limit/3",
+              "/verified_on",
+              "/effective_from",
+              "/effective_to"
+            ]
+          },
+          {
+            "sourceId": "screening-policy",
+            "locators": [
+              "/inputValidation",
+              "/freshness",
+              "/output",
+              "/incomeDecisionOrder",
+              "/fractionalIncome",
+              "/householdsAboveEight"
+            ]
+          }
+        ],
+        "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+      },
+      "attempts": [],
+      "artifact": {
+        "path": "negative-income.artifact.json",
+        "bytes": 1050,
+        "sha256": "1da8be25a6f80e833f35d0908e53e232975c82382bae98f7fdcd626ef10ad842",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 5,
+      "model": null,
+      "provider": null,
+      "candidateAnswer": {
+        "fields": {
+          "error": "INVALID_INCOME",
+          "official_decision": false,
+          "can_act": false
+        },
+        "citations": [
+          {
+            "sourceId": "assistance-rules",
+            "locators": [
+              "/care_income_upper_limit/3",
+              "/fera_income_lower_limit/3",
+              "/fera_income_upper_limit/3",
+              "/verified_on",
+              "/effective_from",
+              "/effective_to"
+            ]
+          },
+          {
+            "sourceId": "screening-policy",
+            "locators": [
+              "/inputValidation",
+              "/freshness",
+              "/output",
+              "/incomeDecisionOrder",
+              "/fractionalIncome",
+              "/householdsAboveEight"
+            ]
+          }
+        ],
+        "note": "Actual BillFit income-only screening on the equally supplied snapshot and declared decision semantics. This is preliminary; no enrollment, official decision or utility action occurs. Unknown precision and stale evidence require confirmation."
+      }
+    },
+    {
+      "taskId": "new-conflicting-bill",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "REVIEW_REQUIRED",
+          "current_plan": "E-TOU-D",
+          "energy_charge_values": [
+            "88.20",
+            "88.70"
+          ],
+          "base_services_charge": "24.15",
+          "total_kwh": "315",
+          "conflicting_fields": [
+            "reported_energy_charge"
+          ],
+          "automatic_calculation": false,
+          "automatic_confirmation": false
+        },
+        "citations": [
+          {
+            "sourceId": "bill-text",
+            "locators": [
+              "/0/text",
+              "/1/text",
+              "/2/text",
+              "/3/text",
+              "/4/text",
+              "/5/text",
+              "/6/text"
+            ]
+          },
+          {
+            "sourceId": "workflow-policy",
+            "locators": [
+              "/bill",
+              "/artifacts"
+            ]
+          }
+        ],
+        "note": "Actual BillFit span extraction retains the conflicting page values and excludes amount due. This text-only fixture does not measure OCR; the user must confirm every field."
+      },
+      "attempts": [],
+      "artifact": {
+        "path": "new-conflicting-bill.artifact.json",
+        "bytes": 1055,
+        "sha256": "cffd20ba2b59824bae6d235e5fc1aef6cdca9d0cd7095173c00465aeef3c7582",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 5,
+      "model": null,
+      "provider": null,
+      "candidateAnswer": {
+        "fields": {
+          "status": "REVIEW_REQUIRED",
+          "current_plan": "E-TOU-D",
+          "energy_charge_values": [
+            "88.20",
+            "88.70"
+          ],
+          "base_services_charge": "24.15",
+          "total_kwh": "315",
+          "conflicting_fields": [
+            "reported_energy_charge"
+          ],
+          "automatic_calculation": false,
+          "automatic_confirmation": false
+        },
+        "citations": [
+          {
+            "sourceId": "bill-text",
+            "locators": [
+              "/0/text",
+              "/1/text",
+              "/2/text",
+              "/3/text",
+              "/4/text",
+              "/5/text",
+              "/6/text"
+            ]
+          },
+          {
+            "sourceId": "workflow-policy",
+            "locators": [
+              "/bill",
+              "/artifacts"
+            ]
+          }
+        ],
+        "note": "Actual BillFit span extraction retains the conflicting page values and excludes amount due. This text-only fixture does not measure OCR; the user must confirm every field."
+      }
+    },
+    {
+      "taskId": "new-duplicate-usage",
+      "status": "OBSERVED",
+      "answer": {
+        "fields": {
+          "status": "parsed",
+          "unique_intervals": 4,
+          "duplicate_intervals_removed": 1,
+          "total_kwh": 5.5,
+          "hours_covered": 4.0,
+          "recommendation_ready": false
+        },
+        "citations": [
+          {
+            "sourceId": "usage-csv",
+            "locators": [
+              "/1",
+              "/2",
+              "/3",
+              "/4",
+              "/5"
+            ]
+          },
+          {
+            "sourceId": "workflow-policy",
+            "locators": [
+              "/usage",
+              "/artifacts"
+            ]
+          }
+        ],
+        "note": "Actual BillFit interval parsing removes duplicate readings and totals unique energy. The four-hour sample withholds switching guidance; no annual saving or rate-plan change is established."
+      },
+      "attempts": [],
+      "artifact": {
+        "path": "new-duplicate-usage.artifact.json",
+        "bytes": 833,
+        "sha256": "5961e7743193e1651082204f895ce8068830e58c80fa6e00dd27dc6c142d3cb8",
+        "provenance": "COMMON_HARNESS_MATERIALIZATION"
+      },
+      "durationMs": 17,
+      "model": null,
+      "provider": null,
+      "candidateAnswer": {
+        "fields": {
+          "status": "parsed",
+          "unique_intervals": 4,
+          "duplicate_intervals_removed": 1,
+          "total_kwh": 5.5,
+          "hours_covered": 4.0,
+          "recommendation_ready": false
+        },
+        "citations": [
+          {
+            "sourceId": "usage-csv",
+            "locators": [
+              "/1",
+              "/2",
+              "/3",
+              "/4",
+              "/5"
+            ]
+          },
+          {
+            "sourceId": "workflow-policy",
+            "locators": [
+              "/usage",
+              "/artifacts"
+            ]
+          }
+        ],
+        "note": "Actual BillFit interval parsing removes duplicate readings and totals unique energy. The four-hour sample withholds switching guidance; no annual saving or rate-plan change is established."
+      }
+    }
+  ],
+  "roundId": "2026-11-01"
+}

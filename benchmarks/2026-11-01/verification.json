@@ -1,0 +1,410 @@
+{
+  "schema": "SHARED_POLICY_VERIFICATION_V1",
+  "observedAtUtc": "2026-11-01T08:00:41.404868+00:00",
+  "baseCommit": "4a6bbdee746b93cc27d7c749b510f43b5639704e",
+  "frozenProtocolCommit": "e6082ad9bdd07f967f9ee187c825f1be503b2165",
+  "runtimeCommit": "beec2f488e8af10461b1152e9db011e0c9747b24",
+  "billfitCommit": "d9d2a079312cf9948b4f5fe4084629ebf41f5cf2",
+  "environment": {
+    "python": "3.11.3",
+    "platform": "Windows",
+    "newDependencies": []
+  },
+  "officialCheck": {
+    "url": "https://www.cpuc.ca.gov/care/",
+    "checkedOn": "2026-11-01",
+    "method": "Official page read through web retrieval; eight table rows, effective window and additional-person increments inspected",
+    "rawResponseHash": null,
+    "verifiedOnInSnapshot": "2026-10-27",
+    "independentReviewer": false
+  },
+  "before": {
+    "tests": 42,
+    "passed": true,
+    "newContracts": "IMPORT_ERROR_MODULE_NOT_IMPLEMENTED",
+    "newPolicyPreflightOnHistoricalCorpus": "POLICY_DOCUMENTS",
+    "historicalModelResultsRegraded": false
+  },
+  "after": {
+    "tests": 50,
+    "passed": true,
+    "skipped": 0,
+    "policyCoverage": {
+      "status": "PASS",
+      "scope": "BOUNDED_INCOME_AND_TWO_SYNTHETIC_FILE_TASKS",
+      "rangeRowsChecked": 8,
+      "additionalPersonChecked": true,
+      "decisionBranchesChecked": 5,
+      "simulatedPolicy": false,
+      "independentPolicyReview": false
+    },
+    "primary": {
+      "completed": 12,
+      "factsCorrect": 95,
+      "factsRequired": 95,
+      "durationMs": 155
+    },
+    "maintenance": {
+      "completed": 1,
+      "factsCorrect": 9,
+      "factsRequired": 9,
+      "durationMs": 88
+    }
+  },
+  "sameEvidenceAndFormat": [
+    {
+      "taskId": "care-at-ceiling",
+      "evidenceHash": "0e4278241b33c601567ea71ffbf04046ff7d3e86013d434f9c0d104c1f936c36",
+      "responseContractHash": "a7e9176bc20a0de618ff15a6b4ad9579f57a4dbf2ea41fd732543b6bb8e5a73a",
+      "modelRequestHash": "dc2e5f28747d08243e64594eed0ceb332a50005a3a3c1fa18c8bee03fc5e54a0",
+      "agentRequestHash": "9167d4200d1dba28e4c44d0f7deebc0db850acb0f0a1405046eb72a369930129"
+    },
+    {
+      "taskId": "fera-at-floor",
+      "evidenceHash": "0e4278241b33c601567ea71ffbf04046ff7d3e86013d434f9c0d104c1f936c36",
+      "responseContractHash": "a7e9176bc20a0de618ff15a6b4ad9579f57a4dbf2ea41fd732543b6bb8e5a73a",
+      "modelRequestHash": "1e59421e7977ed8661765ab720596d7fcbfa052402caf14c3a6017fc464feb3c",
+      "agentRequestHash": "970f647677dd5cd813f0ed500323e9d2bc8b942f49ac34f6c769c62947260896"
+    },
+    {
+      "taskId": "fractional-gap",
+      "evidenceHash": "0e4278241b33c601567ea71ffbf04046ff7d3e86013d434f9c0d104c1f936c36",
+      "responseContractHash": "a7e9176bc20a0de618ff15a6b4ad9579f57a4dbf2ea41fd732543b6bb8e5a73a",
+      "modelRequestHash": "1e14b85c60e0821f6b04905ef9e78a94878c328fe0628edbfb747b43def457c5",
+      "agentRequestHash": "79c0db62ce00409a07d4d25a622322aa351aecb274f5dd002bfff176093815df"
+    },
+    {
+      "taskId": "fera-at-ceiling",
+      "evidenceHash": "0e4278241b33c601567ea71ffbf04046ff7d3e86013d434f9c0d104c1f936c36",
+      "responseContractHash": "a7e9176bc20a0de618ff15a6b4ad9579f57a4dbf2ea41fd732543b6bb8e5a73a",
+      "modelRequestHash": "743022f05748f1d8386c2163529fce544f1cd34da2d8a5bceb672c5474a74ddc",
+      "agentRequestHash": "70b5c20757be335efe19cca429b84288f17c49153e178d9f8fed125a5df3ff26"
+    },
+    {
+      "taskId": "above-fera-ceiling",
+      "evidenceHash": "0e4278241b33c601567ea71ffbf04046ff7d3e86013d434f9c0d104c1f936c36",
+      "responseContractHash": "a7e9176bc20a0de618ff15a6b4ad9579f57a4dbf2ea41fd732543b6bb8e5a73a",
+      "modelRequestHash": "9dcd6304ff44d05e3149ca61930b4b5e7fa7c8e4289e4df283ca35d2f0de8ef2",
+      "agentRequestHash": "70e1bc4bf570bf76133c5071d5d01861ab933859d37f47955c45de8158762e0e"
+    },
+    {
+      "taskId": "missing-income",
+      "evidenceHash": "0e4278241b33c601567ea71ffbf04046ff7d3e86013d434f9c0d104c1f936c36",
+      "responseContractHash": "a7e9176bc20a0de618ff15a6b4ad9579f57a4dbf2ea41fd732543b6bb8e5a73a",
+      "modelRequestHash": "d93d789993805470479c02e2ab29563cdf5470690cec6cee8255c90f362105a2",
+      "agentRequestHash": "5d0be7284ffd1d7ba32b7495598da6bf76a57adc9d36091c2a518ccaad6cc8bc"
+    },
+    {
+      "taskId": "overdue-still-effective",
+      "evidenceHash": "0e4278241b33c601567ea71ffbf04046ff7d3e86013d434f9c0d104c1f936c36",
+      "responseContractHash": "a7e9176bc20a0de618ff15a6b4ad9579f57a4dbf2ea41fd732543b6bb8e5a73a",
+      "modelRequestHash": "c268c333001fa76bc56da1fa890411b71745f1d7c433881541118c2f3f8c187b",
+      "agentRequestHash": "bb9c8e0a817500e84a57046eae0a3027057179816df1f40efcd6c31d1dbc8b49"
+    },
+    {
+      "taskId": "nine-person-household",
+      "evidenceHash": "0e4278241b33c601567ea71ffbf04046ff7d3e86013d434f9c0d104c1f936c36",
+      "responseContractHash": "a7e9176bc20a0de618ff15a6b4ad9579f57a4dbf2ea41fd732543b6bb8e5a73a",
+      "modelRequestHash": "e1967d33e3da4cba18503a3cca44317edde5a79aa8282e4c5a230d9ca16223e1",
+      "agentRequestHash": "7f4409133928f5d02428859e8c1903a06401c013df94d42a89db92b23cff8722"
+    },
+    {
+      "taskId": "outside-effective-window",
+      "evidenceHash": "0e4278241b33c601567ea71ffbf04046ff7d3e86013d434f9c0d104c1f936c36",
+      "responseContractHash": "6f785573b4a69e980fcd2635816c2edfcc32f77d9ea00ae7e456bb45635e7f39",
+      "modelRequestHash": "722789a9c8b7ea85d01319bf4a4254f2743bfb5fe832722efb7978a5ef66e75f",
+      "agentRequestHash": "0e1a856f1d1afa77ffb09b48c28e3efb475570b37e1b24abd3910419f7847653"
+    },
+    {
+      "taskId": "negative-income",
+      "evidenceHash": "0e4278241b33c601567ea71ffbf04046ff7d3e86013d434f9c0d104c1f936c36",
+      "responseContractHash": "567b538775c790c1d93449af43cecb43015dfb2b6b20b281d87cbffd3711887e",
+      "modelRequestHash": "7f619d06bb11c1b838857e3d811494bf3da0f0990b59bb6a36c27f5a512c66dc",
+      "agentRequestHash": "c7aadc7ad6f499703c7bf6ab5d6f0c95ac7cf73c03748e693b9ca6e885d0d44e"
+    },
+    {
+      "taskId": "new-conflicting-bill",
+      "evidenceHash": "e1a22b699e067c86737590876a1d1373576207e70a96452f34eacd4d854886a3",
+      "responseContractHash": "c1b51996fbdf87ec00fe578b69af39b308b12194d8100639874a7f2d08912d1e",
+      "modelRequestHash": "386ea3611c2d80fa279a562bf9414d6c0d538260302d2f867206af6be4ef158f",
+      "agentRequestHash": "3a861d6b58f3d1b85556a72126eb9da9bd386fd9debb351f0298d15e32dd3d9e"
+    },
+    {
+      "taskId": "new-duplicate-usage",
+      "evidenceHash": "a103eb5c15622956ffb66b5dbf76e4459efc82c1e2fb66952657791a84952a45",
+      "responseContractHash": "fa48dd9fb6418829f9393120514a3341a2be71e7d6652c2d69de3e20c2f04e05",
+      "modelRequestHash": "0ff7c9cc951ed53d47c5c10c8cbc07b42b3b115354e001f2281a649a5cc6b7f8",
+      "agentRequestHash": "64739e6482fc5e307d235814aad524aab070095f0465d717d52ea2bf21b2e012"
+    }
+  ],
+  "historicalFiles": [
+    {
+      "path": "benchmarks/2026-10-27/RESULTS.md",
+      "gitBlobSha256": "52860ef7bd71ed2fafa9089bdc4c653f06605b3ef1ea9455fe07f6c34fdee2d5"
+    },
+    {
+      "path": "benchmarks/2026-10-27/results/agent.json",
+      "gitBlobSha256": "96dca404f82d3c907ee339ffc2daa33ff5e60e3e220c6b4c264a1bb551732509"
+    },
+    {
+      "path": "benchmarks/2026-10-27/results/analysis.json",
+      "gitBlobSha256": "9d8aeb9f38d565f6be48aadb8914b80b13f42e526ebbd4645353b9972429a85f"
+    },
+    {
+      "path": "benchmarks/2026-10-27/results/model.json",
+      "gitBlobSha256": "3bbade91b0ff53485156cbd6081558db176e373c9516a190f3633add4f33eaff"
+    },
+    {
+      "path": "benchmarks/2026-10-27/results/skill.json",
+      "gitBlobSha256": "d90a2a4e2a35ae7fbfaa6b511ee3781723e8fda3612f9409ce76bb7d5a8fea65"
+    },
+    {
+      "path": "benchmarks/2026-10-27/sources/cpuc-assistance.json",
+      "gitBlobSha256": "145a5becc0610674d385cc0bf825b9d015502e4f8208ba5c8a5d337a39d6e8a8"
+    },
+    {
+      "path": "benchmarks/2026-10-27/tasks.json",
+      "gitBlobSha256": "28994511a5527ae0f1c8f906484f4fb641b4309c28023a39dfe2cae63e33199d"
+    },
+    {
+      "path": "benchmarks/2026-10-28/USAGE_CAPTURE.md",
+      "gitBlobSha256": "04afb623ef9ac9801b9902cb2b9df551a73c1ad0e461e034088c7412b956a8f1"
+    },
+    {
+      "path": "benchmarks/2026-10-28/usage-probe.json",
+      "gitBlobSha256": "a3f5e99117667f81f57669616742bd79a695ef9097f20c913ec94897866cb1d8"
+    },
+    {
+      "path": "benchmarks/2026-10-29/CALIBRATION.md",
+      "gitBlobSha256": "00afddd6f07b06e20a8c8acfd725c031d8fa8ff55ae0dd51bb9875f7acb02058"
+    },
+    {
+      "path": "benchmarks/2026-10-29/PROTOCOL.md",
+      "gitBlobSha256": "4f44380af939c24d90880ecba61cba9b142dacb32951f7e96488ea1008dfc265"
+    },
+    {
+      "path": "benchmarks/2026-10-29/README.md",
+      "gitBlobSha256": "80a0b0fe9dfaafff4b5e2cb76a70d21b7874502f0552c846573cca2c67961a8d"
+    },
+    {
+      "path": "benchmarks/2026-10-29/RESULTS.md",
+      "gitBlobSha256": "37d3ba41d39ba264afc3e0d66393c065cbe2ce77f3f0c35c4bc5938c2bf6db29"
+    },
+    {
+      "path": "benchmarks/2026-10-29/VERIFICATION.md",
+      "gitBlobSha256": "acd0f5a3c81bbc64b638557832215155733dd94a4e23011cf9f7837ce703afeb"
+    },
+    {
+      "path": "benchmarks/2026-10-29/analysis.json",
+      "gitBlobSha256": "f2d63fc07bc952baa761f04909194be8f0302c99c953cafb565fe4113e56b7f4"
+    },
+    {
+      "path": "benchmarks/2026-10-29/corpus.json",
+      "gitBlobSha256": "c188b78ee5907d8e86cd04668c084086599ccb5990fca9de1402746e6f3e40d5"
+    },
+    {
+      "path": "benchmarks/2026-10-29/line-ending-correction.json",
+      "gitBlobSha256": "a21c4ef6ce8d728f7ab9e1747a14b083439b585b005ba3d21b9fa848d4ef44a2"
+    },
+    {
+      "path": "benchmarks/2026-10-29/response-format.json",
+      "gitBlobSha256": "40165b3051ec75a4cb4a1597d8e04a74e4156ae8f728de81ba20fd997a88f057"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/agent/current-income.artifact.json",
+      "gitBlobSha256": "c8e2b5b8d4a3bbbdf0a08a8a2b3a498b69e75bc5879dbca09a4f712bc3334ec7"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/agent/expired-snapshot.artifact.json",
+      "gitBlobSha256": "9e4e9ad3db6ac38bcb6c3fd209cbd9d4315b165b394ab384b36039db21a4d0f0"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/agent/invalid-income.artifact.json",
+      "gitBlobSha256": "ba843eef08f1aea417ccac2da26e2c155986937a0e6ee855ca110118ac3bb8a6"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/agent/run.json",
+      "gitBlobSha256": "a7a77454d87b60f7394b717bc8e42ed437cdf2ffacfa1500c5a381941dfb8892"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/clarified-agent/conflicting-bill.artifact.json",
+      "gitBlobSha256": "48b6bc695a4b7e8ccf450e29ca36d6c0541b34b225bb8a7e9ae0852fa4a7e663"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/clarified-agent/current-income.artifact.json",
+      "gitBlobSha256": "7eb4cb1f1d99bf8c0df9b0aaabc9ea6a134c5a24b119f9167466dcaf89c6ffda"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/clarified-agent/duplicate-usage.artifact.json",
+      "gitBlobSha256": "753cb33eec4956ddf18b4ca841a73929ee3537c24327cc55ce769ec4f7205a29"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/clarified-agent/run.json",
+      "gitBlobSha256": "e1225e5a5661fc808258e844f842bf2073b11dc61c0bffd7b144f4fe26e4b63e"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/clarified-maintenance-agent/run.json",
+      "gitBlobSha256": "9b632190b0eba663fc393896588f2b8346db5da96b7f20b410eceaff1916f801"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/clarified-maintenance-model/current-income.artifact.json",
+      "gitBlobSha256": "d47c043221eb9bc1d93e2eb774d6b839e8cbcedc2f18155a2e528c5459941ab6"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/clarified-maintenance-model/run.json",
+      "gitBlobSha256": "6e9fa2e27ad61f85fb1a27d7c8e57899f12e5a8797118557a3bbd73f8d5bf240"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/clarified-maintenance-skill/current-income.artifact.json",
+      "gitBlobSha256": "28bc3434bcea98b9b77f49b5f14a4dc6cace3727b19a54a799782395c692690f"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/clarified-maintenance-skill/run.json",
+      "gitBlobSha256": "ecf8751edad2f2f274c0ad69cf148f2a0e615e503052c25eca43cfdd2b78eb63"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/clarified-model/conflicting-bill.artifact.json",
+      "gitBlobSha256": "765789db07f0a2de7c11cc0acff457b8b28b7e6c1e62c242b3edb6b48402bd5e"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/clarified-model/current-income.artifact.json",
+      "gitBlobSha256": "274084a0e9c79c05bd009623d93a9963de7b731f5d17f0676d97d52ea57b6682"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/clarified-model/run.json",
+      "gitBlobSha256": "76eb4ccc958664afea227123cde6d946fb2531b26441638fbdb6b9ddbdeb4a94"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/clarified-skill/conflicting-bill.artifact.json",
+      "gitBlobSha256": "39840d26cd76dadef837c443cea68f46d1ae68d55973f8bbbb84088f2894ad2a"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/clarified-skill/current-income.artifact.json",
+      "gitBlobSha256": "33e311b1e018c0242b3255db334d7a862496244d586856fc25b7ecf35ee3bf21"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/clarified-skill/run.json",
+      "gitBlobSha256": "7649621e1634cfab0ff0bc8b864073419b3aedc0f622f89c26765ca32f69b7ef"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/maintenance-skill/current-income.artifact.json",
+      "gitBlobSha256": "28bc3434bcea98b9b77f49b5f14a4dc6cace3727b19a54a799782395c692690f"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/maintenance-skill/run.json",
+      "gitBlobSha256": "10ba8fd0f7294b8d74885811e97c52521f3ca15e37e72c87c61e270b1c8df474"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/model/current-income.artifact.json",
+      "gitBlobSha256": "c0a84f59020b9ac97614a5d16bfdd1bcdd90cbca8e5004335e392bb629a1d461"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/model/duplicate-usage.artifact.json",
+      "gitBlobSha256": "c510a0e60a52bc82debfc5c4843c52e8e0e826e9cec9b6ae9ea675705ee3b172"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/model/expired-snapshot.artifact.json",
+      "gitBlobSha256": "bc588e1b1e743e0454cde1e3a0f99e5b44ac72cd9e5f0d15130a93d557183299"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/model/invalid-income.artifact.json",
+      "gitBlobSha256": "10f813e0c577f6ad77b88a3e670354b8b31d790ebae6403c26b7c386fe5a7833"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/model/missing-income.artifact.json",
+      "gitBlobSha256": "62bc1a59b99260611a2f7e8d99bc746bb2f31e3c6480b3527ad0fae0ecddf76d"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/model/run.json",
+      "gitBlobSha256": "45eaf2a18ad8a5ce34be1bebbcea1cb5c6c01ad42ca0b755cb8ea6c01c7282eb"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/skill/conflicting-bill.artifact.json",
+      "gitBlobSha256": "39840d26cd76dadef837c443cea68f46d1ae68d55973f8bbbb84088f2894ad2a"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/skill/current-income.artifact.json",
+      "gitBlobSha256": "33e311b1e018c0242b3255db334d7a862496244d586856fc25b7ecf35ee3bf21"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/skill/expired-snapshot.artifact.json",
+      "gitBlobSha256": "7bf3a685c51f49cbe6c47e0f58f624398eb74931129da9cf11123d52d2f04072"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/skill/invalid-income.artifact.json",
+      "gitBlobSha256": "f8806226f7dcfe4a1e07704bca1414d61a91143d9ffc8639808460fe94fce86a"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/skill/missing-income.artifact.json",
+      "gitBlobSha256": "51fdf08d0b73c788c2a3d240c8f451036e8d5d1ee77f59b92409542a81a5a467"
+    },
+    {
+      "path": "benchmarks/2026-10-29/results/skill/run.json",
+      "gitBlobSha256": "763173bbddf4404bb73e9c4fe084d93609443db342778e789025b8c97cd790aa"
+    },
+    {
+      "path": "benchmarks/2026-10-29/skill-usage-diagnostic.json",
+      "gitBlobSha256": "ca4d3a8200e8b18540c7e2177adf83a2ec2ef99dd2877a2cb50bffc488b7bbe9"
+    },
+    {
+      "path": "benchmarks/2026-10-29/tasks.json",
+      "gitBlobSha256": "e190d7a7d32df4caefb977fa35565ec3c217375a0f4c4e9a053dae9b597f55b6"
+    },
+    {
+      "path": "benchmarks/2026-10-31/transcript-integrity/README.md",
+      "gitBlobSha256": "eda799c3d842206805834200d536df5fb27fd8adbe9b6f3ae7afedc08db883c7"
+    },
+    {
+      "path": "benchmarks/2026-10-31/transcript-integrity/after-frozen-probes.txt",
+      "gitBlobSha256": "2e9cc1b6645d91e0d86d695a7608a57eb5cecbacac84675df8f6e3f4a48eedf6"
+    },
+    {
+      "path": "benchmarks/2026-10-31/transcript-integrity/before.txt",
+      "gitBlobSha256": "67153a9c80fd3f8f2eb6af250ff729bf07a45e6aed882c8bbe9aec74c5705b86"
+    },
+    {
+      "path": "benchmarks/2026-10-31/transcript-integrity/full-suite.txt",
+      "gitBlobSha256": "2cb3d161711c3d095b6ab3dae441296f9b91a942dd6e5b2096fca825d0289e31"
+    },
+    {
+      "path": "benchmarks/2026-10-31/transcript-integrity/verification.json",
+      "gitBlobSha256": "a25ce11967fedd29b832d7712720df5de9c22b6a91d268a4df4a5d782d2c6865"
+    },
+    {
+      "path": "benchmarks/README.md",
+      "gitBlobSha256": "db22bcfb5597d7bf0b5d2052239d021648e3460e90426aa25350e42e53497cfe"
+    }
+  ],
+  "testLogs": [
+    {
+      "file": "baseline-tests.txt",
+      "originalLocalSha256": "88d13bf69abfd4ebcfb1bc3e4db2ee1af8778e60ad678ad80f539949a42d2dcf",
+      "publicSha256": "b6d5e72b63f250489ee47b250fa81ec368071853eaffc8f923198581e3dcdcb3",
+      "transformation": "UTF-8 LF; local workspace and Python installation paths redacted"
+    },
+    {
+      "file": "new-contracts-before.txt",
+      "originalLocalSha256": "fe0a44e9b40333f5c6d212b6037a0b066bb8c121d72610d819836620be7e80ea",
+      "publicSha256": "f31c30f525f8e5021a6cbb866720c5b05ce9d0811cb3a09cbbc4ec9ef463b3a4",
+      "transformation": "UTF-8 LF; local workspace and Python installation paths redacted"
+    },
+    {
+      "file": "new-contracts-after.txt",
+      "originalLocalSha256": "3a6d5c2dd44a730623f49f6ddd8b6b525d5ed335a04bf9f44bdf9b96a246dc91",
+      "publicSha256": "709fca0ad4278d362e1b58cd9e7d5c18e70e78f37a84e008fb53cd70c607a60a",
+      "transformation": "UTF-8 LF; local workspace and Python installation paths redacted"
+    },
+    {
+      "file": "full-tests.txt",
+      "originalLocalSha256": "daa1e607df277e42118d16ebc565dfe95632335a9f9746a74007d80622db27f0",
+      "publicSha256": "faf583bf72f553e422e7283c5a08a7c27a7da32b83eed03c80ba22d8fa7fad9f",
+      "transformation": "UTF-8 LF; local workspace and Python installation paths redacted"
+    }
+  ],
+  "newProviderCalls": 0,
+  "realHouseholdOutcomes": 0,
+  "independentUsers": 0,
+  "wholeGoalComplete": false,
+  "newModelResults": null,
+  "comparativeImprovement": null
+}

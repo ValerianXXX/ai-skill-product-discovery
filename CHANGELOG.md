@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased - 2026-11-01
+
+- Add a separately frozen twelve-task income/file round with complete declared screening semantics, lower bounds, fractional-income uncertainty and predeclared response format. Preserve all 59 existing benchmark files byte-for-byte.
+- Separate policy coverage, dated round loading and the current BillFit bridge from historical collection. Export identical bounded evidence for both general arms; reject new model/Agent runs while this round's budget is unallocated.
+- Execute actual BillFit on 12 synthetic reference tasks and one maintenance variation, retaining 13 hashed artifacts. Recompute the reference outcomes, policy requests and history checks in CI. The 50-test suite passes without provider calls.
+- Keep comparative model quality, human review, user effort and attributable cost unmeasured. No new dependency, data migration, production change or market-validation claim.
+
 ## Unreleased - 2026-10-31
 
 - Separate execution-ledger replay from outcome evaluation. Reject turns after a final response, failure or interruption, received responses outside the runner contract, unattempted rows containing output, and observed rows without a valid matching artifact.

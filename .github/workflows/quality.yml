@@ -28,3 +28,6 @@ jobs:
 
       - name: Recompute shared-evidence outcomes and artifact receipts
         run: python scripts/shared_evidence_report.py --check benchmarks/2026-10-29/analysis.json
+
+      - name: Check complete-policy preparation and deterministic reference evidence
+        run: python scripts/shared_policy_report.py
