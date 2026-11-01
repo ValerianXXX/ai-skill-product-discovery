@@ -23,6 +23,9 @@ def execute(task, corpus, root):
         raise ValueError('BILLFIT_MODULE_ORIGIN')
     original_date, original_data = core.date, core.assistance_data
     evidence = {d['id']: d['content'] for d in documents_for(task, corpus)}
+    if 'screening-policy' in evidence:
+        from shared_policy_bridge import execute_assistance
+        return execute_assistance(core, task, evidence)
     fixed_date = date.fromisoformat(task['asOf'])
 
     class FrozenDate(date):
@@ -87,4 +90,7 @@ def execute(task, corpus, root):
         citations = [{'sourceId': 'bill-text', 'locators': [f'/{i}/text' for i in range(len(evidence['bill-text']))]}]
     if 'usage-csv' in evidence:
         citations = [{'sourceId': 'usage-csv', 'locators': [f'/{i}' for i in range(1, len(evidence['usage-csv']))]}]
+    if 'workflow-policy' in evidence:
+        citations.append({'sourceId': 'workflow-policy', 'locators': [
+            '/bill' if task['operation'] == 'bill_fields' else '/usage', '/artifacts']})
     return {'fields': fields, 'citations': citations, 'note': note}

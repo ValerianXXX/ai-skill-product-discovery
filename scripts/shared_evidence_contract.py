@@ -15,7 +15,12 @@ def digest(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(',', ':'), allow_nan=False).encode()).hexdigest()
 
 
-def load_round(maintenance=False, clarified=False):
+def load_round(maintenance=False, clarified=False, round_id='2026-10-29'):
+    if round_id == '2026-11-01':
+        from shared_policy_round import load_policy_round
+        return load_policy_round(maintenance, clarified)
+    if round_id != '2026-10-29':
+        raise ValueError('ROUND_IDENTITY')
     catalog = json.loads((ROUND / 'tasks.json').read_text(encoding='utf-8'))
     corpus = json.loads((ROUND / 'corpus.json').read_text(encoding='utf-8'))
     if len(catalog['tasks']) != 6 or len({t['id'] for t in catalog['tasks']}) != 6:
